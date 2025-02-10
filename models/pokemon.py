@@ -1,8 +1,8 @@
 class Pokemon:
-    def __init__(self, name, hit_points, level, attack, defense, types, evolves_into=None):
+    def __init__(self, name, level, hit_points, attack, defense, types, evolves_into=None):
         self._name = name
-        self._hit_points = hit_points
         self._level = level
+        self._hit_points = hit_points
         self._attack = attack
         self._defense = defense
         self._types = types
@@ -62,7 +62,7 @@ class Pokemon:
     
 
     def display_info(self):
-        """Display Pokémon's details"""
+        """Display the Pokémon's details"""
         print(f"Name: {self._name}")
         print(f"Hit Points: {self._hit_points}")
         print(f"Level: {self._level}")
