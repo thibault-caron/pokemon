@@ -75,7 +75,6 @@ class Pokemon:
         print(f"Hit Points: {self.__hp}")
         print(f"Level: {self.__level}")
         print(f"Attack Power: {self.__attack}")
-        print(f"Defense: {self.__defense}")
         print(f"Types: {', '.join(self.__types)}")
         if self.__evolves_into:
             print(f"Evolves into: {self.__evolves_into}")
