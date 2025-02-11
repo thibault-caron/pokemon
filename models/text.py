@@ -1,14 +1,14 @@
 import pygame
 from pygame.locals import *
 
-from app import App
-
 class Text:
     """Create a text object."""
 
-    def __init__(self, text, pos, **options):
+    def __init__(self, text, pos, app, **options):
+        super().__init__()
         self.text = text
         self.pos = pos
+        self.app = app
 
         self.fontname = None
         self.fontsize = 72
@@ -28,4 +28,4 @@ class Text:
         
     def draw(self):
         """Draw the text image to the screen."""
-        App.screen.blit(self.img, self.rect)
+        self.app.screen.blit(self.img, self.rect)
