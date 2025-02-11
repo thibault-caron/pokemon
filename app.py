@@ -1,16 +1,13 @@
-import pygame
-from pygame.locals import *
-
+from models.config import *
 from models.text import Text
+from models.scene import Scene
 
 class App:
-    """Create a single-window app with multiple scenes."""
-
     def __init__(self):
         """Initialize pygame and the application."""
         pygame.init()
         flags = RESIZABLE
-        self.screen = pygame.display.set_mode((1200, 720), flags)
+        self.screen = pygame.display.set_mode((WIDTH, HEIGTH), flags)
         self.t = Text('Pygame App', pos=(20, 20), app=self)
 
         self.running = True
@@ -38,8 +35,10 @@ class App:
                 if event.type == QUIT:
                     self.running = False
 
-            self.screen.fill(Color('gray'))
-            self.t.draw()
+            Scene(app=self, caption='Intro')
+            Text('Scene 0')
+            Text('Introduction screen the app')
+
             pygame.display.update()
 
         pygame.quit()
