@@ -1,4 +1,4 @@
-from .app import App
+from app import App
 
 class Menu(App):
     def __init__(self):
