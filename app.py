@@ -1,18 +1,19 @@
 import pygame
 from pygame.locals import *
 
+from models.text import Text
+
 class App:
+    """Create a single-window app with multiple scenes."""
+
     def __init__(self):
         """Initialize pygame and the application."""
         pygame.init()
         flags = RESIZABLE
-        App.screen = pygame.display.set_mode((1200, 720), flags)
-        
-        self.flags = RESIZABLE
-        self.rect = Rect(0, 0, 640, 240)
-        App.screen = pygame.display.set_mode(self.rect.size, self.flags)
+        self.screen = pygame.display.set_mode((1200, 720), flags)
+        self.t = Text('Pygame App', pos=(20, 20), app=self)
 
-        App.running = True
+        self.running = True
         
     def toggle_fullscreen(self):
         """Toggle between full screen and windowed screen."""
@@ -29,11 +30,20 @@ class App:
         self.flags ^= NOFRAME
         pygame.display.set_mode(self.rect.size, self.flags)
         
+
     def run(self):
         """Run the main event loop."""
-        while App.running:
+        while self.running:
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    App.running = False
+                    self.running = False
+
+            self.screen.fill(Color('gray'))
+            self.t.draw()
+            pygame.display.update()
+
         pygame.quit()
+
         
+if __name__ == '__main__':
+    App().run()
