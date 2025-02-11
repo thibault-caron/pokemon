@@ -44,6 +44,7 @@ class App:
             # self.intro.draw()
 
             pygame.display.update()
+            CLOCK.tick(FPS)
 
         pygame.quit()
 

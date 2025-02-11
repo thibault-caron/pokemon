@@ -15,5 +15,8 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREY = "grey"
 
-# Set frame updates per seconds
-FPS = pygame.time.Clock()
+# Clock
+CLOCK = pygame.time.Clock()
+
+# Set number of refresh per second
+FPS = 60
