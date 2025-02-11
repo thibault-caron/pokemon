@@ -26,7 +26,7 @@ class Combat:
         print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage (Multiplier: {multiplier})")
         return damage
 
-    def apply_defense(self, defender, damage):
+    def inflict_damage(self, defender, damage):
         """Method to apply defense and deduct life points"""
         defender.set_hp(defender.get_hp() - damage)
         print(f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}")
