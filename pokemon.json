@@ -1,13 +1,248 @@
-{ "bulbasaur": {
-  "name": "bulbasaur",
-  "id_code": 1,
-  "types": ["grass", "poison"],
-  "hp": 45,
-  "attach": 49,
-  "min_level": 1,
-  "evolution": "Ivysaur",
-  "front-sprite": "assets/sprites/bulbasaur_front.png",
-  "back_sprite": "assets/sprites/bulbasaur_back.png",
-  "state": "used"
+{ "Bulbasaur": {
+    "name": "Bulbasaur",
+    "id_code": 1,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "hp": 45,
+    "attack": 49,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Ivysaur"
+    ],
+    "front-sprite": "assets/sprites/bulbasaur_front.png",
+    "back_sprite": "assets/sprites/bulbasaur_back.png",
+    "state": "used"
+  },
+  "Ivysaur": {
+    "name": "Ivysaur",
+    "id_code": 2,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "hp": 60,
+    "attack": 62,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Venusaur"
+    ],
+    "front-sprite": "assets/sprites/ivysaur_front.png",
+    "back_sprite": "assets/sprites/ivysaur_back.png",
+    "state": "used"
+  },
+  "Venusaur": {
+    "name": "Venusaur",
+    "id_code": 3,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "hp": 80,
+    "attack": 82,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/venusaur_front.png",
+    "back_sprite": "assets/sprites/venusaur_back.png",
+    "state": "used"
+  },
+  "Charmander": {
+    "name": "Charmander",
+    "id_code": 4,
+    "types": [
+      "fire"
+    ],
+    "hp": 39,
+    "attack": 52,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Charmeleon"
+    ],
+    "front-sprite": "assets/sprites/charmander_front.png",
+    "back_sprite": "assets/sprites/charmander_back.png",
+    "state": "used"
+  },
+  "Charmeleon": {
+    "name": "Charmeleon",
+    "id_code": 5,
+    "types": [
+      "fire"
+    ],
+    "hp": 58,
+    "attack": 64,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Charizard"
+    ],
+    "front-sprite": "assets/sprites/charmeleon_front.png",
+    "back_sprite": "assets/sprites/charmeleon_back.png",
+    "state": "used"
+  },
+  "Charizard": {
+    "name": "Charizard",
+    "id_code": 6,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "hp": 78,
+    "attack": 84,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/charizard_front.png",
+    "back_sprite": "assets/sprites/charizard_back.png",
+    "state": "used"
+  },
+  "Squirtle": {
+    "name": "Squirtle",
+    "id_code": 7,
+    "types": [
+      "water"
+    ],
+    "hp": 44,
+    "attack": 48,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Wartortle"
+    ],
+    "front-sprite": "assets/sprites/squirtle_front.png",
+    "back_sprite": "assets/sprites/squirtle_back.png",
+    "state": "used"
+  },
+  "Wartortle": {
+    "name": "Wartortle",
+    "id_code": 8,
+    "types": [
+      "water"
+    ],
+    "hp": 59,
+    "attack": 63,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Blastoise"
+    ],
+    "front-sprite": "assets/sprites/wartortle_front.png",
+    "back_sprite": "assets/sprites/wartortle_back.png",
+    "state": "used"
+  },
+  "Blastoise": {
+    "name": "Blastoise",
+    "id_code": 9,
+    "types": [
+      "water"
+    ],
+    "hp": 79,
+    "attack": 83,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/blastoise_front.png",
+    "back_sprite": "assets/sprites/blastoise_back.png",
+    "state": "used"
+  },
+  "Caterpie": {
+    "name": "Caterpie",
+    "id_code": 10,
+    "types": [
+      "bug"
+    ],
+    "hp": 45,
+    "attack": 30,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Metapod"
+    ],
+    "front-sprite": "assets/sprites/caterpie_front.png",
+    "back_sprite": "assets/sprites/caterpie_back.png",
+    "state": "used"
+  },
+  "Metapod": {
+    "name": "Metapod",
+    "id_code": 11,
+    "types": [
+      "bug"
+    ],
+    "hp": 50,
+    "attack": 20,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Butterfree"
+    ],
+    "front-sprite": "assets/sprites/metapod_front.png",
+    "back_sprite": "assets/sprites/metapod_back.png",
+    "state": "used"
+  },
+  "Butterfree": {
+    "name": "Butterfree",
+    "id_code": 12,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "hp": 60,
+    "attack": 45,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/butterfree_front.png",
+    "back_sprite": "assets/sprites/butterfree_back.png",
+    "state": "used"
+  },
+  "Weedle": {
+    "name": "Weedle",
+    "id_code": 13,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hp": 40,
+    "attack": 35,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Kakuna"
+    ],
+    "front-sprite": "assets/sprites/weedle_front.png",
+    "back_sprite": "assets/sprites/weedle_back.png",
+    "state": "unused"
+  },
+  "Kakuna": {
+    "name": "Kakuna",
+    "id_code": 14,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hp": 45,
+    "attack": 25,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Beedrill"
+    ],
+    "front-sprite": "assets/sprites/kakuna_front.png",
+    "back_sprite": "assets/sprites/kakuna_back.png",
+    "state": "unused"
+  },
+  "Beedrill": {
+    "name": "Beedrill",
+    "id_code": 15,
+    "types": [
+      "bug"
+    ],
+    "hp": 65,
+    "attack": 90,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/beedrill_front.png",
+    "back_sprite": "assets/sprites/beedrill_back.png",
+    "state": "unused"
   }
 }
