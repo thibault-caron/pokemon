@@ -9,6 +9,8 @@ class App:
         flags = RESIZABLE
         self.screen = pygame.display.set_mode((WIDTH, HEIGTH), flags)
         self.t = Text('Pygame App', pos=(20, 20), app=self)
+        
+        self.scenes = []
 
         self.running = True
         
@@ -29,15 +31,17 @@ class App:
         
 
     def run(self):
+        self.scene = Scene(app=self, img_folder = "../assets/images", file = "Pokemon_bg1.webp", caption='Intro')
+        self.intro = Text('Introduction screen the app', (20, 20), app=self)
+        
         """Run the main event loop."""
         while self.running:
             for event in pygame.event.get():
                 if event.type == QUIT:
                     self.running = False
 
-            Scene(app=self, caption='Intro')
-            Text('Scene 0')
-            Text('Introduction screen the app')
+            self.scene.draw()
+            # self.intro.draw()
 
             pygame.display.update()
 
