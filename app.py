@@ -31,7 +31,7 @@ class App:
         
 
     def run(self):
-        self.scene = Scene(app=self, img_folder = "../assets/images", file = "Pokemon_bg1.webp", caption='Intro')
+        self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
         self.intro = Text('Introduction screen the app', (20, 20), app=self)
         
         """Run the main event loop."""
