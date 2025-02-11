@@ -5,9 +5,10 @@ class Menu:
         
         self.app = app
         
-    def menu_background(self, app):
-        menu_background = pygame.Surface((WIDTH*0.5, HEIGTH*0.5), pygame.SRCALPHA)
-        menu_background.fill(WHITE)
-        app.screen.blit(menu_background, (WIDTH*0.2, HEIGTH*0.2))
+        self.menu_background = pygame.Surface((WIDTH*0.5, HEIGTH*0.5), pygame.SRCALPHA)
+        self.menu_background.fill(WHITE)
+        
+    def draw(self):
+        self.app.screen.blit(self.menu_background, (WIDTH*0.2, HEIGTH*0.2))
                
         
