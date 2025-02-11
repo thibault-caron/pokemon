@@ -1,75 +1,75 @@
 class Pokemon:    
     def __init__(self, name, level, hit_points, attack, defense, types, evolves_into=None):
-        self._name = name
-        self._level = level
-        self._hit_points = hit_points
-        self._attack = attack
-        self._defense = defense
-        self._types = types
-        self._evolves_into = evolves_into
+        self.__name = name
+        self.__level = level
+        self.__hit_points = hit_points
+        self.__attack = attack
+        self.__defense = defense
+        self.__types = types
+        self.__evolves_into = evolves_into
     
     # Getters
     def get_name(self):
-        return self._name
+        return self.__name
     
     def get_hit_points(self):
-        return self._hit_points
+        return self.__hit_points
     
     def get_level(self):
-        return self._level
+        return self.__level
     
     def get_attack(self):
-        return self._attack
+        return self.__attack
     
     def get_defense(self):
-        return self._defense
+        return self.__defense
     
     def get_types(self):
-        return self._types
+        return self.__types
     
     def get_evolves_into(self):
-        return self._evolves_into
+        return self.__evolves_into
     
     # Setters
     def set_name(self, name):
-        self._name = name
+        self.__name = name
     
     def set_hit_points(self, hit_points):
-        self._hit_points = hit_points
+        self.__hit_points = hit_points
     
     def set_level(self, level):
-        self._level = level
+        self.__level = level
     
     def set_attack(self, attack):
-        self._attack = attack
+        self.__attack = attack
     
     def set_defense(self, defense):
-        self._defense = defense
+        self.__defense = defense
     
     def set_types(self, types):
-        self._types = types
+        self.__types = types
     
     def set_evolves_into(self, evolves_into):
-        self._evolves_into = evolves_into
+        self.__evolves_into = evolves_into
     
 
     def evolve(self):
-        if self._evolves_into:
-            self._name = self._evolves_into
-            print(f"{self._name} has evolved!")
+        if self.__evolves_into:
+            self.__name = self.__evolves_into
+            print(f"{self.__name} has evolved!")
         else:
-            print(f"{self._name} cannot evolve.")
+            print(f"{self.__name} cannot evolve.")
     
 
     def display_info(self):
         """Display the Pokémon's details"""
-        print(f"Name: {self._name}")
-        print(f"Hit Points: {self._hit_points}")
-        print(f"Level: {self._level}")
-        print(f"Attack Power: {self._attack}")
-        print(f"Defense: {self._defense}")
-        print(f"Types: {', '.join(self._types)}")
-        if self._evolves_into:
-            print(f"Evolves into: {self._evolves_into}")
+        print(f"Name: {self.__name}")
+        print(f"Hit Points: {self.__hit_points}")
+        print(f"Level: {self.__level}")
+        print(f"Attack Power: {self.__attack}")
+        print(f"Defense: {self.__defense}")
+        print(f"Types: {', '.join(self.__types)}")
+        if self.__evolves_into:
+            print(f"Evolves into: {self.__evolves_into}")
         else:
             print("This Pokémon cannot evolve.")
