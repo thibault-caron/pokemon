@@ -1,4 +1,8 @@
-class Pokemon:    
+import json
+
+class Pokemon:
+    data_pokemons = json.load(open('pokemon.json'))
+
     def __init__(self, name, level, types, hp, attack, evolves_into=None):
         self.__name = name
         self.__level = level
