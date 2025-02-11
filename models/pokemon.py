@@ -1,11 +1,11 @@
 class Pokemon:    
-    def __init__(self, name, level, hit_points, attack, defense, types, evolves_into=None):
+    def __init__(self, name, level, types, hit_points, attack, savage=True, evolves_into=None):
         self.__name = name
         self.__level = level
+        self.__types = types
         self.__hit_points = hit_points
         self.__attack = attack
-        self.__defense = defense
-        self.__types = types
+        self.__savage = savage
         self.__evolves_into = evolves_into
     
     # Getters
@@ -18,14 +18,14 @@ class Pokemon:
     def get_level(self):
         return self.__level
     
+    def get_types(self):
+        return self.__types
+    
     def get_attack(self):
         return self.__attack
     
-    def get_defense(self):
-        return self.__defense
-    
-    def get_types(self):
-        return self.__types
+    def get_savage(self):
+        return self.__savage
     
     def get_evolves_into(self):
         return self.__evolves_into
@@ -39,15 +39,15 @@ class Pokemon:
     
     def set_level(self, level):
         self.__level = level
+
+    def set_types(self, types):
+        self.__types = types
     
     def set_attack(self, attack):
         self.__attack = attack
     
-    def set_defense(self, defense):
-        self.__defense = defense
-    
-    def set_types(self, types):
-        self.__types = types
+    def set_savage(self, savage):
+        self.__savage = savage
     
     def set_evolves_into(self, evolves_into):
         self.__evolves_into = evolves_into
