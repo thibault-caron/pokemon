@@ -1,0 +1,13 @@
+{ "bulbasaur": {
+  "name": "bulbasaur",
+  "id_code": 1,
+  "types": ["grass", "poison"],
+  "hp": 45,
+  "attach": 49,
+  "min_level": 1,
+  "evolution": "Ivysaur",
+  "front-sprite": "assets/sprites/bulbasaur_front.png",
+  "back_sprite": "assets/sprites/bulbasaur_back.png",
+  "state": "used"
+  }
+}
