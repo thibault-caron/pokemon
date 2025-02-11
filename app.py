@@ -1,6 +1,7 @@
 from models.config import *
 from models.text import Text
 from models.scene import Scene
+from models.menu import Menu
 
 class App:
     def __init__(self):
@@ -33,7 +34,7 @@ class App:
     def run(self):
         self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
         self.intro = Text('Introduction screen the app', (20, 20), app=self)
-        
+        self.menu1 = Menu(app=self)
         """Run the main event loop."""
         while self.running:
             for event in pygame.event.get():
@@ -42,8 +43,9 @@ class App:
 
             self.scene.draw()
             # self.intro.draw()
-
             pygame.display.update()
+            
+        self.menu1.menu_background(app=self)
 
         pygame.quit()
 
