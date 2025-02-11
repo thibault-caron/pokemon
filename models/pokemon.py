@@ -3,7 +3,7 @@ import json
 class Pokemon:
     data_pokemons = json.load(open('pokemon.json'))
 
-    def __init__(self, name, level, types, hp, attack, evolves_into=None):
+    def __init__(self, name, level, types, hp, attack, evolution=None):
         self.__name = name
         self.__level = level
         self.__xp = 0
@@ -11,7 +11,7 @@ class Pokemon:
         self.__hp = hp
         self.__attack = attack
         self.__savage = True
-        self.__evolves_into = evolves_into
+        self.__evolution = evolution
     
     # Getters
     def get_name(self):
@@ -35,8 +35,8 @@ class Pokemon:
     def get_savage(self):
         return self.__savage
     
-    def get_evolves_into(self):
-        return self.__evolves_into
+    def get_evolution(self):
+        return self.__evolution
     
     # Setters
     def set_name(self, name):
@@ -60,18 +60,18 @@ class Pokemon:
     def set_savage(self, savage):
         self.__savage = savage
     
-    def set_evolves_into(self, evolves_into):
-        self.__evolves_into = evolves_into
+    def set_evolution(self, evolution):
+        self.__evolution = evolution
     
 
     def evolve(self):
-        if self.__evolves_into:
-            if self.__level >= self.__evolves_into[0]:
-                self.__name = self.__evolves_into[1]
+        if self.__evolution != []:
+            if self.__level >= self.__evolution[0]:
+                self.__name = self.__evolution[1]
                 self.__types = None  # recuperer les données de l'evolution dans 'pokemon.json'
                 self.__hp = None
                 self.__attack = None
-                self.__evolves_into = None
+                self.__evolution = None
                 print(f"{self.__name} has evolved!")
         else:
             print(f"{self.__name} cannot evolve.")
@@ -89,7 +89,7 @@ class Pokemon:
         print(f"Level: {self.__level}")
         print(f"Attack Power: {self.__attack}")
         print(f"Types: {', '.join(self.__types)}")
-        if self.__evolves_into:
-            print(f"Evolves into: {self.__evolves_into}")
+        if self.__evolution:
+            print(f"Evolves into: {self.__evolution}")
         else:
             print("This Pokémon cannot evolve.")
