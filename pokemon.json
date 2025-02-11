@@ -235,7 +235,8 @@
     "name": "Beedrill",
     "id_code": 15,
     "types": [
-      "bug"
+      "bug",
+      "poison"
     ],
     "hp": 65,
     "attack": 90,
@@ -244,5 +245,581 @@
     "front-sprite": "assets/sprites/beedrill_front.png",
     "back_sprite": "assets/sprites/beedrill_back.png",
     "state": "unused"
+  },
+  "Pidgey": {
+    "name": "Pidgey",
+    "id_code": 16,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hp": 40,
+    "attack": 45,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Pidgeotto"
+    ],
+    "front-sprite": "assets/sprites/pidgey_front.png",
+    "back_sprite": "assets/sprites/pidgey_back.png",
+    "state": "unused"
+  },
+  "Pidgeotto": {
+    "name": "Pidgeotto",
+    "id_code": 17,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hp": 63,
+    "attack": 60,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Pidgeot"
+    ],
+    "front-sprite": "assets/sprites/pidgeotto_front.png",
+    "back_sprite": "assets/sprites/pidgeotto_back.png",
+    "state": "unused"
+  },
+  "Pidgeot": {
+    "name": "Pidgeot",
+    "id_code": 18,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hp": 83,
+    "attack": 80,
+    "min_level": 15,
+    "evolution": [],
+    "front-sprite": "assets/sprites/pidgeot_front.png",
+    "back_sprite": "assets/sprites/pidgeot_back.png",
+    "state": "unused"
+  },
+   "Rattata": {
+     "name": "Rattata",
+     "id_code": 19,
+     "types": [
+       "normal"
+     ],
+     "hp": 30,
+     "attack": 56,
+     "min_level": 1,
+     "evolution": [
+       20,
+       "Raticate"
+     ],
+     "front-sprite": "assets/sprites/rattata_front.png",
+     "back_sprite": "assets/sprites/rattata_back.png",
+     "state": "used"
+   },
+  "Raticate": {
+    "name": "Raticate",
+    "id_code": 20,
+    "types": [
+      "normal"
+    ],
+    "hp": 55,
+    "attack": 81,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/raticate_front.png",
+    "back_sprite": "assets/sprites/raticate_back.png",
+    "state": "used"
+  },
+  "Ekans": {
+    "name": "Ekans",
+    "id_code": 23,
+    "types": [
+      "poison"
+    ],
+    "hp": 35,
+    "attack": 60,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Arbok"
+    ],
+    "front-sprite": "assets/sprites/ekans_front.png",
+    "back_sprite": "assets/sprites/ekans_back.png",
+    "state": "unused"
+  },
+  "Arbok": {
+    "name": "Arbok",
+    "id_code": 24,
+    "types": [
+      "poison"
+    ],
+    "hp": 60,
+    "attack": 95,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/arbok_front.png",
+    "back_sprite": "assets/sprites/arbok_back.png",
+    "state": "unused"
+  },
+  "Pikachu": {
+    "name": "Pikachu",
+    "id_code": 25,
+    "types": [
+      "electric"
+    ],
+    "hp": 35,
+    "attack": 55,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Raichu"
+    ],
+    "front-sprite": "assets/sprites/pikachu_front.png",
+    "back_sprite": "assets/sprites/pikachu_back.png",
+    "state": "used"
+  },
+  "Raichu": {
+    "name": "Raichu",
+    "id_code": 26,
+    "types": [
+      "electric"
+    ],
+    "hp": 60,
+    "attack": 90,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/raichu_front.png",
+    "back_sprite": "assets/sprites/raichu_back.png",
+    "state": "used"
+  },
+  "Sandshrew": {
+    "name": "Sandshrew",
+    "id_code": 27,
+    "types": [
+      "ground"
+    ],
+    "hp": 50,
+    "attack": 75,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Sandslash"
+    ],
+    "front-sprite": "assets/sprites/sandshrew_front.png",
+    "back_sprite": "assets/sprites/sandshrew_back.png",
+    "state": "used"
+  },
+  "Sandslash": {
+    "name": "Sandslash",
+    "id_code": 28,
+    "types": [
+      "ground"
+    ],
+    "hp": 75,
+    "attack": 100,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/sandslash_front.png",
+    "back_sprite": "assets/sprites/sandslash_back.png",
+    "state": "used"
+  },
+  "Clefairy": {
+    "name": "Clefairy",
+    "id_code": 35,
+    "types": [
+      "fairy"
+    ],
+    "hp": 70,
+    "attack": 45,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Clefable"
+    ],
+    "front-sprite": "assets/sprites/clefairy_front.png",
+    "back_sprite": "assets/sprites/clefairy_back.png",
+    "state": "used"
+  },
+  "Clefable": {
+    "name": "Clefable",
+    "id_code": 41,
+    "types": [
+      "fairy"
+    ],
+    "hp": 95,
+    "attack": 70,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/clefable_front.png",
+    "back_sprite": "assets/sprites/clefable_back.png",
+    "state": "used"
+  },
+  "Zubat": {
+    "name": "Zubat",
+    "id_code": 36,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "hp": 40,
+    "attack": 45,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Golbat"
+    ],
+    "front-sprite": "assets/sprites/zubat_front.png",
+    "back_sprite": "assets/sprites/zubat_back.png",
+    "state": "unused"
+  },
+  "Golbat": {
+    "name": "Golbat",
+    "id_code": 42,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "hp": 75,
+    "attack": 80,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/golbat_front.png",
+    "back_sprite": "assets/sprites/golbat_back.png",
+    "state": "unused"
+  },
+  "Diglett": {
+    "name": "Diglett",
+    "id_code": 50,
+    "types": [
+      "ground"
+    ],
+    "hp": 10,
+    "attack": 55,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Dugtrio"
+    ],
+    "front-sprite": "assets/sprites/diglett_front.png",
+    "back_sprite": "assets/sprites/diglett_back.png",
+    "state": "unused"
+  },
+  "Dugtrio": {
+    "name": "Dugtrio",
+    "id_code": 51,
+    "types": [
+      "ground"
+    ],
+    "hp": 35,
+    "attack": 100,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/dugtrio_front.png",
+    "back_sprite": "assets/sprites/dugtrio_back.png",
+    "state": "unused"
+  },
+  "Meowth": {
+    "name": "Meowth",
+    "id_code": 52,
+    "types": [
+      "normal"
+    ],
+    "hp": 40,
+    "attack": 45,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Persian"
+    ],
+    "front-sprite": "assets/sprites/meowth_front.png",
+    "back_sprite": "assets/sprites/meowth_back.png",
+    "state": "unused"
+  },
+  "Persian": {
+    "name": "Persian",
+    "id_code": 53,
+    "types": [
+      "normal"
+    ],
+    "hp": 65,
+    "attack": 70,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/persian_front.png",
+    "back_sprite": "assets/sprites/persian_back.png",
+    "state": "unused"
+  },
+  "Psyduck": {
+    "name": "Psyduck",
+    "id_code": 54,
+    "types": [
+      "water"
+    ],
+    "hp": 50,
+    "attack": 52,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Golduck"
+    ],
+    "front-sprite": "assets/sprites/psyduck_front.png",
+    "back_sprite": "assets/sprites/psyduck_back.png",
+    "state": "used"
+  },
+  "Golduck": {
+    "name": "Golduck",
+    "id_code": 55,
+    "types": [
+      "water"
+    ],
+    "hp": 95,
+    "attack": 70,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/golduck_front.png",
+    "back_sprite": "assets/sprites/golduck_back.png",
+    "state": "used"
+  },
+  "Mankey": {
+    "name": "Mankey",
+    "id_code": 56,
+    "types": [
+      "fighting"
+    ],
+    "hp": 95,
+    "attack": 70,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Primeape"
+    ],
+    "front-sprite": "assets/sprites/mankey_front.png",
+    "back_sprite": "assets/sprites/mankey_back.png",
+    "state": "used"
+  },
+  "Primeape": {
+    "name": "Primeape",
+    "id_code": 57,
+    "types": [
+      "fighting"
+    ],
+    "hp": 65,
+    "attack": 105,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/primeape_front.png",
+    "back_sprite": "assets/sprites/primeape_back.png",
+    "state": "used"
+  },
+  "Poliwag": {
+    "name": "Poliwag",
+    "id_code": 60,
+    "types": [
+      "water"
+    ],
+    "hp": 40,
+    "attack": 50,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Poliwhirl"
+    ],
+    "front-sprite": "assets/sprites/poliwag_front.png",
+    "back_sprite": "assets/sprites/poliwag_back.png",
+    "state": "unused"
+  },
+  "Poliwhirl": {
+    "name": "Poliwhirl",
+    "id_code": 61,
+    "types": [
+      "water"
+    ],
+    "hp": 65,
+    "attack": 65,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Poliwrath"
+    ],
+    "front-sprite": "assets/sprites/poliwhirl_front.png",
+    "back_sprite": "assets/sprites/poliwhirl_back.png",
+    "state": "unused"
+  },
+  "Poliwrath": {
+    "name": "Poliwrath",
+    "id_code": 62,
+    "types": [
+      "water"
+    ],
+    "hp": 90,
+    "attack": 95,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/poliwrath_front.png",
+    "back_sprite": "assets/sprites/poliwrath_back.png",
+    "state": "unused"
+  },
+  "Abra": {
+    "name": "Abra",
+    "id_code": 63,
+    "types": [
+      "psychic"
+    ],
+    "hp": 25,
+    "attack": 20,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Kadabra"
+    ],
+    "front-sprite": "assets/sprites/abra_front.png",
+    "back_sprite": "assets/sprites/abra_back.png",
+    "state": "used"
+  },
+  "Kadabra": {
+    "name": "Kadabra",
+    "id_code": 64,
+    "types": [
+      "psychic"
+    ],
+    "hp": 40,
+    "attack": 35,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Alakazam"
+    ],
+    "front-sprite": "assets/sprites/kadabra_front.png",
+    "back_sprite": "assets/sprites/kadabra_back.png",
+    "state": "used"
+  },
+  "Alakazam": {
+    "name": "Alakazam",
+    "id_code": 65,
+    "types": [
+      "psychic"
+    ],
+    "hp": 55,
+    "attack": 50,
+    "min_level": 30,
+    "evolution": [],
+    "front-sprite": "assets/sprites/alakazam_front.png",
+    "back_sprite": "assets/sprites/alakazam_back.png",
+    "state": "used"
+  },
+  "Tentacool": {
+    "name": "Tentacool",
+    "id_code": 72,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "hp": 40,
+    "attack": 40,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Tentacruel"
+    ],
+    "front-sprite": "assets/sprites/tentacool_front.png",
+    "back_sprite": "assets/sprites/tentacool_back.png",
+    "state": "unused"
+  },
+  "Tentacruel": {
+    "name": "Tentacruel",
+    "id_code": 73,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "hp": 80,
+    "attack": 70,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/tentacruel_front.png",
+    "back_sprite": "assets/sprites/tentacruel_back.png",
+    "state": "unused"
+  },
+  "Geodude": {
+    "name": "Geodude",
+    "id_code": 74,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "hp": 40,
+    "attack": 80,
+    "min_level": 1,
+    "evolution": [
+      15,
+      "Graveler"
+    ],
+    "front-sprite": "assets/sprites/geodude_front.png",
+    "back_sprite": "assets/sprites/geodude_back.png",
+    "state": "used"
+  },
+  "Graveler": {
+    "name": "Graveler",
+    "id_code": 75,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "hp": 55,
+    "attack": 95,
+    "min_level": 15,
+    "evolution": [
+      30,
+      "Golem"
+    ],
+    "front-sprite": "assets/sprites/graveler_front.png",
+    "back_sprite": "assets/sprites/graveler_back.png",
+    "state": "used"
+  },
+  "Golem": {
+    "name": "Golem",
+    "id_code": 76,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "hp": 80,
+    "attack": 120,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/golem_front.png",
+    "back_sprite": "assets/sprites/golem_back.png",
+    "state": "used"
+  },
+  "Magnemite": {
+    "name": "Magnemite",
+    "id_code": 81,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "hp": 25,
+    "attack": 35,
+    "min_level": 1,
+    "evolution": [
+      20,
+      "Magneton"
+    ],
+    "front-sprite": "assets/sprites/magnemite_front.png",
+    "back_sprite": "assets/sprites/magnemite_back.png",
+    "state": "used"
+  },
+  "Magneton": {
+    "name": "Magneton",
+    "id_code": 82,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "hp": 50,
+    "attack": 60,
+    "min_level": 20,
+    "evolution": [],
+    "front-sprite": "assets/sprites/magneton_front.png",
+    "back_sprite": "assets/sprites/magneton_back.png",
+    "state": "used"
   }
 }
