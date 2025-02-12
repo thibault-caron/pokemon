@@ -24,5 +24,5 @@ class Pokedex(Database):
         """
         json_object = json.dumps(my_pokemons, indent=4)  # Serializing in a json format.
 
-        with open(self.path, "w") as file:  # Write th in pokedex.json
+        with open(self.path, "w") as file:  # Write in pokedex.json
             file.write(json_object)

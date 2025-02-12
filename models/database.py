@@ -1,8 +1,8 @@
 import json
 
 class Database:
-    def __init__(self):
-        self.path = "../pokemons.json"
+    def __init__(self, path="../pokemons.json"):
+        self.path = path
 
     def read_json(self):
         """
