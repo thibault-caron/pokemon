@@ -12,6 +12,7 @@ HEIGTH = 720
 
 # Set colors
 WHITE = (255, 255, 255)
+FADE_WHITE = (255, 255, 255, 220)
 BLACK = (0, 0, 0)
 GREY = "grey"
 

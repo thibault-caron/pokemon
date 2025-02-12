@@ -29,3 +29,4 @@ class Text:
     def draw(self):
         """Draw the text image to the screen."""
         self.app.screen.blit(self.img, self.rect)
+        pygame.display.update()

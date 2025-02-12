@@ -33,7 +33,7 @@ class App:
 
     def run(self):
         self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
-        self.intro = Text('Introduction screen', (20, 20), app=self)
+        # self.intro = Text('Introduction screen', (20, 20), app=self)
         self.menu1 = Menu(app=self)
         
         game_state = "welcome_menu"
@@ -43,10 +43,11 @@ class App:
             for event in pygame.event.get():
                 if event.type == QUIT:
                     self.running = False
-                if game_state == "welcome_menu":
-                    self.scene.draw()
-                    self.menu1.draw()
-                    self.intro.draw()
+                    
+            if game_state == "welcome_menu":
+                self.scene.draw()
+                self.menu1.draw()
+                # self.intro.draw()
 
                 # elif game_state == "game":
 
