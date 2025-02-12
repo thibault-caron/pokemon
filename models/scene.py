@@ -31,25 +31,17 @@ class Scene:
         # load and scale background image
         self.img = pygame.image.load(self.file)
         self.img = pygame.transform.smoothscale(self.img, self.app.screen.get_size())
-            
-        self.enter()
         
     def draw(self):
         screen_size = self.app.screen.get_size()
         
         """Draw all objects in the scene."""
         if self.img:
-            resized_img = pygame.transform.smoothscale(self.img, screen_size)  # Redimensionner l'image
+            resized_img = pygame.transform.smoothscale(self.img, screen_size)  # Resize background
             self.app.screen.blit(resized_img, (0, 0))
         else:
             self.app.screen.fill(self.bg)
         
         for node in self.nodes:
             node.draw()
-            
-        pygame.display.flip()
-        
-    def enter(self):
-        """Méthode qui sera appelée lors de l'entrée dans la scène."""
-        print(f"Entering scene {self.id}")
         
