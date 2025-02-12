@@ -1,17 +1,23 @@
 import json
+from database import Database
+from pokedex import Pokedex
+
+data_pokemons = Database.read_json()
+my_pokemons = Pokedex.read_json()
 
 class Pokemon:
-    data_pokemons = json.load(open('pokemon.json'))
 
-    def __init__(self, name, level, types, hp, attack, evolution=None):
+    def __init__(self, name, level, savage=True):
         self.__name = name
         self.__level = level
         self.__xp = 0
-        self.__types = types
-        self.__hp = hp
-        self.__attack = attack
-        self.__savage = True
-        self.__evolution = evolution
+        self.__savage = savage
+
+        # a faire: données à récup dans data_pokemons via le "name"
+        self.__types = None
+        self.__hp = None
+        self.__attack = None
+        self.__evolution = None
     
     # Getters
     def get_name(self):
@@ -63,16 +69,20 @@ class Pokemon:
     def set_evolution(self, evolution):
         self.__evolution = evolution
     
-
     def evolve(self):
         if self.__evolution != []:
             if self.__level >= self.__evolution[0]:
                 self.__name = self.__evolution[1]
-                self.__types = None  # recuperer les données de l'evolution dans 'pokemon.json'
+
+                # a faire: recuperer les données de l'evolution dans 'pokemon.json (data_pokemons)'
+                self.__types = None  
                 self.__hp = None
                 self.__attack = None
                 self.__evolution = None
+
                 print(f"{self.__name} has evolved!")
+
+                # a faire: retirer l'objet du nom de la pré-evolution à 'my_pokemons' et append celui du nouveau nom à la place 
         else:
             print(f"{self.__name} cannot evolve.")
 
