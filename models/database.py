@@ -1,7 +1,7 @@
 import json
 
 class Database:
-    def __init__(self, path="../pokemons.json"):
+    def __init__(self, path="pokemons.json"):
         self.path = path
 
     def read_json(self):
@@ -14,3 +14,8 @@ class Database:
         with open(self.path, 'r') as input_file:  # Deserializing from a json format.
             data = json.load(input_file)
         return data
+    
+if __name__ == '__main__':
+        test = Database()
+        test = test.read_json()
+        print(test)
