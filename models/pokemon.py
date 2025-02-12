@@ -14,10 +14,10 @@ class Pokemon:
         self.__savage = savage
 
         # a faire: données à récup dans data_pokemons via le "name"
-        self.__types = None
-        self.__hp = None
-        self.__attack = None
-        self.__evolution = None
+        self.__types = data_pokemons["self.__name"]["types"]
+        self.__hp = data_pokemons["self.__name"]["hp"]
+        self.__attack = data_pokemons["self.__name"]["attack"]
+        self.__evolution = data_pokemons["self.__name"]["evolution"]
     
     # Getters
     def get_name(self):
@@ -75,10 +75,10 @@ class Pokemon:
                 self.__name = self.__evolution[1]
 
                 # a faire: recuperer les données de l'evolution dans 'pokemon.json (data_pokemons)'
-                self.__types = None  
-                self.__hp = None
-                self.__attack = None
-                self.__evolution = None
+                self.__types = data_pokemons["self.__name"]["types"]
+                self.__hp = data_pokemons["self.__name"]["hp"]
+                self.__attack = data_pokemons["self.__name"]["attack"]
+                self.__evolution = data_pokemons["self.__name"]["evolution"]
 
                 print(f"{self.__name} has evolved!")
 
