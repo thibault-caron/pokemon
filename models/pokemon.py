@@ -1,9 +1,10 @@
 import json
 from database import Database
 from pokedex import Pokedex
+from pokemon_dictionary import PokemonDictionary
 
-data_pokemons = Database.read_json()
-my_pokemons = Pokedex.read_json()
+# data_pokemons = PokemonDictionary().data_pokemons
+# my_pokemons = Pokedex.read_json()
 
 class Pokemon:
 
@@ -14,10 +15,10 @@ class Pokemon:
         self.__savage = savage
 
         # a faire: données à récup dans data_pokemons via le "name"
-        self.__types = data_pokemons["self.__name"]["types"]
-        self.__hp = data_pokemons["self.__name"]["hp"]
-        self.__attack = data_pokemons["self.__name"]["attack"]
-        self.__evolution = data_pokemons["self.__name"]["evolution"]
+        self.__types = data_pokemons[self.get_name()]["types"]
+        self.__hp = data_pokemons[self.get_name()]["hp"]
+        self.__attack = data_pokemons[self.get_name()]["attack"]
+        self.__evolution = data_pokemons[self.get_name()]["evolution"]
     
     # Getters
     def get_name(self):
@@ -75,10 +76,10 @@ class Pokemon:
                 self.__name = self.__evolution[1]
 
                 # a faire: recuperer les données de l'evolution dans 'pokemon.json (data_pokemons)'
-                self.__types = data_pokemons["self.__name"]["types"]
-                self.__hp = data_pokemons["self.__name"]["hp"]
-                self.__attack = data_pokemons["self.__name"]["attack"]
-                self.__evolution = data_pokemons["self.__name"]["evolution"]
+                self.__types = data_pokemons[self.get_name()]["types"]
+                self.__hp = data_pokemons[self.get_name()]["hp"]
+                self.__attack = data_pokemons[self.get_name()]["attack"]
+                self.__evolution = data_pokemons[self.get_name()]["evolution"]
 
                 print(f"{self.__name} has evolved!")
 
@@ -103,3 +104,9 @@ class Pokemon:
             print(f"Evolves into: {self.__evolution}")
         else:
             print("This Pokémon cannot evolve.")
+
+
+if __name__ == '__main__':
+    data_pokemons = PokemonDictionary().data_pokemons
+    test = Pokemon("Pikachu", 1)
+    print(test.get_evolution())
