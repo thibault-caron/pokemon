@@ -21,8 +21,6 @@ class Scene:
         Scene.id += 1
         self.nodes = []
         self.bg = Scene.bg
-        
-        self.file = kwargs.get("file", "")
 
         # get background image path
         self.file = os.path.join(img_folder, file) if file else ""
@@ -39,8 +37,6 @@ class Scene:
         if self.img:
             resized_img = pygame.transform.smoothscale(self.img, screen_size)  # Resize background
             self.app.screen.blit(resized_img, (0, 0))
-        else:
-            self.app.screen.fill(self.bg)
         
         for node in self.nodes:
             node.draw()
