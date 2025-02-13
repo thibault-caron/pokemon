@@ -1,9 +1,9 @@
 import json
-from database import Database
+from .database import Database
 
 class Pokedex(Database):
     def __init__(self):
-        self.path = "../data/pokedex.json"
+        self.path = "./data/pokedex.json"
         self.data_pokedex = self.read_json()
 
     def clear_pokedex(self):

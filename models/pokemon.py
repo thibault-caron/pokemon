@@ -1,7 +1,7 @@
 # import json
 # from database import Database
 # from pokedex import Pokedex
-from pokemon_dictionary import PokemonDictionary
+from .pokemon_dictionary import PokemonDictionary
 
 data_pokemons = PokemonDictionary().data_pokemons
 
@@ -19,8 +19,8 @@ class Pokemon:
         self.__hp = self.__max_hp
         self.__attack = data_pokemons[self.get_name()]["attack"]
         self.__evolution = data_pokemons[self.get_name()]["evolution"]
-        self.__front_sprite_path = '../assets/sprites/' + self.__name.lower() + '_front.png'
-        self.__back_sprite_path = '../assets/sprites/' + self.__name.lower() + '_back.png'
+        self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
+        self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
     
     # Getters
     def get_name(self):
