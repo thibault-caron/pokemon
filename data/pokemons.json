@@ -5,14 +5,14 @@
       "grass",
       "poison"
     ],
-    "hp": 45,
-    "attack": 49,
+    "hp": 100,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       15,
       "Ivysaur"
     ],
-    "front-sprite": "assets/sprites/bulbasaur_front.png",
+    "front_sprite": "assets/sprites/bulbasaur_front.png",
     "back_sprite": "assets/sprites/bulbasaur_back.png",
     "state": "used"
   },
@@ -23,14 +23,14 @@
       "grass",
       "poison"
     ],
-    "hp": 60,
-    "attack": 62,
+    "hp": 120,
+    "attack": 30,
     "min_level": 15,
     "evolution": [
       30,
       "Venusaur"
     ],
-    "front-sprite": "assets/sprites/ivysaur_front.png",
+    "front_sprite": "assets/sprites/ivysaur_front.png",
     "back_sprite": "assets/sprites/ivysaur_back.png",
     "state": "used"
   },
@@ -41,11 +41,11 @@
       "grass",
       "poison"
     ],
-    "hp": 80,
-    "attack": 82,
+    "hp": 140,
+    "attack": 38,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/venusaur_front.png",
+    "front_sprite": "assets/sprites/venusaur_front.png",
     "back_sprite": "assets/sprites/venusaur_back.png",
     "state": "used"
   },
@@ -55,14 +55,14 @@
     "types": [
       "fire"
     ],
-    "hp": 39,
-    "attack": 52,
+    "hp": 95,
+    "attack": 27,
     "min_level": 1,
     "evolution": [
       15,
       "Charmeleon"
     ],
-    "front-sprite": "assets/sprites/charmander_front.png",
+    "front_sprite": "assets/sprites/charmander_front.png",
     "back_sprite": "assets/sprites/charmander_back.png",
     "state": "used"
   },
@@ -72,14 +72,14 @@
     "types": [
       "fire"
     ],
-    "hp": 58,
-    "attack": 64,
+    "hp": 120,
+    "attack": 30,
     "min_level": 15,
     "evolution": [
       30,
       "Charizard"
     ],
-    "front-sprite": "assets/sprites/charmeleon_front.png",
+    "front_sprite": "assets/sprites/charmeleon_front.png",
     "back_sprite": "assets/sprites/charmeleon_back.png",
     "state": "used"
   },
@@ -90,11 +90,11 @@
       "fire",
       "flying"
     ],
-    "hp": 78,
-    "attack": 84,
+    "hp": 140,
+    "attack": 38,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/charizard_front.png",
+    "front_sprite": "assets/sprites/charizard_front.png",
     "back_sprite": "assets/sprites/charizard_back.png",
     "state": "used"
   },
@@ -104,14 +104,14 @@
     "types": [
       "water"
     ],
-    "hp": 44,
-    "attack": 48,
+    "hp": 100,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       15,
       "Wartortle"
     ],
-    "front-sprite": "assets/sprites/squirtle_front.png",
+    "front_sprite": "assets/sprites/squirtle_front.png",
     "back_sprite": "assets/sprites/squirtle_back.png",
     "state": "used"
   },
@@ -121,14 +121,14 @@
     "types": [
       "water"
     ],
-    "hp": 59,
-    "attack": 63,
+    "hp": 120,
+    "attack": 30,
     "min_level": 15,
     "evolution": [
       30,
       "Blastoise"
     ],
-    "front-sprite": "assets/sprites/wartortle_front.png",
+    "front_sprite": "assets/sprites/wartortle_front.png",
     "back_sprite": "assets/sprites/wartortle_back.png",
     "state": "used"
   },
@@ -139,10 +139,10 @@
       "water"
     ],
     "hp": 79,
-    "attack": 83,
-    "min_level": 30,
+    "attack": 140,
+    "min_level": 38,
     "evolution": [],
-    "front-sprite": "assets/sprites/blastoise_front.png",
+    "front_sprite": "assets/sprites/blastoise_front.png",
     "back_sprite": "assets/sprites/blastoise_back.png",
     "state": "used"
   },
@@ -152,14 +152,14 @@
     "types": [
       "bug"
     ],
-    "hp": 45,
-    "attack": 30,
+    "hp": 100,
+    "attack": 18,
     "min_level": 1,
     "evolution": [
       15,
       "Metapod"
     ],
-    "front-sprite": "assets/sprites/caterpie_front.png",
+    "front_sprite": "assets/sprites/caterpie_front.png",
     "back_sprite": "assets/sprites/caterpie_back.png",
     "state": "used"
   },
@@ -169,14 +169,14 @@
     "types": [
       "bug"
     ],
-    "hp": 50,
-    "attack": 20,
+    "hp": 118,
+    "attack": 25,
     "min_level": 15,
     "evolution": [
       30,
       "Butterfree"
     ],
-    "front-sprite": "assets/sprites/metapod_front.png",
+    "front_sprite": "assets/sprites/metapod_front.png",
     "back_sprite": "assets/sprites/metapod_back.png",
     "state": "used"
   },
@@ -187,11 +187,11 @@
       "bug",
       "flying"
     ],
-    "hp": 60,
-    "attack": 45,
+    "hp": 135,
+    "attack": 32,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/butterfree_front.png",
+    "front_sprite": "assets/sprites/butterfree_front.png",
     "back_sprite": "assets/sprites/butterfree_back.png",
     "state": "used"
   },
@@ -202,14 +202,14 @@
       "bug",
       "poison"
     ],
-    "hp": 40,
-    "attack": 35,
+    "hp": 95,
+    "attack": 21,
     "min_level": 1,
     "evolution": [
       15,
       "Kakuna"
     ],
-    "front-sprite": "assets/sprites/weedle_front.png",
+    "front_sprite": "assets/sprites/weedle_front.png",
     "back_sprite": "assets/sprites/weedle_back.png",
     "state": "unused"
   },
@@ -220,14 +220,14 @@
       "bug",
       "poison"
     ],
-    "hp": 45,
-    "attack": 25,
+    "hp": 115,
+    "attack": 27,
     "min_level": 15,
     "evolution": [
       30,
       "Beedrill"
     ],
-    "front-sprite": "assets/sprites/kakuna_front.png",
+    "front_sprite": "assets/sprites/kakuna_front.png",
     "back_sprite": "assets/sprites/kakuna_back.png",
     "state": "unused"
   },
@@ -238,11 +238,11 @@
       "bug",
       "poison"
     ],
-    "hp": 65,
-    "attack": 90,
+    "hp": 135,
+    "attack": 40,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/beedrill_front.png",
+    "front_sprite": "assets/sprites/beedrill_front.png",
     "back_sprite": "assets/sprites/beedrill_back.png",
     "state": "unused"
   },
@@ -253,14 +253,14 @@
       "normal",
       "flying"
     ],
-    "hp": 40,
-    "attack": 45,
+    "hp": 100,
+    "attack": 24,
     "min_level": 1,
     "evolution": [
       15,
       "Pidgeotto"
     ],
-    "front-sprite": "assets/sprites/pidgey_front.png",
+    "front_sprite": "assets/sprites/pidgey_front.png",
     "back_sprite": "assets/sprites/pidgey_back.png",
     "state": "unused"
   },
@@ -271,14 +271,14 @@
       "normal",
       "flying"
     ],
-    "hp": 63,
-    "attack": 60,
+    "hp": 120,
+    "attack": 30,
     "min_level": 15,
     "evolution": [
       30,
       "Pidgeot"
     ],
-    "front-sprite": "assets/sprites/pidgeotto_front.png",
+    "front_sprite": "assets/sprites/pidgeotto_front.png",
     "back_sprite": "assets/sprites/pidgeotto_back.png",
     "state": "unused"
   },
@@ -289,11 +289,11 @@
       "normal",
       "flying"
     ],
-    "hp": 83,
-    "attack": 80,
+    "hp": 140,
+    "attack": 37,
     "min_level": 15,
     "evolution": [],
-    "front-sprite": "assets/sprites/pidgeot_front.png",
+    "front_sprite": "assets/sprites/pidgeot_front.png",
     "back_sprite": "assets/sprites/pidgeot_back.png",
     "state": "unused"
   },
@@ -303,14 +303,14 @@
      "types": [
        "normal"
      ],
-     "hp": 30,
-     "attack": 56,
+     "hp": 90,
+     "attack": 28,
      "min_level": 1,
      "evolution": [
        20,
        "Raticate"
      ],
-     "front-sprite": "assets/sprites/rattata_front.png",
+     "front_sprite": "assets/sprites/rattata_front.png",
      "back_sprite": "assets/sprites/rattata_back.png",
      "state": "used"
    },
@@ -320,11 +320,11 @@
     "types": [
       "normal"
     ],
-    "hp": 55,
-    "attack": 81,
+    "hp": 125,
+    "attack": 38,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/raticate_front.png",
+    "front_sprite": "assets/sprites/raticate_front.png",
     "back_sprite": "assets/sprites/raticate_back.png",
     "state": "used"
   },
@@ -334,14 +334,14 @@
     "types": [
       "poison"
     ],
-    "hp": 35,
-    "attack": 60,
+    "hp": 95,
+    "attack": 28,
     "min_level": 1,
     "evolution": [
       20,
       "Arbok"
     ],
-    "front-sprite": "assets/sprites/ekans_front.png",
+    "front_sprite": "assets/sprites/ekans_front.png",
     "back_sprite": "assets/sprites/ekans_back.png",
     "state": "unused"
   },
@@ -351,11 +351,11 @@
     "types": [
       "poison"
     ],
-    "hp": 60,
-    "attack": 95,
+    "hp": 130,
+    "attack": 41,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/arbok_front.png",
+    "front_sprite": "assets/sprites/arbok_front.png",
     "back_sprite": "assets/sprites/arbok_back.png",
     "state": "unused"
   },
@@ -365,14 +365,14 @@
     "types": [
       "electric"
     ],
-    "hp": 35,
-    "attack": 55,
+    "hp": 95,
+    "attack": 28,
     "min_level": 1,
     "evolution": [
       20,
       "Raichu"
     ],
-    "front-sprite": "assets/sprites/pikachu_front.png",
+    "front_sprite": "assets/sprites/pikachu_front.png",
     "back_sprite": "assets/sprites/pikachu_back.png",
     "state": "used"
   },
@@ -382,11 +382,11 @@
     "types": [
       "electric"
     ],
-    "hp": 60,
-    "attack": 90,
+    "hp": 130,
+    "attack": 40,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/raichu_front.png",
+    "front_sprite": "assets/sprites/raichu_front.png",
     "back_sprite": "assets/sprites/raichu_back.png",
     "state": "used"
   },
@@ -396,14 +396,14 @@
     "types": [
       "ground"
     ],
-    "hp": 50,
-    "attack": 75,
+    "hp": 102,
+    "attack": 32,
     "min_level": 1,
     "evolution": [
       20,
       "Sandslash"
     ],
-    "front-sprite": "assets/sprites/sandshrew_front.png",
+    "front_sprite": "assets/sprites/sandshrew_front.png",
     "back_sprite": "assets/sprites/sandshrew_back.png",
     "state": "used"
   },
@@ -413,11 +413,11 @@
     "types": [
       "ground"
     ],
-    "hp": 75,
-    "attack": 100,
+    "hp": 135,
+    "attack": 45,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/sandslash_front.png",
+    "front_sprite": "assets/sprites/sandslash_front.png",
     "back_sprite": "assets/sprites/sandslash_back.png",
     "state": "used"
   },
@@ -427,14 +427,14 @@
     "types": [
       "fairy"
     ],
-    "hp": 70,
-    "attack": 45,
+    "hp": 125,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       20,
       "Clefable"
     ],
-    "front-sprite": "assets/sprites/clefairy_front.png",
+    "front_sprite": "assets/sprites/clefairy_front.png",
     "back_sprite": "assets/sprites/clefairy_back.png",
     "state": "used"
   },
@@ -444,11 +444,11 @@
     "types": [
       "fairy"
     ],
-    "hp": 95,
-    "attack": 70,
+    "hp": 145,
+    "attack": 33,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/clefable_front.png",
+    "front_sprite": "assets/sprites/clefable_front.png",
     "back_sprite": "assets/sprites/clefable_back.png",
     "state": "used"
   },
@@ -459,14 +459,14 @@
       "poison",
       "flying"
     ],
-    "hp": 40,
-    "attack": 45,
+    "hp": 97,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       20,
       "Golbat"
     ],
-    "front-sprite": "assets/sprites/zubat_front.png",
+    "front_sprite": "assets/sprites/zubat_front.png",
     "back_sprite": "assets/sprites/zubat_back.png",
     "state": "unused"
   },
@@ -477,11 +477,11 @@
       "poison",
       "flying"
     ],
-    "hp": 75,
-    "attack": 80,
+    "hp": 130,
+    "attack": 37,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/golbat_front.png",
+    "front_sprite": "assets/sprites/golbat_front.png",
     "back_sprite": "assets/sprites/golbat_back.png",
     "state": "unused"
   },
@@ -491,14 +491,14 @@
     "types": [
       "ground"
     ],
-    "hp": 10,
-    "attack": 55,
+    "hp": 80,
+    "attack": 29,
     "min_level": 1,
     "evolution": [
       20,
       "Dugtrio"
     ],
-    "front-sprite": "assets/sprites/diglett_front.png",
+    "front_sprite": "assets/sprites/diglett_front.png",
     "back_sprite": "assets/sprites/diglett_back.png",
     "state": "unused"
   },
@@ -508,11 +508,11 @@
     "types": [
       "ground"
     ],
-    "hp": 35,
-    "attack": 100,
+    "hp": 90,
+    "attack": 45,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/dugtrio_front.png",
+    "front_sprite": "assets/sprites/dugtrio_front.png",
     "back_sprite": "assets/sprites/dugtrio_back.png",
     "state": "unused"
   },
@@ -522,14 +522,14 @@
     "types": [
       "normal"
     ],
-    "hp": 40,
-    "attack": 45,
+    "hp": 95,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       20,
       "Persian"
     ],
-    "front-sprite": "assets/sprites/meowth_front.png",
+    "front_sprite": "assets/sprites/meowth_front.png",
     "back_sprite": "assets/sprites/meowth_back.png",
     "state": "unused"
   },
@@ -539,11 +539,11 @@
     "types": [
       "normal"
     ],
-    "hp": 65,
-    "attack": 70,
+    "hp": 125,
+    "attack": 35,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/persian_front.png",
+    "front_sprite": "assets/sprites/persian_front.png",
     "back_sprite": "assets/sprites/persian_back.png",
     "state": "unused"
   },
@@ -553,14 +553,14 @@
     "types": [
       "water"
     ],
-    "hp": 50,
-    "attack": 52,
+    "hp": 102,
+    "attack": 27,
     "min_level": 1,
     "evolution": [
       20,
       "Golduck"
     ],
-    "front-sprite": "assets/sprites/psyduck_front.png",
+    "front_sprite": "assets/sprites/psyduck_front.png",
     "back_sprite": "assets/sprites/psyduck_back.png",
     "state": "used"
   },
@@ -570,11 +570,11 @@
     "types": [
       "water"
     ],
-    "hp": 95,
-    "attack": 70,
+    "hp": 145,
+    "attack": 34,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/golduck_front.png",
+    "front_sprite": "assets/sprites/golduck_front.png",
     "back_sprite": "assets/sprites/golduck_back.png",
     "state": "used"
   },
@@ -584,14 +584,14 @@
     "types": [
       "fighting"
     ],
-    "hp": 95,
-    "attack": 70,
+    "hp": 110,
+    "attack": 35,
     "min_level": 1,
     "evolution": [
       20,
       "Primeape"
     ],
-    "front-sprite": "assets/sprites/mankey_front.png",
+    "front_sprite": "assets/sprites/mankey_front.png",
     "back_sprite": "assets/sprites/mankey_back.png",
     "state": "used"
   },
@@ -601,11 +601,11 @@
     "types": [
       "fighting"
     ],
-    "hp": 65,
-    "attack": 105,
+    "hp": 125,
+    "attack": 46,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/primeape_front.png",
+    "front_sprite": "assets/sprites/primeape_front.png",
     "back_sprite": "assets/sprites/primeape_back.png",
     "state": "used"
   },
@@ -615,14 +615,14 @@
     "types": [
       "water"
     ],
-    "hp": 40,
-    "attack": 50,
+    "hp": 96,
+    "attack": 22,
     "min_level": 1,
     "evolution": [
       15,
       "Poliwhirl"
     ],
-    "front-sprite": "assets/sprites/poliwag_front.png",
+    "front_sprite": "assets/sprites/poliwag_front.png",
     "back_sprite": "assets/sprites/poliwag_back.png",
     "state": "unused"
   },
@@ -632,14 +632,14 @@
     "types": [
       "water"
     ],
-    "hp": 65,
-    "attack": 65,
+    "hp": 122,
+    "attack": 30,
     "min_level": 15,
     "evolution": [
       30,
       "Poliwrath"
     ],
-    "front-sprite": "assets/sprites/poliwhirl_front.png",
+    "front_sprite": "assets/sprites/poliwhirl_front.png",
     "back_sprite": "assets/sprites/poliwhirl_back.png",
     "state": "unused"
   },
@@ -649,11 +649,11 @@
     "types": [
       "water"
     ],
-    "hp": 90,
-    "attack": 95,
+    "hp": 143,
+    "attack": 43,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/poliwrath_front.png",
+    "front_sprite": "assets/sprites/poliwrath_front.png",
     "back_sprite": "assets/sprites/poliwrath_back.png",
     "state": "unused"
   },
@@ -663,14 +663,14 @@
     "types": [
       "psychic"
     ],
-    "hp": 25,
-    "attack": 20,
+    "hp": 90,
+    "attack": 18,
     "min_level": 1,
     "evolution": [
       15,
       "Kadabra"
     ],
-    "front-sprite": "assets/sprites/abra_front.png",
+    "front_sprite": "assets/sprites/abra_front.png",
     "back_sprite": "assets/sprites/abra_back.png",
     "state": "used"
   },
@@ -680,14 +680,14 @@
     "types": [
       "psychic"
     ],
-    "hp": 40,
-    "attack": 35,
+    "hp": 110,
+    "attack": 23,
     "min_level": 15,
     "evolution": [
       30,
       "Alakazam"
     ],
-    "front-sprite": "assets/sprites/kadabra_front.png",
+    "front_sprite": "assets/sprites/kadabra_front.png",
     "back_sprite": "assets/sprites/kadabra_back.png",
     "state": "used"
   },
@@ -697,11 +697,11 @@
     "types": [
       "psychic"
     ],
-    "hp": 55,
-    "attack": 50,
+    "hp": 130,
+    "attack": 28,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/alakazam_front.png",
+    "front_sprite": "assets/sprites/alakazam_front.png",
     "back_sprite": "assets/sprites/alakazam_back.png",
     "state": "used"
   },
@@ -712,14 +712,14 @@
       "water",
       "poison"
     ],
-    "hp": 40,
-    "attack": 40,
+    "hp": 96,
+    "attack": 22,
     "min_level": 1,
     "evolution": [
       20,
       "Tentacruel"
     ],
-    "front-sprite": "assets/sprites/tentacool_front.png",
+    "front_sprite": "assets/sprites/tentacool_front.png",
     "back_sprite": "assets/sprites/tentacool_back.png",
     "state": "unused"
   },
@@ -730,11 +730,11 @@
       "water",
       "poison"
     ],
-    "hp": 80,
-    "attack": 70,
+    "hp": 135,
+    "attack": 33,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/tentacruel_front.png",
+    "front_sprite": "assets/sprites/tentacruel_front.png",
     "back_sprite": "assets/sprites/tentacruel_back.png",
     "state": "unused"
   },
@@ -745,14 +745,14 @@
       "rock",
       "ground"
     ],
-    "hp": 40,
-    "attack": 80,
+    "hp": 96,
+    "attack": 34,
     "min_level": 1,
     "evolution": [
       15,
       "Graveler"
     ],
-    "front-sprite": "assets/sprites/geodude_front.png",
+    "front_sprite": "assets/sprites/geodude_front.png",
     "back_sprite": "assets/sprites/geodude_back.png",
     "state": "used"
   },
@@ -763,14 +763,14 @@
       "rock",
       "ground"
     ],
-    "hp": 55,
-    "attack": 95,
+    "hp": 125,
+    "attack": 40,
     "min_level": 15,
     "evolution": [
       30,
       "Golem"
     ],
-    "front-sprite": "assets/sprites/graveler_front.png",
+    "front_sprite": "assets/sprites/graveler_front.png",
     "back_sprite": "assets/sprites/graveler_back.png",
     "state": "used"
   },
@@ -781,11 +781,11 @@
       "rock",
       "ground"
     ],
-    "hp": 80,
-    "attack": 120,
+    "hp": 140,
+    "attack": 47,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/golem_front.png",
+    "front_sprite": "assets/sprites/golem_front.png",
     "back_sprite": "assets/sprites/golem_back.png",
     "state": "used"
   },
@@ -796,14 +796,14 @@
       "electric",
       "steel"
     ],
-    "hp": 25,
-    "attack": 35,
+    "hp": 90,
+    "attack": 19,
     "min_level": 1,
     "evolution": [
       20,
       "Magneton"
     ],
-    "front-sprite": "assets/sprites/magnemite_front.png",
+    "front_sprite": "assets/sprites/magnemite_front.png",
     "back_sprite": "assets/sprites/magnemite_back.png",
     "state": "used"
   },
@@ -814,11 +814,11 @@
       "electric",
       "steel"
     ],
-    "hp": 50,
-    "attack": 60,
+    "hp": 120,
+    "attack": 29,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/magneton_front.png",
+    "front_sprite": "assets/sprites/magneton_front.png",
     "back_sprite": "assets/sprites/magneton_back.png",
     "state": "used"
   },
@@ -829,14 +829,14 @@
       "ghost",
       "poison"
     ],
-    "hp": 30,
-    "attack": 34,
+    "hp": 93,
+    "attack": 23,
     "min_level": 1,
     "evolution": [
       15,
       "Haunter"
     ],
-    "front-sprite": "assets/sprites/gastly_front.png",
+    "front_sprite": "assets/sprites/gastly_front.png",
     "back_sprite": "assets/sprites/gastly_back.png",
     "state": "used"
   },
@@ -847,14 +847,14 @@
       "ghost",
       "poison"
     ],
-    "hp": 45,
-    "attack": 50,
+    "hp": 115,
+    "attack": 28,
     "min_level": 15,
     "evolution": [
       30,
       "Gengar"
     ],
-    "front-sprite": "assets/sprites/haunter_front.png",
+    "front_sprite": "assets/sprites/haunter_front.png",
     "back_sprite": "assets/sprites/haunter_back.png",
     "state": "used"
   },
@@ -865,11 +865,11 @@
       "ghost",
       "poison"
     ],
-    "hp": 60,
-    "attack": 65,
+    "hp": 130,
+    "attack": 32,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/gengar_front.png",
+    "front_sprite": "assets/sprites/gengar_front.png",
     "back_sprite": "assets/sprites/gengar_back.png",
     "state": "used"
   },
@@ -880,14 +880,14 @@
       "rock",
       "ground"
     ],
-    "hp": 35,
-    "attack": 45,
+    "hp": 93,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       20,
       "Steelix"
     ],
-    "front-sprite": "assets/sprites/onix_front.png",
+    "front_sprite": "assets/sprites/onix_front.png",
     "back_sprite": "assets/sprites/onix_back.png",
     "state": "used"
   },
@@ -897,14 +897,14 @@
     "types": [
       "water"
     ],
-    "hp": 30,
-    "attack": 105,
+    "hp": 93,
+    "attack": 23,
     "min_level": 1,
     "evolution": [
       20,
       "Kingler"
     ],
-    "front-sprite": "assets/sprites/krabby_front.png",
+    "front_sprite": "assets/sprites/krabby_front.png",
     "back_sprite": "assets/sprites/krabby_back.png",
     "state": "unused"
   },
@@ -914,11 +914,11 @@
     "types": [
       "water"
     ],
-    "hp": 55,
-    "attack": 130,
+    "hp": 110,
+    "attack": 45,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/kingler_front.png",
+    "front_sprite": "assets/sprites/kingler_front.png",
     "back_sprite": "assets/sprites/kingler_back.png",
     "state": "unused"
   },
@@ -928,14 +928,14 @@
     "types": [
       "electric"
     ],
-    "hp": 40,
-    "attack": 30,
+    "hp": 98,
+    "attack": 18,
     "min_level": 1,
     "evolution": [
       20,
       "Electrode"
     ],
-    "front-sprite": "assets/sprites/voltorb_front.png",
+    "front_sprite": "assets/sprites/voltorb_front.png",
     "back_sprite": "assets/sprites/voltorb_back.png",
     "state": "unused"
   },
@@ -945,11 +945,11 @@
     "types": [
       "electric"
     ],
-    "hp": 60,
-    "attack": 50,
+    "hp": 125,
+    "attack": 28,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/electrode_front.png",
+    "front_sprite": "assets/sprites/electrode_front.png",
     "back_sprite": "assets/sprites/electrode_back.png",
     "state": "unused"
   },
@@ -959,14 +959,14 @@
     "types": [
       "ground"
     ],
-    "hp": 50,
-    "attack": 50,
+    "hp": 102,
+    "attack": 25,
     "min_level": 1,
     "evolution": [
       20,
       "Marowak"
     ],
-    "front-sprite": "assets/sprites/cubone_front.png",
+    "front_sprite": "assets/sprites/cubone_front.png",
     "back_sprite": "assets/sprites/cubone_back.png",
     "state": "unused"
   },
@@ -976,11 +976,11 @@
     "types": [
       "ground"
     ],
-    "hp": 60,
-    "attack": 80,
+    "hp": 130,
+    "attack": 37,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/marowak_front.png",
+    "front_sprite": "assets/sprites/marowak_front.png",
     "back_sprite": "assets/sprites/marowak_back.png",
     "state": "unused"
   },
@@ -990,14 +990,14 @@
     "types": [
       "poison"
     ],
-    "hp": 40,
-    "attack": 65,
+    "hp": 98,
+    "attack": 29,
     "min_level": 1,
     "evolution": [
       20,
       "Weezing"
     ],
-    "front-sprite": "assets/sprites/koffing_front.png",
+    "front_sprite": "assets/sprites/koffing_front.png",
     "back_sprite": "assets/sprites/koffing_back.png",
     "state": "unused"
   },
@@ -1007,11 +1007,11 @@
     "types": [
       "poison"
     ],
-    "hp": 50,
-    "attack": 60,
+    "hp": 125,
+    "attack": 30,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/weezing_front.png",
+    "front_sprite": "assets/sprites/weezing_front.png",
     "back_sprite": "assets/sprites/weezing_back.png",
     "state": "unused"
   },
@@ -1022,11 +1022,11 @@
       "ice",
       "psychic"
     ],
-    "hp": 65,
-    "attack": 50,
+    "hp": 120,
+    "attack": 25,
     "min_level": 1,
     "evolution": [],
-    "front-sprite": "assets/sprites/jynx_front.png",
+    "front_sprite": "assets/sprites/jynx_front.png",
     "back_sprite": "assets/sprites/jynx_back.png",
     "state": "used"
   },
@@ -1036,14 +1036,14 @@
     "types": [
       "water"
     ],
-    "hp": 20,
-    "attack": 10,
+    "hp": 80,
+    "attack": 15,
     "min_level": 1,
     "evolution": [
       20,
       "Gyarados"
     ],
-    "front-sprite": "assets/sprites/magikarp_front.png",
+    "front_sprite": "assets/sprites/magikarp_front.png",
     "back_sprite": "assets/sprites/magikarp_back.png",
     "state": "used"
   },
@@ -1054,11 +1054,11 @@
       "water",
       "flying"
     ],
-    "hp": 95,
-    "attack": 125,
+    "hp": 150,
+    "attack": 46,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/gyarados_front.png",
+    "front_sprite": "assets/sprites/gyarados_front.png",
     "back_sprite": "assets/sprites/gyarados_back.png",
     "state": "used"
   },
@@ -1069,11 +1069,11 @@
       "water",
       "ice"
     ],
-    "hp": 130,
-    "attack": 85,
+    "hp": 160,
+    "attack": 39,
     "min_level": 1,
     "evolution": [],
-    "front-sprite": "assets/sprites/lapras_front.png",
+    "front_sprite": "assets/sprites/lapras_front.png",
     "back_sprite": "assets/sprites/lapras_back.png",
     "state": "unused"
   },
@@ -1083,11 +1083,11 @@
     "types": [
       "normal"
     ],
-    "hp": 160,
-    "attack": 110,
+    "hp": 180,
+    "attack": 42,
     "min_level": 1,
     "evolution": [],
-    "front-sprite": "assets/sprites/snorlax_front.png",
+    "front_sprite": "assets/sprites/snorlax_front.png",
     "back_sprite": "assets/sprites/snorlax_back.png",
     "state": "unused"
   },
@@ -1097,14 +1097,14 @@
     "types": [
       "dragon"
     ],
-    "hp": 41,
-    "attack": 64,
+    "hp": 97,
+    "attack": 31,
     "min_level": 1,
     "evolution": [
       15,
       "Dragonair"
     ],
-    "front-sprite": "assets/sprites/dratini_front.png",
+    "front_sprite": "assets/sprites/dratini_front.png",
     "back_sprite": "assets/sprites/dratini_back.png",
     "state": "used"
   },
@@ -1114,14 +1114,14 @@
     "types": [
       "dragon"
     ],
-    "hp": 61,
-    "attack": 84,
+    "hp": 120,
+    "attack": 38,
     "min_level": 15,
     "evolution": [
       30,
       "Dragonite"
     ],
-    "front-sprite": "assets/sprites/dragonair_front.png",
+    "front_sprite": "assets/sprites/dragonair_front.png",
     "back_sprite": "assets/sprites/dragonair_back.png",
     "state": "used"
   },
@@ -1131,11 +1131,11 @@
     "types": [
       "dragon"
     ],
-    "hp": 91,
-    "attack": 134,
+    "hp": 145,
+    "attack": 47,
     "min_level": 30,
     "evolution": [],
-    "front-sprite": "assets/sprites/dragonite_front.png",
+    "front_sprite": "assets/sprites/dragonite_front.png",
     "back_sprite": "assets/sprites/dragonite_back.png",
     "state": "used"
   },
@@ -1145,11 +1145,11 @@
     "types": [
       "psychic"
     ],
-    "hp": 106,
-    "attack": 110,
+    "hp": 150,
+    "attack": 50,
     "min_level": 1,
     "evolution": [],
-    "front-sprite": "assets/sprites/mewtwo_front.png",
+    "front_sprite": "assets/sprites/mewtwo_front.png",
     "back_sprite": "assets/sprites/mewtwo_back.png",
     "state": "unused"
   },
@@ -1159,11 +1159,11 @@
     "types": [
       "psychic"
     ],
-    "hp": 100,
-    "attack": 100,
+    "hp": 145,
+    "attack": 48,
     "min_level": 1,
     "evolution": [],
-    "front-sprite": "assets/sprites/mew_front.png",
+    "front_sprite": "assets/sprites/mew_front.png",
     "back_sprite": "assets/sprites/mew_back.png",
     "state": "unused"
   },
@@ -1174,11 +1174,11 @@
       "steel",
       "ground"
     ],
-    "hp": 75,
-    "attack": 85,
+    "hp": 135,
+    "attack": 38,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/steelix_front.png",
+    "front_sprite": "assets/sprites/steelix_front.png",
     "back_sprite": "assets/sprites/steelix_back.png",
     "state": "used"
   },
@@ -1189,14 +1189,14 @@
       "dark",
       "fire"
     ],
-    "hp": 45,
-    "attack": 60,
+    "hp": 100,
+    "attack": 29,
     "min_level": 1,
     "evolution": [
       20,
       "Houndoom"
     ],
-    "front-sprite": "assets/sprites/houndour_front.png",
+    "front_sprite": "assets/sprites/houndour_front.png",
     "back_sprite": "assets/sprites/houndour_back.png",
     "state": "used"
   },
@@ -1207,11 +1207,11 @@
       "dark",
       "fire"
     ],
-    "hp": 75,
-    "attack": 90,
+    "hp": 130,
+    "attack": 40,
     "min_level": 20,
     "evolution": [],
-    "front-sprite": "assets/sprites/houndoom_front.png",
+    "front_sprite": "assets/sprites/houndoom_front.png",
     "back_sprite": "assets/sprites/houndoom_back.png",
     "state": "used"
   }
