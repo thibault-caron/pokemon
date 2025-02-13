@@ -3,7 +3,7 @@ from database import Database
 from pokedex import Pokedex
 from pokemon_dictionary import PokemonDictionary
 
-# data_pokemons = PokemonDictionary().data_pokemons
+data_pokemons = PokemonDictionary().data_pokemons
 # my_pokemons = Pokedex.read_json()
 
 class Pokemon:
@@ -107,6 +107,6 @@ class Pokemon:
 
 
 if __name__ == '__main__':
-    data_pokemons = PokemonDictionary().data_pokemons
+    # data_pokemons = PokemonDictionary().data_pokemons
     test = Pokemon("Pikachu", 1)
     print(test.get_evolution())

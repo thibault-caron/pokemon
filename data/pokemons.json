@@ -1147,7 +1147,7 @@
     ],
     "hp": 106,
     "attack": 110,
-    "min_level": 20,
+    "min_level": 1,
     "evolution": [],
     "front-sprite": "assets/sprites/mewtwo_front.png",
     "back_sprite": "assets/sprites/mewtwo_back.png",
@@ -1162,10 +1162,7 @@
     "hp": 100,
     "attack": 100,
     "min_level": 1,
-    "evolution": [
-      20,
-      "Mewtwo"
-    ],
+    "evolution": [],
     "front-sprite": "assets/sprites/mew_front.png",
     "back_sprite": "assets/sprites/mew_back.png",
     "state": "unused"

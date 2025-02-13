@@ -2,7 +2,7 @@ import json
 
 class Database:
     def __init__(self):
-        self.path = "type_chart.json"
+        self.path = "../data/type_chart.json"
 
     def read_json(self):
         """
