@@ -16,8 +16,8 @@ class WelcomeMenu(GameState):
         self.buttons = [self.button1, self.button2, self.button3]
         
     def start_game(self):
-        """Passe à l'état de bataille."""
-        self.app.state_manager.set_state("battle")
+        """Go to menu Choose your first pokemon"""
+        self.app.state_manager.set_state("Choose pokemon menu")
 
     def settings(self):
         """Affiche les paramètres."""
@@ -28,7 +28,8 @@ class WelcomeMenu(GameState):
         self.app.running = False
 
     def draw(self):
-        """Dessine la scène du menu principal."""
-        super().draw()  # Dessine le fond
+        """Draw welcome menu scene"""
+        super().draw()  # Draw background
+        self.app.screen.blit(self.menu_background, (WIDTH*0.25, HEIGHT*0.25)) # Draw menu rectangle
         for button in self.buttons:
-            button.process()  # Affiche les boutons
+            button.process()  # Show buttons

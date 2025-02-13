@@ -29,5 +29,5 @@ class GameState:
         """Draw all objects in the scene."""
         if self.img:
             resized_img = pygame.transform.smoothscale(self.img, screen_size)  # Resize background
-            self.app.screen.blit(resized_img, (0, 0))
-            self.app.screen.blit(self.menu_background, (WIDTH*0.25, HEIGHT*0.25))
+            self.app.screen.blit(resized_img, (0, 0)) # Draw background
+            
