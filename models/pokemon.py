@@ -8,11 +8,11 @@ from pokemon_dictionary import PokemonDictionary
 
 class Pokemon:
 
-    def __init__(self, name, level, savage=True):
+    def __init__(self, name, level, wild=True):
         self.__name = name
         self.__level = level
         self.__xp = 0
-        self.__savage = savage
+        self.__wild = wild
 
         # a faire: données à récup dans data_pokemons via le "name"
         self.__types = data_pokemons[self.get_name()]["types"]
@@ -45,8 +45,8 @@ class Pokemon:
     def get_attack(self):
         return self.__attack
     
-    def get_savage(self):
-        return self.__savage
+    def get_wild(self):
+        return self.__wild
     
     def get_evolution(self):
         return self.__evolution
@@ -76,8 +76,8 @@ class Pokemon:
     def set_attack(self, attack):
         self.__attack = attack
     
-    def set_savage(self, savage):
-        self.__savage = savage
+    def set_wild(self, wild):
+        self.__wild = wild
     
     def set_evolution(self, evolution):
         self.__evolution = evolution
