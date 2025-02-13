@@ -3,12 +3,7 @@ import os
 from .config import *
 from .button import Button
 
-class Menu:
-    import os
-
-from .config import *
-
-class Menu:
+class GameState:
     """Create a new scene (room, level, view)."""
     options = {"file": ""}    
     

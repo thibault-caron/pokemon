@@ -3,7 +3,7 @@ import os
 from models.config import *
 from models.text import Text
 from models.scene import Scene
-from models.menu import Menu
+from models.game_state import GameState
 from models.button import Button
 from models.database import Database
 from models.pokemon import Pokemon
@@ -39,16 +39,16 @@ class App:
         
 
     def run(self):
-        img_path = os.path.join(os.getcwd(), "assets", "images", "pokemon.jpg")
-        self.menu1 = Menu(app=self, file=img_path, caption="Main Menu")
+        menu1_img_path = os.path.join(os.getcwd(), "assets", "images", "pokemon.jpg")
+        self.menu1 = GameState(app=self, file=menu1_img_path, caption="Main Menu")
         self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Button One', Button.myFunction)
         self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Button Two', Button.myFunction)
         self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Button Three', Button.myFunction)
         self.button4 = Button(WIDTH/2 - 200, 470, 400, 50, 'Button Four', Button.myFunction)
         
-        game_state = "welcome_menu"
-        
         objects = [self.button1, self.button2, self.button3, self.button4]
+        
+        game_state = "welcome_menu"
         
         """Run the main event loop."""
         while self.running:
