@@ -18,7 +18,7 @@ BACKGROUND = pygame.transform.scale(BACKGROUND_IMAGE, SCREEN_SIZE)
 
 # Set colors
 WHITE = (255, 255, 255)
-FADE_WHITE = (255, 255, 255, 20)
+FADE_WHITE = (255, 255, 255, 180)
 BLACK = (0, 0, 0)
 GREY = "grey"
 

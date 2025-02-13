@@ -5,7 +5,7 @@ class Menu:
         
         self.app = app
         
-        self.menu_background = pygame.Surface((WIDTH*0.5, HEIGHT*0.5))
+        self.menu_background = pygame.Surface((WIDTH*0.5, HEIGHT*0.5), pygame.SRCALPHA)
         self.menu_background.fill(FADE_WHITE)
         
     def draw(self):
