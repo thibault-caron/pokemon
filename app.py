@@ -36,11 +36,14 @@ class App:
         self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
         # self.intro = Text('Introduction screen', (20, 20), app=self)
         self.menu1 = Menu(app=self)
-        self.button = Button(WIDTH/2 - 200, 200, 400, 50, 'Button One (onePress)', Button.myFunction)
+        self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Button One', Button.myFunction)
+        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Button Two', Button.myFunction)
+        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Button Three', Button.myFunction)
+        self.button4 = Button(WIDTH/2 - 200, 470, 400, 50, 'Button Four', Button.myFunction)
         
         game_state = "welcome_menu"
         
-        objects = [self.button]
+        objects = [self.button1, self.button2, self.button3, self.button4]
         
         """Run the main event loop."""
         while self.running:
