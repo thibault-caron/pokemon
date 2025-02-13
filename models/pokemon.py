@@ -1,9 +1,7 @@
 # import json
 # from database import Database
-# from pokedex import Pokedex
+from .pokedex import Pokedex
 from .pokemon_dictionary import PokemonDictionary
-
-data_pokemons = PokemonDictionary().data_pokemons
 
 class Pokemon:
 
@@ -90,9 +88,11 @@ class Pokemon:
     def evolve(self):
         if self.__evolution != []:
             if self.__level >= self.__evolution[0]:
+
+
                 self.__name = self.__evolution[1]
 
-                # a faire: recuperer les données de l'evolution dans 'pokemon.json (data_pokemons)'
+                # get evolution data from 'pokemon.json (data_pokemons)'
                 self.__types = data_pokemons[self.get_name()]["types"]
                 self.__max_hp = data_pokemons[self.get_name()]["hp"]
                 self.__hp = self.__max_hp
@@ -108,7 +108,7 @@ class Pokemon:
             print(f"{self.__name} cannot evolve.")
 
     def level_up(self):
-        if self.__xp >= self.__level * 4:
+        if self.__xp >= self.__level * 4 and self.__level < 50:
             self.__level += 1
             print(f"{self.__name} has grown to level {self.__level} !")
             self.__xp = 0
@@ -128,6 +128,8 @@ class Pokemon:
 
 
 if __name__ == '__main__':
+    data_pokemons = PokemonDictionary().data_pokemons
+
     # data_pokemons = PokemonDictionary().data_pokemons
     test = Pokemon("Pikachu", 30)
     test.evolve()
