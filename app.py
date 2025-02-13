@@ -1,3 +1,5 @@
+import os
+
 from models.config import *
 from models.text import Text
 from models.scene import Scene
@@ -37,9 +39,8 @@ class App:
         
 
     def run(self):
-        self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
-        # self.intro = Text('Introduction screen', (20, 20), app=self)
-        self.menu1 = Menu(app=self)
+        img_path = os.path.join(os.getcwd(), "assets", "images", "pokemon.jpg")
+        self.menu1 = Menu(app=self, file=img_path, caption="Main Menu")
         self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Button One', Button.myFunction)
         self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Button Two', Button.myFunction)
         self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Button Three', Button.myFunction)
@@ -56,7 +57,6 @@ class App:
                     self.running = False
                     
             if game_state == "welcome_menu":
-                self.scene.draw()
                 self.menu1.draw()
             
             for object in objects:
