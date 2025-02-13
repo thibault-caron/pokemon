@@ -8,17 +8,20 @@ data_pokemons = PokemonDictionary().data_pokemons
 
 class Pokemon:
 
-    def __init__(self, name, level, savage=True):
+    def __init__(self, name, level, wild=True):
         self.__name = name
         self.__level = level
         self.__xp = 0
-        self.__savage = savage
+        self.__wild = wild
 
         # a faire: données à récup dans data_pokemons via le "name"
         self.__types = data_pokemons[self.get_name()]["types"]
-        self.__hp = data_pokemons[self.get_name()]["hp"]
+        self.__max_hp = data_pokemons[self.get_name()]["hp"]
+        self.__hp = self.__max_hp
         self.__attack = data_pokemons[self.get_name()]["attack"]
         self.__evolution = data_pokemons[self.get_name()]["evolution"]
+        self.__front_sprite_path = '../assets/sprites/' + self.__name.lower() + '_front.png'
+        self.__back_sprite_path = '../assets/sprites/' + self.__name.lower() + '_back.png'
     
     # Getters
     def get_name(self):
@@ -33,17 +36,26 @@ class Pokemon:
     def get_types(self):
         return self.__types
     
+    def get_max_hp(self):
+        return self.__max_hp
+    
     def get_hp(self):
         return self.__hp
     
     def get_attack(self):
         return self.__attack
     
-    def get_savage(self):
-        return self.__savage
+    def get_wild(self):
+        return self.__wild
     
     def get_evolution(self):
         return self.__evolution
+    
+    def get_front_sprite(self):
+        return self.__front_sprite_path
+    
+    def get_back_sprite(self):
+        return self.__back_sprite_path
     
     # Setters
     def set_name(self, name):
@@ -53,7 +65,7 @@ class Pokemon:
         self.__level = level
 
     def set_xp(self, xp):
-        self.__hp = xp
+        self.__max_hp = xp
 
     def set_types(self, types):
         self.__types = types
@@ -64,11 +76,17 @@ class Pokemon:
     def set_attack(self, attack):
         self.__attack = attack
     
-    def set_savage(self, savage):
-        self.__savage = savage
+    def set_wild(self, wild):
+        self.__wild = wild
     
     def set_evolution(self, evolution):
         self.__evolution = evolution
+    
+    def set_front_sprite(self, front_sprite):
+        self.__front_sprite_path = front_sprite
+
+    def set_back_sprite(self, back_sprite):
+        self.__back_sprite_path = back_sprite
     
     def evolve(self):
         if self.__evolution != []:
@@ -77,9 +95,12 @@ class Pokemon:
 
                 # a faire: recuperer les données de l'evolution dans 'pokemon.json (data_pokemons)'
                 self.__types = data_pokemons[self.get_name()]["types"]
-                self.__hp = data_pokemons[self.get_name()]["hp"]
+                self.__max_hp = data_pokemons[self.get_name()]["hp"]
+                self.__hp = self.__max_hp
                 self.__attack = data_pokemons[self.get_name()]["attack"]
                 self.__evolution = data_pokemons[self.get_name()]["evolution"]
+                self.front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
+                self.back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
 
                 print(f"{self.__name} has evolved!")
 
@@ -96,7 +117,8 @@ class Pokemon:
     def display_info(self):
         """Display the Pokémon's details"""
         print(f"Name: {self.__name}")
-        print(f"Hit Points: {self.__hp}")
+        print(f"Max Hit Points: {self.__max_hp}")
+        print(f"Current Hit Points: {self.__hp}")
         print(f"Level: {self.__level}")
         print(f"Attack Power: {self.__attack}")
         print(f"Types: {', '.join(self.__types)}")
