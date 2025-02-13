@@ -17,6 +17,15 @@ class Pokedex(Database):
             # Rewrote "{}" in the empty file to avoid an error, in which the file was not recognized as a json format.
             json.dump({}, file)
 
+    def add_pokemon(self, name):
+        """Function that add a pokemon in data_pokedex"""
+        self.data_pokedex[name] = all_pokemons.data_pokemons[name]
+
 if __name__ == '__main__':
+    from pokemon_dictionary import PokemonDictionary
+
+    all_pokemons = PokemonDictionary()
     player_pokedex = Pokedex()
+    player_pokedex.add_pokemon("Mewtwo")
+
     print(player_pokedex.data_pokedex)
