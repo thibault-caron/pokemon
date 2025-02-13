@@ -2,6 +2,7 @@ from models.config import *
 from models.text import Text
 from models.scene import Scene
 from models.menu import Menu
+from models.button import Button
 
 class App:
     def __init__(self):
@@ -35,8 +36,11 @@ class App:
         self.scene = Scene(app=self, img_folder = "assets/images", file = "pokemon.jpg", caption='Intro')
         # self.intro = Text('Introduction screen', (20, 20), app=self)
         self.menu1 = Menu(app=self)
+        self.button = Button(WIDTH/2 - 200, 200, 400, 50, 'Button One (onePress)', Button.myFunction)
         
         game_state = "welcome_menu"
+        
+        objects = [self.button]
         
         """Run the main event loop."""
         while self.running:
@@ -47,11 +51,9 @@ class App:
             if game_state == "welcome_menu":
                 self.scene.draw()
                 self.menu1.draw()
-                # self.intro.draw()
-
-                # elif game_state == "game":
-
-                #     game_state = play_game(event)
+            
+            for object in objects:
+                object.process()
                 
             pygame.display.update()
             CLOCK.tick(FPS)
