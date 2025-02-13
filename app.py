@@ -3,6 +3,10 @@ from models.text import Text
 from models.scene import Scene
 from models.menu import Menu
 from models.button import Button
+from models.database import Database
+from models.pokemon import Pokemon
+from models.battle import Battle
+
 
 class App:
     def __init__(self):

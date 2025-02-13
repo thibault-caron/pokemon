@@ -1,10 +1,9 @@
-import json
-from database import Database
-from pokedex import Pokedex
+# import json
+# from database import Database
+# from pokedex import Pokedex
 from pokemon_dictionary import PokemonDictionary
 
 data_pokemons = PokemonDictionary().data_pokemons
-# my_pokemons = Pokedex.read_json()
 
 class Pokemon:
 
@@ -99,8 +98,8 @@ class Pokemon:
                 self.__hp = self.__max_hp
                 self.__attack = data_pokemons[self.get_name()]["attack"]
                 self.__evolution = data_pokemons[self.get_name()]["evolution"]
-                self.front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
-                self.back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
+                self.__front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
+                self.__back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
 
                 print(f"{self.__name} has evolved!")
 
@@ -130,5 +129,6 @@ class Pokemon:
 
 if __name__ == '__main__':
     # data_pokemons = PokemonDictionary().data_pokemons
-    test = Pokemon("Pikachu", 1)
-    print(test.get_evolution())
+    test = Pokemon("Pikachu", 30)
+    test.evolve()
+    test.display_info()
