@@ -9,16 +9,11 @@ class ChoiceMenu(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokemon.jpg")
         self.caption = "Choose Pokemon Menu"
-        
-        # self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Game', self.start_game)
-        # self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Settings', self.settings)
-        # self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Exit', self.exit_game)
-        
-        # self.buttons = [self.button1, self.button2, self.button3]
-        
-    def start_game(self):
-        """Go to menu Choose your first pokemon"""
-        self.app.state_manager.set_state("Choose pokemon menu")
+              
+    '''Action'''
+    def battle(self):
+        """Go to menu battle menu"""
+        self.app.state_manager.set_state("battle")
 
     def settings(self):
         """Affiche les paramètres."""
@@ -33,8 +28,9 @@ class ChoiceMenu(GameState):
         super().draw()  # Draw background
         if hasattr(self.app, 'screen'):
             DisplayPokemon("Pikachu", 100, 100, 400, 200, app=self.app).draw_card()
-            DisplayPokemon("Bulbasaur", 600, 900, 400, 200, app=self.app).draw_card()
-            DisplayPokemon("Charmander", 900, 100, 400, 200, app=self.app).draw_card()
-            DisplayPokemon("Blastoise", 1000, 900, 400, 200, app=self.app).draw_card()
+            # Button(220, 120, 70, 50, 'New game', self.battle).process()
+            DisplayPokemon("Bulbasaur", 700, 100, 400, 200, app=self.app).draw_card()
+            DisplayPokemon("Charmander", 100, 400, 400, 200, app=self.app).draw_card()
+            DisplayPokemon("Blastoise", 700, 400, 400, 200, app=self.app).draw_card()
         else:
             print("Erreur: `self.app` ne contient pas d'attribut `screen`.")
