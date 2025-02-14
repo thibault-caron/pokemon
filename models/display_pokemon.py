@@ -2,8 +2,9 @@ from .config import *
 from .pokemon import Pokemon
 from .button import Button
 
-class DisplayPokemon:
+class DisplayPokemon():
     def __init__(self, name, x, y, width, height, app, onclickFunction=None, onePress=False):
+        # super().__init__(self)
         self.app = app
         self.name = name
         self.x = x
@@ -15,7 +16,9 @@ class DisplayPokemon:
         self.alreadyPressed = False
         self.pokemon = Pokemon(name, level=1)
         
-        self.font = pygame.font.Font(None, 30)    
+        self.font = pygame.font.Font(None, 30)
+        
+        self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle) 
     
     '''Get pokemon infos'''    
     def get_pokemon_name(self):
@@ -80,7 +83,7 @@ class DisplayPokemon:
         image = pygame.transform.scale(image, (self.width, self.height))
         self.app.screen.blit(image, (x, y))
     
-    def draw_card(self):
+    def draw_card(self):       
         self.draw_card_background(self.x, self.y)
         self.draw_pokemon_name(self.x + 10, self.y + 10)
         self.draw_pokemon_type(self.x + self.width - 235, self.y + 10)
@@ -88,4 +91,10 @@ class DisplayPokemon:
         self.draw_pokemon_level(self.x + self.width - 235, self.y + 35)
         self.draw_pokemon_attack(self.x + 10, self.y + 60)
         self.draw_pokemon_front_sprite(self.x + 10, self.y + 100)
+        self.button.process()
+        
+    '''Action'''
+    def battle(self):
+        """Go to menu battle menu"""
+        self.app.state_manager.set_state("battle")
         
