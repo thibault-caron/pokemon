@@ -7,25 +7,30 @@ from .button import Button
 class WelcomeMenu(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokemon.jpg")
-        self.caption = "Main Menu"
+        self.caption = "Welcome Menu"
         
-        self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Game', self.start_game)
-        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Settings', self.settings)
-        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Exit', self.exit_game)
+        self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'New game', self.new_game)
+        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Continue', self.continue_game)
+        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Add Wild Pokemon', self.add_wild_pokemon)
+        self.button4 = Button(WIDTH/2 - 200, 470, 400, 50, 'My Pokedex', self.display_pokedex)
         
-        self.buttons = [self.button1, self.button2, self.button3]
+        self.buttons = [self.button1, self.button2, self.button3, self.button4]
         
-    def start_game(self):
+    def new_game(self):
         """Go to menu Choose your first pokemon"""
-        self.app.state_manager.set_state("Choose pokemon menu")
+        self.app.state_manager.set_state("choice")
+        
+    def continue_game(self):
+        """Go to menu battle menu"""
+        self.app.state_manager.set_state("battle menu")
+        
+    def add_wild_pokemon(self):
+        """Go to pokedex display scene."""
+        print("Show all pokemons")
 
-    def settings(self):
-        """Affiche les paramètres."""
-        print("Settings clicked!")
-
-    def exit_game(self):
-        """Quitte l'application."""
-        self.app.running = False
+    def display_pokedex(self):
+        """Go to pokedex display scene"""
+        print("Show my pokedex")
 
     def draw(self):
         """Draw welcome menu scene"""
