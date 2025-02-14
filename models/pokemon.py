@@ -3,6 +3,8 @@
 from .pokedex import Pokedex
 from .pokemon_dictionary import PokemonDictionary
 
+data_pokemons = PokemonDictionary().data_pokemons
+
 class Pokemon:
 
     def __init__(self, name, level, wild=True):
@@ -128,7 +130,7 @@ class Pokemon:
 
 
 if __name__ == '__main__':
-    data_pokemons = PokemonDictionary().data_pokemons
+    
 
     # data_pokemons = PokemonDictionary().data_pokemons
     test = Pokemon("Pikachu", 30)

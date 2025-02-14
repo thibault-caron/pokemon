@@ -3,11 +3,12 @@ import os
 from .config import *
 from .game_state import GameState
 from .button import Button
+from.display_pokemon import DisplayPokemon
 
 class ChoiceMenu(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokemon.jpg")
-        self.caption = "Welcome Menu"
+        self.caption = "Choose Pokemon Menu"
         
         # self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Game', self.start_game)
         # self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Settings', self.settings)
@@ -30,6 +31,10 @@ class ChoiceMenu(GameState):
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
-        # self.app.screen.blit(self.menu_background, (WIDTH*0.25, HEIGHT*0.25)) # Draw menu rectangle
-        # for button in self.buttons:
-        #     button.process()  # Show buttons
+        if hasattr(self.app, 'screen'):
+            DisplayPokemon("Pikachu", 100, 100, 400, 200, app=self.app).draw_card()
+            DisplayPokemon("Bulbasaur", 600, 900, 400, 200, app=self.app).draw_card()
+            DisplayPokemon("Charmander", 900, 100, 400, 200, app=self.app).draw_card()
+            DisplayPokemon("Blastoise", 1000, 900, 400, 200, app=self.app).draw_card()
+        else:
+            print("Erreur: `self.app` ne contient pas d'attribut `screen`.")
