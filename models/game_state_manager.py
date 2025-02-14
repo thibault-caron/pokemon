@@ -1,6 +1,6 @@
 from .config import *
 
-from .welcome_menu import WelcomeMenu
+from welcome_menu import WelcomeMenu
 
 class GameStateManager:
     def __init__(self, app):

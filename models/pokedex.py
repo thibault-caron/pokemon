@@ -1,5 +1,5 @@
 import json
-from .database import Database
+from database import Database
 
 class Pokedex(Database):
     def __init__(self):

@@ -1,12 +1,13 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex
-from .pokemon_dictionary import PokemonDictionary
+from pokedex import Pokedex
+from pokemon_dictionary import PokemonDictionary
 
 class Pokemon:
 
     def __init__(self, name, level, wild=True):
         self.__name = name
+        self.__id = data_pokemons[self.get_name()]["id_code"]
         self.__level = level
         self.__xp = 0
         self.__wild = wild
@@ -17,12 +18,15 @@ class Pokemon:
         self.__hp = self.__max_hp
         self.__attack = data_pokemons[self.get_name()]["attack"]
         self.__evolution = data_pokemons[self.get_name()]["evolution"]
-        self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
-        self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
+        # self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
+        # self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
     
     # Getters
     def get_name(self):
         return self.__name
+    
+    def get_id(self):
+        return self.__id
     
     def get_level(self):
         return self.__level
@@ -84,11 +88,28 @@ class Pokemon:
 
     def set_back_sprite(self, back_sprite):
         self.__back_sprite_path = back_sprite
-    
+
+
+    def to_dico(self):
+        """Convert Pokemon instance to dictionary"""
+        return {
+            "name": self.__name,
+            "id": self.__id,
+            "level": self.__level,
+            "xp": self.__xp,
+            "types": self.__types,
+            "max hp": self.__max_hp,
+            "hp": self.__hp,
+            "attack": self.__attack,
+            "evolution": self.__evolution,
+            "front sprite": self.__front_sprite_path,
+            "back sprite": self.__back_sprite_path,
+        }
+
     def evolve(self):
         if self.__evolution != []:
             if self.__level >= self.__evolution[0]:
-
+                print(f"{self.__name} is evolving!")
 
                 self.__name = self.__evolution[1]
 
@@ -98,8 +119,8 @@ class Pokemon:
                 self.__hp = self.__max_hp
                 self.__attack = data_pokemons[self.get_name()]["attack"]
                 self.__evolution = data_pokemons[self.get_name()]["evolution"]
-                self.__front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
-                self.__back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
+                # self.__front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
+                # self.__back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
 
                 print(f"{self.__name} has evolved!")
 
@@ -131,6 +152,6 @@ if __name__ == '__main__':
     data_pokemons = PokemonDictionary().data_pokemons
 
     # data_pokemons = PokemonDictionary().data_pokemons
-    test = Pokemon("Pikachu", 30)
-    test.evolve()
-    test.display_info()
+    pika = Pokemon("Pikachu", 30)
+    pika.evolve()
+    pika.display_info()

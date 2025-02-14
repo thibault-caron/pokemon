@@ -1,6 +1,6 @@
 import random, json
-from .pokemon import Pokemon
-from .database import Database
+from pokemon import Pokemon
+from database import Database
 
 class Battle:
     def __init__(self, pokemon1, pokemon2):
