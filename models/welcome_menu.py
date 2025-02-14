@@ -10,9 +10,9 @@ class WelcomeMenu(GameState):
         self.caption = "Welcome Menu"
         
         self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'New game', self.new_game)
-        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Continue', self.display_pokedex)
-        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Add Pokemon', self.display_pokemons)
-        self.button4 = Button(WIDTH/2 - 200, 470, 400, 50, 'My Pokedex', self.display_pokemons)
+        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Continue', self.continue_game)
+        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Add Wild Pokemon', self.add_wild_pokemon)
+        self.button4 = Button(WIDTH/2 - 200, 470, 400, 50, 'My Pokedex', self.display_pokedex)
         
         self.buttons = [self.button1, self.button2, self.button3, self.button4]
         
@@ -24,7 +24,7 @@ class WelcomeMenu(GameState):
         """Go to menu battle menu"""
         self.app.state_manager.set_state("battle menu")
         
-    def display_pokemons(self):
+    def add_wild_pokemon(self):
         """Go to pokedex display scene."""
         print("Show all pokemons")
 

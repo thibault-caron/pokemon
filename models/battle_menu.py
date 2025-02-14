@@ -6,18 +6,18 @@ from .button import Button
 
 class BattleMenu(GameState):
     def __init__(self, app):
-        super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="start_battle-menu_background.webp")
+        super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="start_battle_menu_background.webp")
         self.caption = "Battle Menu"
         
-        self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Game', self.start_game)
-        self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Settings', self.view_pokedex)
-        self.button3 = Button(WIDTH/2 - 200, 380, 400, 50, 'Exit', self.exit_game)
+        self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Battle', self.start_battle)
+        self.button2 = Button(WIDTH/2 - 200, 335, 400, 50, 'Settings', self.view_pokedex)
+        self.button3 = Button(WIDTH/2 - 200, 470, 400, 50, 'Exit', self.exit_game)
         
         self.buttons = [self.button1, self.button2, self.button3]
         
-    def start_game(self):
+    def start_battle(self):
         """Start game"""
-        self.app.state_manager.set_state("Battle")
+        self.app.state_manager.set_state("battle")
 
     def view_pokedex(self):
         """Show pokedex"""
