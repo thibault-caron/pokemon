@@ -1,10 +1,13 @@
 import json
 from .database import Database
+from .pokemon_dictionary import PokemonDictionary
 
 class Pokedex(Database):
     def __init__(self):
         self.path = "./data/pokedex.json"
         self.data_pokedex = self.read_json()
+        
+        self.all_pokemons = PokemonDictionary()
 
     def clear_pokedex(self):
         """
@@ -18,14 +21,23 @@ class Pokedex(Database):
             json.dump({}, file)
 
     def add_pokemon(self, name):
-        """Function that add a pokemon in data_pokedex"""
-        self.data_pokedex[name] = all_pokemons.data_pokemons[name]
+        """Function that adds a Pokemon to the Pokedex"""
+        if name in self.all_pokemons.data_pokemons:
+            self.data_pokedex[name] = self.all_pokemons.data_pokemons[name]
+            
+            # Save in JSON file
+            with open(self.path, "w") as file:
+                json.dump(self.data_pokedex, file, indent=4)
+                
+pokedex = Pokedex()
 
-if __name__ == '__main__':
-    from pokemon_dictionary import PokemonDictionary
 
-    all_pokemons = PokemonDictionary()
-    player_pokedex = Pokedex()
-    player_pokedex.add_pokemon("Mewtwo")
+'''Si c'est défini en dessous pour que ça marche ilfaut le dénir au dessus aussi (ex: PokemonDictionary pas importé, all_pokemons pas défini)'''
+# if __name__ == '__main__':
+#     from pokemon_dictionary import PokemonDictionary
 
-    print(player_pokedex.data_pokedex)
+#     all_pokemons = PokemonDictionary()
+#     player_pokedex = Pokedex()
+#     player_pokedex.add_pokemon("Mewtwo")
+
+#     print(player_pokedex.data_pokedex)

@@ -1,6 +1,7 @@
 from .config import *
 from .pokemon import Pokemon
 from .button import Button
+from .pokedex import pokedex
 
 class DisplayPokemon():
     def __init__(self, name, x, y, width, height, app, onclickFunction=None, onePress=False):
@@ -95,6 +96,9 @@ class DisplayPokemon():
         
     '''Action'''
     def battle(self):
-        """Go to menu battle menu"""
+        """Go to menu battle menu and add choosen pokemon"""
+        # Add choosen pokemon in pokedex
+        pokedex.add_pokemon(self.name)
+        #change game_state to battle scene
         self.app.state_manager.set_state("battle")
         
