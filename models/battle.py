@@ -1,7 +1,9 @@
 import random
 from pokemon import Pokemon
 from database import Database
+from pokemon_dictionary import PokemonDictionary
 
+data_pokemons = PokemonDictionary().data_pokemons
 
 class Battle:
     """ Class to manage the battle. """
@@ -95,6 +97,7 @@ class Battle:
 
 
 if __name__ == '__main__':
+
     type_chart = Database().read_json()
     poke1 = Pokemon("Pikachu", 1)
     poke2 = Pokemon("Caterpie", 1)
