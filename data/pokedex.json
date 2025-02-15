@@ -1,20 +1,37 @@
 {
     "Bulbasaur": {
-    "name": "Bulbasaur",
-    "id_code": 1,
-    "types": [
-      "grass",
-      "poison"
-    ],
-    "hp": 45,
-    "attack": 49,
-    "min_level": 1,
-    "evolution": [
-      15,
-      "Ivysaur"
-    ],
-    "front-sprite": "assets/sprites/bulbasaur_front.png",
-    "back_sprite": "assets/sprites/bulbasaur_back.png",
-    "state": "used"
-  }
+        "name": "Bulbasaur",
+        "id_code": 1,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "hp": 45,
+        "attack": 49,
+        "min_level": 1,
+        "evolution": [
+            15,
+            "Ivysaur"
+        ],
+        "front-sprite": "assets/sprites/bulbasaur_front.png",
+        "back_sprite": "assets/sprites/bulbasaur_back.png",
+        "state": "used"
+    },
+    "Pikachu": {
+        "name": "Pikachu",
+        "id_code": 25,
+        "types": [
+            "electric"
+        ],
+        "hp": 35,
+        "attack": 55,
+        "min_level": 1,
+        "evolution": [
+            20,
+            "Raichu"
+        ],
+        "front-sprite": "assets/sprites/pikachu_front.png",
+        "back_sprite": "assets/sprites/pikachu_back.png",
+        "state": "used"
+    }
 }
