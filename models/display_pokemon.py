@@ -26,7 +26,8 @@ class DisplayPokemon():
         return self.pokemon.get_name()
         
     def get_pokemon_type(self):
-        return self.pokemon.get_types()
+        types = " ".join(self.pokemon.get_types())
+        return types
         
     def get_pokemon_hp(self):
         return self.pokemon.get_hp()
