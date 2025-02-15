@@ -14,7 +14,7 @@ class ChoiceMenu(GameState):
             DisplayPokemon("Pikachu", 100, 100, 400, 200, app=self.app),
             DisplayPokemon("Bulbasaur", 700, 100, 400, 200, app=self.app),
             DisplayPokemon("Charmander", 100, 400, 400, 200, app=self.app),
-            DisplayPokemon("Blastoise", 700, 400, 400, 200, app=self.app),
+            DisplayPokemon("Squirtle", 700, 400, 400, 200, app=self.app),
         ]
               
     '''Action'''
