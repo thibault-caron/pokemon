@@ -19,19 +19,20 @@
     },
     "Pikachu": {
         "name": "Pikachu",
-        "id_code": 25,
+        "id": 25,
+        "level": 1,
+        "xp": 0,
         "types": [
             "electric"
         ],
-        "hp": 35,
-        "attack": 55,
-        "min_level": 1,
+        "max hp": 95,
+        "hp": 95,
+        "attack": 28,
         "evolution": [
             20,
             "Raichu"
         ],
-        "front-sprite": "assets/sprites/pikachu_front.png",
-        "back_sprite": "assets/sprites/pikachu_back.png",
-        "state": "used"
+        "front sprite": "./assets/sprites/pikachu_front.png",
+        "back sprite": "./assets/sprites/pikachu_back.png"
     }
 }

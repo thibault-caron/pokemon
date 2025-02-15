@@ -20,14 +20,23 @@ class Pokedex(Database):
             # Rewrote "{}" in the empty file to avoid an error, in which the file was not recognized as a json format.
             json.dump({}, file)
 
-    def add_pokemon(self, name):
-        """Function that adds a Pokemon to the Pokedex"""
-        if name in self.all_pokemons.data_pokemons:
-            self.data_pokedex[name] = self.all_pokemons.data_pokemons[name]
+    # def add_pokemon(self, name):
+    #     """Function that adds a Pokemon to the Pokedex"""
+    #     if name in self.all_pokemons.data_pokemons:
+    #         self.data_pokedex[name] = self.all_pokemons.data_pokemons[name]
             
-            # Save in JSON file
-            with open(self.path, "w") as file:
-                json.dump(self.data_pokedex, file, indent=4)
+    #         # Save in JSON file
+    #         with open(self.path, "w") as file:
+    #             json.dump(self.data_pokedex, file, indent=4)
+
+    def add_pokemon(self, pokemon):
+        """Function that adds a Pokemon to the Pokedex"""
+        pokemon = pokemon.to_dico()
+        self.data_pokedex[pokemon["name"]] = pokemon
+        
+        # Save in JSON file
+        with open(self.path, "w") as file:
+            json.dump(self.data_pokedex, file, indent=4)
                 
 pokedex = Pokedex()
 

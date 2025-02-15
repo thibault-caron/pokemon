@@ -1,4 +1,4 @@
-from config import *
+from .config import *
 
 class Button:
     def __init__(self, x, y, width, height, buttonText='Button', onclickFunction=None, onePress=False):

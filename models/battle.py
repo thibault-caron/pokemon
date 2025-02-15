@@ -1,7 +1,7 @@
 import random
-from pokemon import Pokemon
-from database import Database
-from pokemon_dictionary import PokemonDictionary
+from .pokemon import Pokemon
+from .database import Database
+from .pokemon_dictionary import PokemonDictionary
 
 data_pokemons = PokemonDictionary().data_pokemons
 

@@ -1,7 +1,7 @@
 import os
 
-from config import *
-from button import Button
+from .config import *
+from .button import Button
 
 class GameState:
     """Create a new scene (room, level, view)."""
