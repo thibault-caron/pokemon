@@ -1,73 +1,108 @@
-import random, json
+import random
 from pokemon import Pokemon
 from database import Database
 
+
 class Battle:
-    def __init__(self, pokemon1, pokemon2):
-        self.pokemon1 = pokemon1
-        self.pokemon2 = pokemon2
-        # self.type_chart = Database().read_json()
-    # Type effectiveness table (attack multiplier)
+    """ Class to manage the battle. """
+    def __init__(self, player_pokemon, wild_pokemon):
+        """
+        Initialisation of the class.
+        :param player_pokemon: The player pokemon choose for the battle.
+        :param wild_pokemon: A wild pokemon encountered.
+        """
+        self.player_pokemon = player_pokemon
+        self.wild_pokemon = wild_pokemon
+        self.multiplier = 1.0
 
+    def calculate_multiplier(self, attacker, defender):
+        """
+        Calculate attack multiplier.
+        :param attacker: Pokemon attacking.
+        :param defender: Pokemon defending.
+        :return: Global attack multiplier.
+        """
+        def single_type_multiplier(attacker_type, defender_type):
+            """
+            Check the multiplier of one single type couple.
+            :param attacker_type: The attacker type.
+            :param defender_type: The defender type.
+            :return: Single type couple multiplier.
+            """
+            for attack_key in type_chart:
+                if attacker_type == attack_key:
+                    for defense_key in type_chart[attack_key]:
+                        if defender_type == defense_key:
+                            return type_chart[attack_key][defense_key]
 
-    # Method to apply type effectiveness and calculate the attack damage
-    def calculate_damage(self, attacker, defender):
-        attacker_type = attacker.get_types()[0] 
-        defender_type = defender.get_types()[0]
-        
-        # Check for type effectiveness
-        multiplier = 1.0
-        for attack_key in type_chart:
-            if attacker_type == attack_key:
-                for defense_key in type_chart[attack_key]:
-                    if defender_type == defense_key:
-                        multiplier = type_chart[attack_key][defense_key]
-                        print(multiplier)
+        attacker_type_0 = attacker.get_types()[0]
+        defender_type_0 = defender.get_types()[0]
+        multiplier_1 = single_type_multiplier(attacker_type_0, defender_type_0)
 
-        # Calculate damage: attack power * type multiplier
+        if len(attacker.get_types()) > 1:  # Check if attacker pokemon have two types.
+            attacker_type_1 = attacker.get_types()[1]
+            defender_type_1 = defender.get_types()[1]
+            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_1)
+            self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of two types pokemon.
+        else:
+            self.multiplier = multiplier_1  # Global multiplier of a single type pokemon.
+
+    def inflict_damage(self, attacker, defender):
+        """
+        Inflict damages to the defender.
+        :param attacker: Pokemon attacking.
+        :param defender: Pokemon defending.
+        :return: ∅
+        """
         attack = attacker.get_attack()
-        damage = attack * multiplier
-        print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage (Multiplier: {multiplier})")
-        # return damage
+        damage = attack * self.multiplier
+        print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage "
+              f"(Multiplier: {self.multiplier})")
 
-    def inflict_damage(self, defender, damage):
-        """Method to apply defense and deduct life points"""
         defender.set_hp(defender.get_hp() - damage)
         print(f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}")
 
-    def determine_winner(self):
-        """Method to determine the winner"""
-        if self.pokemon1.get_hp() > 0 and self.pokemon2.get_hp() <= 0:
-            return self.pokemon1.get_name()
-        elif self.pokemon2.get_hp() > 0 and self.pokemon1.get_hp() <= 0:
-            return self.pokemon2.get_name()
+    def check_victory(self):
+        """
+        Check if someone as win the battle this turn.
+        :return: The result of the battle turn.
+        """
+        result = False
+        if self.player_pokemon.get_hp() > 0 >= self.wild_pokemon.get_hp():
+            result = True
+            print(f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}")
+        elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
+            result = True
+            print(f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}")
         else:
-            return "Draw"
+            print("Battle continues!")
+        return result
     
-    def get_battle_outcome(self):
-        """Method to determine the names of the winner and loser"""
-        winner = self.determine_winner()
-        if winner == "Draw":
-            return "It's a draw!"
-        if winner == self.pokemon1.get_name():
-            loser = self.pokemon2.get_name()
+    def turn(self):
+        """
+        Play a battle turn.
+        :return: The victory.
+        """
+        victory = None
+        self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+        if not self.check_victory():
+            self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+            if self.check_victory():
+                victory = self.wild_pokemon.get_name()
         else:
-            loser = self.pokemon1.get_name()  
-        return f"Winner: {winner}, Loser: {loser}"
-
-    def record_encounter(self, pokemon):
-        """Method to record encountered Pokémon in the Pokédex"""
-        if pokemon.get_name() not in [p.get_name() for p in self.pokedex]:
-            self.pokedex.append(pokemon)
-            print(f"{pokemon.get_name()} added to Pokédex.")
-        else:
-            print(f"{pokemon.get_name()} is already in the Pokédex.")
+            victory = self.player_pokemon.get_name()
+        return victory
 
 
 if __name__ == '__main__':
     type_chart = Database().read_json()
-    print(type_chart)
     poke1 = Pokemon("Pikachu", 1)
     poke2 = Pokemon("Caterpie", 1)
     test_battle = Battle(poke1, poke2)
-    test_battle.calculate_damage(poke1, poke2)
+
+    victory = 0
+    n = 1
+    while not isinstance(victory, str):
+        print(f"\nTour {n}")
+        victory = test_battle.turn()
+        n += 1
