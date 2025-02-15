@@ -1,11 +1,7 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex
-from .pokemon_dictionary import PokemonDictionary
-
-data_pokemons = PokemonDictionary().data_pokemons
-
-data_pokemons = PokemonDictionary().data_pokemons
+from .pokedex import Pokedex, pokedex
+from .pokemon_dictionary import data_pokemons
 
 class Pokemon:
 

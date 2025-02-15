@@ -1,38 +1,20 @@
 {
-    "Bulbasaur": {
-        "name": "Bulbasaur",
-        "id_code": 1,
-        "types": [
-            "grass",
-            "poison"
-        ],
-        "hp": 45,
-        "attack": 49,
-        "min_level": 1,
-        "evolution": [
-            15,
-            "Ivysaur"
-        ],
-        "front-sprite": "assets/sprites/bulbasaur_front.png",
-        "back_sprite": "assets/sprites/bulbasaur_back.png",
-        "state": "used"
-    },
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Squirtle": {
+        "name": "Squirtle",
+        "id": 7,
         "level": 1,
         "xp": 0,
         "types": [
-            "electric"
+            "water"
         ],
-        "max hp": 95,
-        "hp": 95,
-        "attack": 28,
+        "max hp": 100,
+        "hp": 100,
+        "attack": 25,
         "evolution": [
-            20,
-            "Raichu"
+            15,
+            "Wartortle"
         ],
-        "front sprite": "./assets/sprites/pikachu_front.png",
-        "back sprite": "./assets/sprites/pikachu_back.png"
+        "front sprite": "./assets/sprites/squirtle_front.png",
+        "back sprite": "./assets/sprites/squirtle_back.png"
     }
 }

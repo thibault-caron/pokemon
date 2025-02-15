@@ -6,6 +6,7 @@ class PokemonDictionary(Database):
         self.path = "./data/pokemons.json"
         self.data_pokemons = self.read_json()
 
+data_pokemons = PokemonDictionary().data_pokemons
 
 if __name__ == '__main__':
     test = PokemonDictionary()

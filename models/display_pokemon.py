@@ -97,6 +97,7 @@ class DisplayPokemon():
     '''Action'''
     def battle(self):
         """Go to menu battle menu and add choosen pokemon"""
+        pokedex.clear_pokedex()
         # Add choosen pokemon in pokedex
         pokedex.add_pokemon(self.pokemon)
         #change game_state to battle scene
