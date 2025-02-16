@@ -15,7 +15,7 @@ class DisplayPokemon():
         self.onclickFunction = onclickFunction
         self.onePress = onePress
         self.alreadyPressed = False
-        self.pokemon = Pokemon(name, level=1)
+        self.pokemon = Pokemon(name, level=5)
         
         self.font = pygame.font.Font(None, 30)
         
@@ -97,10 +97,9 @@ class DisplayPokemon():
         
     '''Action'''
     def battle(self):
-        """Go to menu battle menu and add choosen pokemon"""
-        pokedex.clear_pokedex()
-        # Add choosen pokemon in pokedex
-        pokedex.add_pokemon(self.pokemon)
-        #change game_state to battle scene
-        self.app.state_manager.set_state("battle")
+        """Go to battle menu and add chosen pokemon"""
+
+        pokedex.add_pokemon(self.pokemon)  # Add chosen pokemon in pokedex
+
+        self.app.state_manager.set_state("battle")  # Change game_state to battle scene
         

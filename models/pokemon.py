@@ -1,7 +1,11 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex, pokedex
-from .pokemon_dictionary import data_pokemons
+from .pokedex import Pokedex
+from .pokemon_dictionary import PokemonDictionary
+
+data_pokemons = PokemonDictionary().data_pokemons
+
+data_pokemons = PokemonDictionary().data_pokemons
 
 class Pokemon:
 
@@ -14,9 +18,9 @@ class Pokemon:
 
         # a faire: données à récup dans data_pokemons via le "name"
         self.__types = data_pokemons[self.get_name()]["types"]
-        self.__max_hp = data_pokemons[self.get_name()]["hp"]
+        self.__max_hp = self.calculate_max_hp()
         self.__hp = self.__max_hp
-        self.__attack = data_pokemons[self.get_name()]["attack"]
+        self.__attack = self.calculate_attack()
         self.__evolution = data_pokemons[self.get_name()]["evolution"]
         self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
         self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
@@ -132,8 +136,32 @@ class Pokemon:
         if self.__xp >= self.__level * 4 and self.__level < 50:
             self.__level += 1
             print(f"{self.__name} has grown to level {self.__level} !")
+            self.__attack = self.__attack * 1.02  # Increases attack by 2 % each level
+            self.__hp = self.__hp * 1.02  # # Increases HP by 2 % each level
             self.__xp = 0
-    
+
+    def calculate_attack(self):
+        """
+        Calculate pokemon attack evolution.
+        :return:
+        """
+        if self.__level > 1:
+            attack = data_pokemons[self.get_name()]["attack"] * 1.02 ** self.__level
+        else:
+            attack = data_pokemons[self.get_name()]["attack"]
+        return round(attack)
+
+    def calculate_max_hp(self):
+        """
+        Calculate pokemon max HP evolution.
+        :return:
+        """
+        if self.__level > 1:
+            max_hp = data_pokemons[self.get_name()]["hp"] * 1.02 ** self.__level
+        else:
+            max_hp = data_pokemons[self.get_name()]["hp"]
+        return round(max_hp)
+
     def display_info(self):
         """Display the Pokémon's details"""
         print(f"Name: {self.__name}")
