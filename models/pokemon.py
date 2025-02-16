@@ -5,8 +5,6 @@ from .pokemon_dictionary import PokemonDictionary
 
 data_pokemons = PokemonDictionary().data_pokemons
 
-data_pokemons = PokemonDictionary().data_pokemons
-
 class Pokemon:
 
     def __init__(self, name, level, wild=True):
