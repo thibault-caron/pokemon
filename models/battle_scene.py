@@ -60,7 +60,7 @@ class BattleScene(GameState):
 
     def draw_pokemon_background(self, x, y):
         """"""
-        image = pygame.image.load("assets/images/battle_front.png")
+        image = pygame.image.load("assets/images/battle_background.webp")
         image = pygame.transform.scale(image, (400, 300))
         self.app.screen.blit(image, (x, y))
 
