@@ -41,7 +41,7 @@ class DisplayPokemon():
     def get_pokemon_front_sprite(self):
         return self.pokemon.get_front_sprite()
     
-    def get_pokemon_backsprite(self):
+    def get_pokemon_back_sprite(self):
         return self.pokemon.get_back_sprite()
     
     '''Draw pokemon info'''
@@ -78,7 +78,7 @@ class DisplayPokemon():
         self.draw_image(self.get_pokemon_front_sprite(), x, y)
 
     def draw_pokemon_back_sprite(self, x, y):
-        self.draw_image(self.get_pokemon_backsprite(), x, y)
+        self.draw_image(self.get_pokemon_back_sprite(), x, y)
         
     def draw_card_background(self, x, y):
         image = pygame.image.load("assets/images/card.png")
