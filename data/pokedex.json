@@ -1,20 +1,21 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
         "level": 5,
         "xp": 0,
         "types": [
-            "electric"
+            "grass",
+            "poison"
         ],
-        "max hp": 105,
-        "hp": 105,
-        "attack": 31,
+        "max hp": 110,
+        "hp": 110,
+        "attack": 28,
         "evolution": [
-            20,
-            "Raichu"
+            15,
+            "Ivysaur"
         ],
-        "front sprite": "./assets/sprites/pikachu_front.png",
-        "back sprite": "./assets/sprites/pikachu_back.png"
+        "front sprite": "./assets/sprites/bulbasaur_front.png",
+        "back sprite": "./assets/sprites/bulbasaur_back.png"
     }
 }
