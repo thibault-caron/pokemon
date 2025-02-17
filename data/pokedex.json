@@ -14,7 +14,7 @@
             20,
             "Raichu"
         ],
-        "front sprite": "./assets/sprites/pikachu_front.png",
-        "back sprite": "./assets/sprites/pikachu_back.png"
+        "front_sprite": "./assets/sprites/pikachu_front.png",
+        "back_sprite": "./assets/sprites/pikachu_back.png"
     }
 }

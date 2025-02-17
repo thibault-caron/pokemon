@@ -62,7 +62,8 @@ class DisplayPokemon():
         self.draw_text(self.pokemon.get_name(), x, y)
 
     def draw_pokemon_type(self, x, y):
-        self.draw_text(f"Type: {self.pokemon.get_types()}", x, y)
+        types = " ".join(self.pokemon.get_types())
+        self.draw_text(f"Type: {types}", x, y)
 
     def draw_pokemon_hp(self, x, y):
         self.draw_text(f"HP: {self.pokemon.get_hp()}", x, y)
@@ -105,6 +106,7 @@ class DisplayPokemon():
         """Go to battle menu and add chosen pokemon"""
         pokedex.clear_pokedex()
         pokedex.add_pokemon(self.pokemon)  # Add chosen pokemon in pokedex
+        pokedex.data_pokedex = pokedex.read_json()
 
         self.app.state_manager.set_state("battle menu")  # Change game_state to battle scene
         

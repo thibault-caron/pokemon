@@ -5,14 +5,28 @@ from .game_state import GameState
 from .button import Button
 from .pokemon import Pokemon
 from .battle import Battle
+from .pokedex import Pokedex
 
 class BattleScene(GameState):
-    def __init__(self, app):
+    def __init__(self, app, player_team=[]):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
+        pokedex = Pokedex()
 
-        self.player_pokemon = Pokemon("Pikachu", 5)
-        self.wild_pokemon = Pokemon("Caterpie", 1)
+        if player_team == [] and pokedex != {}: 
+            print(pokedex.data_pokedex)
+            print(pokedex.list_pokemons())
+            # [next(iter(pokedex))]
+            player_pokemon_name = next(iter(pokedex.data_pokedex))
+            self.player_pokemon = Pokemon(pokedex.data_pokedex[player_pokemon_name], summoned=True)
+            print("player_team = []")
+            # self.player_pokemon = Pokemon("Pidgey")
+            # print (self.player_pokemon)
+        elif pokedex != {}:
+            self.player_pokemon = Pokemon(player_team[0])
+
+        self.wild_pokemon = Pokemon("Pidgey")
+        # self.wild_pokemon = Pokemon("Pidgey", 1)
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
 
         self.font = pygame.font.Font(None, 50)
@@ -37,7 +51,7 @@ class BattleScene(GameState):
             self.app.state_manager.set_state("battle menu")
 
     def change_pokemon(self):
-        """ Change pokemon in the battle. """
+        """ Change pokemon in the battle. ! ne pas changer de state, """
         pass
 
     def run(self):
@@ -66,11 +80,11 @@ class BattleScene(GameState):
 
     def draw_player_pokemon_sprite(self, x, y):
         """"""
-        self.draw_image(self.get_pokemon_front_sprite(), x, y)
+        self.draw_image(self.player_pokemon.get_back_sprite(), x, y)
 
     def draw_wild_pokemon_sprite(self, x, y):
         """"""
-        self.draw_image(self.get_pokemon_back_sprite(), x, y)
+        self.draw_image(self.wild_pokemon.get_front_sprite(), x, y)
 
     def draw_player_pokemon_name(self, x, y):
         get_pokemon_name = self.player_pokemon.get_name()
@@ -84,11 +98,11 @@ class BattleScene(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
         self.draw_pokemon_background(50, 300)
-        self.draw_player_pokemon_sprite(50, 300)
+        # self.draw_player_pokemon_sprite(50, 300)
         self.draw_player_pokemon_name(175, 310)
 
         self.draw_pokemon_background(750, 50)
-        self.draw_wild_pokemon_sprite(750, 50)
+        # self.draw_wild_pokemon_sprite(750, 50)
         self.draw_wild_pokemon_name(875, 60)
 
         for button in self.buttons:

@@ -1,26 +1,39 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex
+from .pokedex import pokedex
 from .pokemon_dictionary import PokemonDictionary, all_pokemons
 
 
 class Pokemon:
 
-    def __init__(self, name, level, wild=True):
+    def __init__(self, name, level=1, summoned=False, wild=True):
         self.__name = name
-        self.__id = all_pokemons.data_pokemons[self.get_name()]["id_code"]
-        self.__level = level
-        self.__xp = 0
-        self.__wild = wild
 
-        # a faire: données à récup dans all_pokemons.data_pokemons via le "name"
-        self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
-        self.__max_hp = self.calculate_max_hp()
-        self.__hp = self.__max_hp
-        self.__attack = self.calculate_attack()
-        self.__evolution = all_pokemons.data_pokemons[self.get_name()]["evolution"]
-        self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
-        self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
+        if summoned == False:
+            self.__id = all_pokemons.data_pokemons[self.get_name()]["id_code"]
+            self.__level = level
+            self.__xp = 0
+            self.__wild = wild
+            self.__types = all_pokemons.data_pokemons[self.__name]["types"]
+            self.__max_hp = self.calculate_max_hp()
+            self.__hp = self.__max_hp
+            self.__attack = self.calculate_attack()
+            self.__evolution = all_pokemons.data_pokemons[self.__name]["evolution"]
+            self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
+            self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
+        
+        elif summoned == True and self.__name in pokedex.list_pokemons():
+            self.__id = pokedex.data_pokedex[self.__name]["id"]
+            self.__level = pokedex.data_pokedex[self.__name]["level"]
+            self.__xp = pokedex.data_pokedex[self.__name]["xp"]
+            self.__wild = False
+            self.__types = pokedex.data_pokedex[self.__name]["types"]
+            self.__max_hp = pokedex.data_pokedex[self.__name]["max hp"]
+            self.__hp = pokedex.data_pokedex[self.__name]["hp"]
+            self.__attack = pokedex.data_pokedex[self.__name]["attack"]
+            self.__evolution = pokedex.data_pokedex[self.__name]["evolution"]
+            self.__front_sprite_path = pokedex.data_pokedex[self.__name]["front_sprite"]
+            self.__back_sprite_path = pokedex.data_pokedex[self.__name]["back_sprite"]
     
     # Getters
     def get_name(self):
@@ -103,8 +116,8 @@ class Pokemon:
             "hp": self.__hp,
             "attack": self.__attack,
             "evolution": self.__evolution,
-            "front sprite": self.__front_sprite_path,
-            "back sprite": self.__back_sprite_path,
+            "front_sprite": self.__front_sprite_path,
+            "back_sprite": self.__back_sprite_path,
         }
 
     def evolve(self):
