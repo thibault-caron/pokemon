@@ -2,6 +2,7 @@ import random
 from .pokemon import Pokemon
 from .database import Database
 from .pokemon_dictionary import PokemonDictionary
+from .pokedex import pokedex
 
 data_pokemons = PokemonDictionary().data_pokemons
 
@@ -69,17 +70,53 @@ class Battle:
         Check if someone as win the battle this turn.
         :return: The result of the battle turn.
         """
-        result = False
+        result = "ongoing"
         if self.player_pokemon.get_hp() > 0 >= self.wild_pokemon.get_hp():
-            result = True
+            result = "victory"
             print(f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}")
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
-            result = True
+            result = "defeat"
             print(f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}")
         else:
+            result = "onging"
             print("Battle continues!")
         return result
     
+    def end_battle(self):
+        end = False
+
+        if self.check_victory() == "victory":
+            self.player_pokemon.gain_xp(self.wild_pokemon)
+            self.player_pokemon.level_up()
+            # ajouter condition 'si le pokemon (name) n'est pas dans pokedex
+            self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
+            pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
+            # self.app.state_manager.set_state("battle menu")
+            end = True
+        
+        elif self.check_victory() == "defeat":
+            pokedex.remove_pokemon(self.player_pokemon)
+            # self.app.state_manager.set_state("battle menu")
+            end = True
+        
+        return end
+
+    
+    # def turn(self):
+    #     """
+    #     Play a battle turn.
+    #     :return: The victory.
+    #     """
+    #     victory = None
+    #     self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+    #     if not self.check_victory():
+    #         self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+    #         if self.check_victory():
+    #             victory = self.wild_pokemon.get_name()
+    #     else:
+    #         victory = self.player_pokemon.get_name()
+    #     return victory
+
     def turn(self):
         """
         Play a battle turn.
@@ -87,14 +124,13 @@ class Battle:
         """
         victory = None
         self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
-        if not self.check_victory():
+        if self.check_victory() == "ongoing":
             self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
-            if self.check_victory():
+            if self.check_victory() == "defeat":
                 victory = self.wild_pokemon.get_name()
         else:
             victory = self.player_pokemon.get_name()
         return victory
-
 
 if __name__ == '__main__':
 

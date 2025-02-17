@@ -26,6 +26,11 @@ class Pokedex(Database):
         # Save in JSON file
         with open(self.path, "w") as file:
             json.dump(self.data_pokedex, file, indent=4)
+
+    def remove_pokemon(self, pokemon_name):
+        """remove a pokemon from var pokedex if it contains an item with its name"""
+        if pokemon_name in self.data_pokedex:
+            self.data_pokedex.pop(pokemon_name, None)
                 
 pokedex = Pokedex()
 

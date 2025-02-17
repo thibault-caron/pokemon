@@ -32,9 +32,9 @@ class BattleScene(GameState):
 
     def attack(self):
         """ Attack the enemy. """
-        victory = self.battle.turn()
-        if isinstance(victory, str):
-            exit()
+        self.battle.turn()
+        if self.battle.end_battle():
+            self.app.state_manager.set_state("battle menu")
 
     def change_pokemon(self):
         """ Change pokemon in the battle. """

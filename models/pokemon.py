@@ -159,6 +159,12 @@ class Pokemon:
         else:
             max_hp = data_pokemons[self.get_name()]["hp"]
         return round(max_hp)
+    
+    def gain_xp(self, enemy_pokemon):
+        """methode to gain hp after victory"""
+        xp_source = enemy_pokemon.get_level()
+        self.__xp += xp_source
+
 
     def display_info(self):
         """Display the Pokémon's details"""
