@@ -2,6 +2,7 @@ from .config import *
 from .pokemon import Pokemon
 from .button import Button
 from .pokedex import pokedex
+from .pokemon_dictionary import PokemonDictionary, all_pokemons
 
 class DisplayPokemon():
     def __init__(self, name, x, y, width, height, app, onclickFunction=None, onePress=False):
@@ -94,6 +95,7 @@ class DisplayPokemon():
         self.draw_pokemon_attack(self.x + 10, self.y + 60)
         self.draw_pokemon_front_sprite(self.x + 10, self.y + 100)
         self.button.process()
+        
         
     '''Action'''
     def battle(self):
