@@ -1,4 +1,4 @@
-from models.config import *
+from config import *
 from models.text import Text
 from models.game_state_manager import GameStateManager
 

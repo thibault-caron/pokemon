@@ -1,4 +1,4 @@
-from .config import *
+from config import *
 from .pokemon import Pokemon
 from .button import Button
 from .pokedex import pokedex

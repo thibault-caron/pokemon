@@ -1,6 +1,6 @@
 import os
 
-from .config import *
+from config import *
 from .game_state import GameState
 from .button import Button
 

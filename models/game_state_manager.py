@@ -1,4 +1,4 @@
-from .config import *
+from config import *
 
 from .welcome_menu import WelcomeMenu
 from .battle_menu import BattleMenu
