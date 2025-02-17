@@ -1,7 +1,7 @@
 from config import *
 
 class Button:
-    def __init__(self, x, y, width, height, buttonText='Button', onclickFunction=None, onePress=False):
+    def __init__(self, x, y, width, height, buttonText='Button', onclickFunction=None, onePress=False, screen = None):
         self.x = x
         self.y = y
         self.width = width
@@ -16,9 +16,12 @@ class Button:
             'pressed': '#693f01',
         }
         
-        font = pygame.font.SysFont('Arial', 40)
+        font = pygame.font.Font('assets/pokemon_classic.ttf', 20)
         
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        self.screen = screen
+        
+        if self.screen is None:
+            raise ValueError("La surface Pygame 'screen' ne peut pas être None. Vérifie que tu passes bien self.app.screen au Button.")
         
         self.buttonSurface = pygame.Surface((self.width, self.height))
         self.buttonRect = pygame.Rect(self.x, self.y, self.width, self.height)
@@ -43,6 +46,6 @@ class Button:
         self.buttonSurface.blit(self.buttonSurf, [self.buttonRect.width/2 - self.buttonSurf.get_rect().width/2, self.buttonRect.height/2 - self.buttonSurf.get_rect().height/2])
         self.screen.blit(self.buttonSurface, self.buttonRect)
     
-    @staticmethod    
-    def myFunction():
-        print('Button Pressed')
+    # @staticmethod    
+    # def myFunction():
+    #     print('Button Pressed')
