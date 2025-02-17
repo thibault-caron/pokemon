@@ -1,0 +1,21 @@
+{
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
+        "level": 5,
+        "xp": 0,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "max hp": 110,
+        "hp": 110,
+        "attack": 28,
+        "evolution": [
+            15,
+            "Ivysaur"
+        ],
+        "front sprite": "./assets/sprites/bulbasaur_front.png",
+        "back sprite": "./assets/sprites/bulbasaur_back.png"
+    }
+}
