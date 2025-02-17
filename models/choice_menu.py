@@ -1,10 +1,10 @@
 import os
 
 from config import *
-from game_state import GameState
-from button import Button
-from pokemon import Pokemon
-from display_pokemon import DisplayPokemon
+from .game_state import GameState
+from .button import Button
+from .pokemon import Pokemon
+from .display_pokemon import DisplayPokemon
 
 class ChoiceMenu(GameState):
     def __init__(self, app):

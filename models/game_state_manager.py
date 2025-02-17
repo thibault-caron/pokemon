@@ -1,10 +1,10 @@
 from config import *
 
-from welcome_menu import WelcomeMenu
-from battle_menu import BattleMenu
-from battle_scene import BattleScene
-from choice_menu import ChoiceMenu
-from add_wild_pokemon import AddWildPokemon
+from .welcome_menu import WelcomeMenu
+from .battle_menu import BattleMenu
+from .battle_scene import BattleScene
+from .choice_menu import ChoiceMenu
+from .add_wild_pokemon import AddWildPokemon
 
 class GameStateManager:
     def __init__(self, app):

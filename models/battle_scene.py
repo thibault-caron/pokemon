@@ -1,10 +1,10 @@
 import os
 
 from config import *
-from game_state import GameState
-from button import Button
-from pokemon import Pokemon
-from battle import Battle
+from .game_state import GameState
+from .button import Button
+from .pokemon import Pokemon
+from .battle import Battle
 
 class BattleScene(GameState):
     def __init__(self, app):

@@ -1,10 +1,10 @@
 import os
 # config = "../config.py"
 from config import *
-from game_state import GameState
-from button import Button
-from display_pokemon import DisplayPokemon
-from pokemon_dictionary import all_pokemons
+from .game_state import GameState
+from .button import Button
+from .display_pokemon import DisplayPokemon
+from .pokemon_dictionary import all_pokemons
 
 class AddWildPokemon(GameState):
     def __init__(self, app):
