@@ -3,7 +3,6 @@ import os
 from config import *
 from .game_state import GameState
 from .button import Button
-from .pokemon_dictionary import data_pokemons, all_pokemons
 
 class WelcomeMenu(GameState):
     def __init__(self, app):
