@@ -29,7 +29,7 @@ class AddWildPokemon(GameState):
         self.buttons.clear()
         
         for name in unused_pokemon:
-            button = Button(x, y, 180, 30, name, lambda: all_pokemons.set_used_pokemons(name), screen=self.app.screen)
+            button = Button(x, y, 180, 30, name, lambda : self.change_state(name, unused_pokemon), screen=self.app.screen)
             self.buttons.append(button)
             
             y += 40
@@ -38,6 +38,10 @@ class AddWildPokemon(GameState):
                 y = HEIGHT*0.05
                 y += 30
                 x += 200      
+
+    def change_state(self, name, unused_pokemon):
+        """"""
+        all_pokemons.set_used_pokemons(name, unused_pokemon)
 
     def draw(self):
         """Draw welcome menu scene"""
