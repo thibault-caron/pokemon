@@ -24,10 +24,16 @@ class AddWildPokemon(GameState):
 
     def draw_unused_pokemon(self, x, y):
         unused_pokemon = all_pokemons.get_unused_pokemons()
+    
         for name in unused_pokemon:
-            # if name == all_pokemons["name"]:
-            self.draw_text(name, x, y)
-            y += 30
+            if y <= HEIGHT*0.9 - 30:
+                self.draw_text(name, x, y)
+                y += 30
+            else:
+                self.draw_text(name, x, y)
+                y = HEIGHT*0.05 -10
+                y += 30
+                x += 200      
 
     def draw(self):
         """Draw welcome menu scene"""
