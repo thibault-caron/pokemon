@@ -1,8 +1,8 @@
 from config import *
-from .pokemon import Pokemon
-from .button import Button
-from .pokedex import pokedex
-from .pokemon_dictionary import PokemonDictionary, all_pokemons
+from pokemon import Pokemon
+from button import Button
+from pokedex import pokedex
+from pokemon_dictionary import PokemonDictionary, all_pokemons
 
 class DisplayPokemon():
     def __init__(self, pokemon, x, y, width, height, app, onclickFunction=None, onePress=False):

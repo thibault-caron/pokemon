@@ -1,6 +1,6 @@
 from config import *
-from models.text import Text
-from models.game_state_manager import GameStateManager
+from models import *
+
 
 class App:
     def __init__(self):

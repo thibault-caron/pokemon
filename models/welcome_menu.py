@@ -1,8 +1,9 @@
 import os
 
 from config import *
-from .game_state import GameState
-from .button import Button
+from game_state import GameState
+from button import Button
+from pokemon_dictionary import all_pokemons
 
 class WelcomeMenu(GameState):
     def __init__(self, app):

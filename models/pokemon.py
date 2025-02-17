@@ -1,7 +1,7 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex
-from .pokemon_dictionary import PokemonDictionary, all_pokemons
+from pokedex import Pokedex
+from pokemon_dictionary import PokemonDictionary, all_pokemons
 
 
 class Pokemon:

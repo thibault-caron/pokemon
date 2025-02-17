@@ -1,7 +1,7 @@
 import random
-from .pokemon import Pokemon
-from .database import Database
-from .pokedex import pokedex
+from pokemon import Pokemon
+from database import Database
+from pokedex import pokedex
 
 class Battle:
     """ Class to manage the battle. """
