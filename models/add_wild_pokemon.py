@@ -11,7 +11,7 @@ class AddWildPokemon(GameState):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="Pokemon_bg1.webp")
         self.caption = "Welcome Menu"
         
-        self.font = pygame.font.Font(None, 30)
+        self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
         self.menu_background = pygame.Surface((WIDTH*0.9, HEIGHT*0.9), pygame.SRCALPHA)
         self.menu_background.fill(FADE_WHITE)
@@ -31,7 +31,7 @@ class AddWildPokemon(GameState):
                 y += 30
             else:
                 self.draw_text(name, x, y)
-                y = HEIGHT*0.05 -10
+                y = HEIGHT*0.05
                 y += 30
                 x += 200      
 
@@ -39,4 +39,4 @@ class AddWildPokemon(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
         self.app.screen.blit(self.menu_background, (WIDTH*0.05, HEIGHT*0.05)) # Draw menu rectangle
-        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 20)
+        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30)

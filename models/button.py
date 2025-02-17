@@ -16,7 +16,7 @@ class Button:
             'pressed': '#693f01',
         }
         
-        font = pygame.font.SysFont('Arial', 40)
+        font = pygame.font.Font('assets/pokemon_classic.ttf', 20)
         
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         
