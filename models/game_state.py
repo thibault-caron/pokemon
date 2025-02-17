@@ -1,6 +1,6 @@
 import os
 
-from .config import *
+from config import *
 from .button import Button
 
 class GameState:

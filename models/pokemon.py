@@ -1,25 +1,24 @@
 # import json
 # from database import Database
 from .pokedex import Pokedex
-from .pokemon_dictionary import PokemonDictionary
+from .pokemon_dictionary import PokemonDictionary, all_pokemons
 
-data_pokemons = PokemonDictionary().data_pokemons
 
 class Pokemon:
 
     def __init__(self, name, level, wild=True):
         self.__name = name
-        self.__id = data_pokemons[self.get_name()]["id_code"]
+        self.__id = all_pokemons.data_pokemons[self.get_name()]["id_code"]
         self.__level = level
         self.__xp = 0
         self.__wild = wild
 
-        # a faire: données à récup dans data_pokemons via le "name"
-        self.__types = data_pokemons[self.get_name()]["types"]
+        # a faire: données à récup dans all_pokemons.data_pokemons via le "name"
+        self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
         self.__max_hp = self.calculate_max_hp()
         self.__hp = self.__max_hp
         self.__attack = self.calculate_attack()
-        self.__evolution = data_pokemons[self.get_name()]["evolution"]
+        self.__evolution = all_pokemons.data_pokemons[self.get_name()]["evolution"]
         self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
         self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
     
@@ -115,14 +114,14 @@ class Pokemon:
 
                 self.__name = self.__evolution[1]
 
-                # get evolution data from 'pokemon.json (data_pokemons)'
-                self.__types = data_pokemons[self.get_name()]["types"]
-                self.__max_hp = data_pokemons[self.get_name()]["hp"]
+                # get evolution data from 'pokemon.json (all_pokemons.data_pokemons)'
+                self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
+                self.__max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"]
                 self.__hp = self.__max_hp
-                self.__attack = data_pokemons[self.get_name()]["attack"]
-                self.__evolution = data_pokemons[self.get_name()]["evolution"]
-                self.__front_sprite_path = data_pokemons[self.get_name()]["front_sprite"]
-                self.__back_sprite_path = data_pokemons[self.get_name()]["back_sprite"]
+                self.__attack = all_pokemons.data_pokemons[self.get_name()]["attack"]
+                self.__evolution = all_pokemons.data_pokemons[self.get_name()]["evolution"]
+                self.__front_sprite_path = all_pokemons.data_pokemons[self.get_name()]["front_sprite"]
+                self.__back_sprite_path = all_pokemons.data_pokemons[self.get_name()]["back_sprite"]
 
                 print(f"{self.__name} has evolved!")
 
@@ -144,9 +143,9 @@ class Pokemon:
         :return:
         """
         if self.__level > 1:
-            attack = data_pokemons[self.get_name()]["attack"] * 1.02 ** self.__level
+            attack = all_pokemons.data_pokemons[self.get_name()]["attack"] * 1.02 ** self.__level
         else:
-            attack = data_pokemons[self.get_name()]["attack"]
+            attack = all_pokemons.data_pokemons[self.get_name()]["attack"]
         return round(attack)
 
     def calculate_max_hp(self):
@@ -155,10 +154,16 @@ class Pokemon:
         :return:
         """
         if self.__level > 1:
-            max_hp = data_pokemons[self.get_name()]["hp"] * 1.02 ** self.__level
+            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"] * 1.02 ** self.__level
         else:
-            max_hp = data_pokemons[self.get_name()]["hp"]
+            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"]
         return round(max_hp)
+    
+    def gain_xp(self, enemy_pokemon):
+        """methode to gain hp after victory"""
+        xp_source = enemy_pokemon.get_level()
+        self.__xp += xp_source
+
 
     def display_info(self):
         """Display the Pokémon's details"""

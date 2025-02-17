@@ -18,9 +18,7 @@ class PokemonDictionary(Database):
             if self.data_pokemons[pokemon]["state"] == "unused":
                self.data_pokemons[pokemon]["state"] = "used"
 
-data_pokemons = PokemonDictionary().data_pokemons
 all_pokemons = PokemonDictionary()
-
 
 # if __name__ == '__main__':
 #     test = PokemonDictionary()
