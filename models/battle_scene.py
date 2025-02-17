@@ -17,9 +17,9 @@ class BattleScene(GameState):
 
         self.font = pygame.font.Font(None, 50)
 
-        self.button1 = Button(50, 650, 200, 50, "Attack", self.attack)
-        self.button2 = Button(450, 650, 300, 50, "Change Pokemon", self.change_pokemon)
-        self.button3 = Button(950, 650, 200, 50, "Run", self.run)
+        self.button1 = Button(50, 650, 200, 50, "Attack", self.attack, screen=self.app.screen)
+        self.button2 = Button(450, 650, 300, 50, "Change Pokemon", self.change_pokemon, screen=self.app.screen)
+        self.button3 = Button(950, 650, 200, 50, "Run", self.run, screen=self.app.screen)
         self.buttons = [self.button1, self.button2, self.button3]
 
     def get_pokemon_front_sprite(self):

@@ -13,6 +13,8 @@ class AddWildPokemon(GameState):
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
+        self.buttons = []
+        
         self.menu_background = pygame.Surface((WIDTH*0.9, HEIGHT*0.9), pygame.SRCALPHA)
         self.menu_background.fill(FADE_WHITE)
         
@@ -24,13 +26,15 @@ class AddWildPokemon(GameState):
 
     def draw_unused_pokemon(self, x, y):
         unused_pokemon = all_pokemons.get_unused_pokemons()
-    
+        self.buttons.clear()
+        
         for name in unused_pokemon:
-            if y <= HEIGHT*0.9 - 30:
-                self.draw_text(name, x, y)
-                y += 30
-            else:
-                self.draw_text(name, x, y)
+            button = Button(x, y, 180, 30, name, lambda: all_pokemons.set_used_pokemons(name), screen=self.app.screen)
+            self.buttons.append(button)
+            
+            y += 40
+            
+            if y > HEIGHT*0.9 - 10:
                 y = HEIGHT*0.05
                 y += 30
                 x += 200      
@@ -39,4 +43,8 @@ class AddWildPokemon(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
         self.app.screen.blit(self.menu_background, (WIDTH*0.05, HEIGHT*0.05)) # Draw menu rectangle
-        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30)
+        
+        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with wild avaible pokemons names
+        
+        for button in self.buttons:
+            button.process()

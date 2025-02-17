@@ -8,9 +8,9 @@ class App:
         pygame.init()
         # flags = RESIZABLE
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT), RESIZABLE)
-        # self.t = Text('Pygame App', pos=(20, 20), app=self)
 
         self.state_manager = GameStateManager(self)
+        self.state_manager.set_state("welcome")
         
         self.running = True
         

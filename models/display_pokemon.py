@@ -19,7 +19,7 @@ class DisplayPokemon():
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
-        self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle) 
+        self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle, screen=self.app.screen) 
     
     '''Get pokemon infos'''    
     # def get_pokemon_name(self):
