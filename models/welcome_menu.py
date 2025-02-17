@@ -3,6 +3,7 @@ import os
 from config import *
 from .game_state import GameState
 from .button import Button
+from .pokemon_dictionary import data_pokemons, all_pokemons
 
 class WelcomeMenu(GameState):
     def __init__(self, app):
@@ -26,7 +27,7 @@ class WelcomeMenu(GameState):
         
     def add_wild_pokemon(self):
         """Go to pokedex display scene."""
-        print("Show all pokemons")
+        self.app.state_manager.set_state("add wild pokemon")
 
     def display_pokedex(self):
         """Go to pokedex display scene"""
