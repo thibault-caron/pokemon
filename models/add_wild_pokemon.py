@@ -1,4 +1,5 @@
 import os
+import time
 # config = "../config.py"
 from config import *
 from .game_state import GameState
@@ -29,26 +30,29 @@ class AddWildPokemon(GameState):
         self.buttons.clear()
         
         for name in unused_pokemon:
-            button = Button(x, y, 180, 30, name, lambda : self.change_state(name, unused_pokemon), screen=self.app.screen)
+            button = Button(x, y, 180, 30, name, lambda name=name: self.change_state(name), screen=self.app.screen)
             self.buttons.append(button)
             
-            y += 40
+            y += 70
             
-            if y > HEIGHT*0.9 - 10:
+            if y > HEIGHT*0.9 - 70:
                 y = HEIGHT*0.05
                 y += 30
-                x += 200      
+                x += 270      
 
-    def change_state(self, name, unused_pokemon):
+    def change_state(self, name):
         """"""
-        all_pokemons.set_used_pokemons(name, unused_pokemon)
+        all_pokemons.set_used_pokemons(name)
+        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with wild avaible pokemons names
+        self.draw_text(f"{all_pokemons.set_used_pokemons(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)
 
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
         self.app.screen.blit(self.menu_background, (WIDTH*0.05, HEIGHT*0.05)) # Draw menu rectangle
-        
-        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with wild avaible pokemons names
+        self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30)
         
         for button in self.buttons:
             button.process()
+        
+        # self.draw_text(f"{all_pokemons.set_used_pokemons(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)

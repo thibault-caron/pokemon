@@ -13,17 +13,13 @@ class PokemonDictionary(Database):
                 unused_pokemon.append(self.data_pokemons[pokemon]["name"])
         return unused_pokemon
 
-    def set_used_pokemons(self, name, unused_pokemon):
+    def set_used_pokemons(self, name):
         """"""
         for pokemon in self.data_pokemons:
-            if pokemon == name:
+            if self.data_pokemons[pokemon]["name"] == name:
                 self.data_pokemons[pokemon]["state"] = "used"
-        
-        print(unused_pokemon)
-        for value in unused_pokemon:
-            if value == name:
-                unused_pokemon.remove(value)
-                print(unused_pokemon)
+                break
+        self.data_pokemons = {key: value for key, value in self.data_pokemons.items() if value["state"] == "unused"}        
             
             # print(self.data_pokemons[pokemon]["name"])
             # set_use = self.data_pokemons[pokemon]["name"]
