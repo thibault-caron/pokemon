@@ -63,7 +63,8 @@ class DisplayPokemon():
         self.draw_text(self.pokemon.get_name(), x, y)
 
     def draw_pokemon_type(self, x, y):
-        self.draw_text(f"Type: {self.pokemon.get_types()}", x, y)
+        types = " ".join(self.pokemon.get_types())
+        self.draw_text(f"Type: {types}", x, y)
 
     def draw_pokemon_hp(self, x, y):
         self.draw_text(f"HP: {self.pokemon.get_hp()}", x, y)
