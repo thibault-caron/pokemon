@@ -58,6 +58,7 @@ class BattleScene(GameState):
         """ Attack the enemy. """
         self.battle.turn()
         if self.battle.end_battle():
+            self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
             self.app.state_manager.set_state("battle menu")
 
     def change_pokemon(self):

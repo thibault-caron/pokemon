@@ -16,15 +16,15 @@ class BattleMenu(GameState):
         self.buttons = [self.button1, self.button2, self.button3]
         
     def start_battle(self):
-        """Start game"""
+        """Start game."""
         self.app.state_manager.set_state("battle")
 
     def view_pokedex(self):
-        """Show pokedex"""
+        """Show pokedex."""
         print("Settings clicked!")
 
     def exit_game(self):
-        """Quitte l'application."""
+        """ Exit the game."""
         self.app.running = False
 
     def draw(self):
