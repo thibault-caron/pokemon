@@ -18,6 +18,7 @@ class BattleScene(GameState):
         pp_list = pokedex.list_pokemons()
         pp_name = pp_list[0]
         print(pp_name)
+        print(pokedex.data_pokedex[pp_name]["types"])
         self.player_pokemon = PlayerPokemon(pp_name)
         self.wild_pokemon = Pokemon("Caterpie", 1)
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
