@@ -5,8 +5,9 @@ from .game_state import GameState
 from .button import Button
 from .pokemon import Pokemon
 from .battle import Battle
+from .display_pokemon import DisplayPokemon
 
-class BattleScene(GameState):
+class BattleScene(GameState, DisplayPokemon):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
@@ -14,7 +15,7 @@ class BattleScene(GameState):
         self.player_pokemon = Pokemon("Pikachu", 5)
         self.wild_pokemon = Pokemon("Caterpie", 1)
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
-
+        
         self.font = pygame.font.Font(None, 50)
 
         self.button1 = Button(50, 650, 200, 50, "Attack", self.attack, screen=self.app.screen)
@@ -58,12 +59,6 @@ class BattleScene(GameState):
         except pygame.error as error:
             print(f"Error: there is no image at the path {image_path}: {error}")
 
-    def draw_pokemon_background(self, x, y):
-        """"""
-        image = pygame.image.load("assets/images/battle_background.webp")
-        image = pygame.transform.scale(image, (400, 300))
-        self.app.screen.blit(image, (x, y))
-
     def draw_player_pokemon_sprite(self, x, y):
         """"""
         self.draw_image(self.get_pokemon_front_sprite(), x, y)
@@ -83,13 +78,15 @@ class BattleScene(GameState):
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
-        self.draw_pokemon_background(50, 300)
-        self.draw_player_pokemon_sprite(50, 300)
-        self.draw_player_pokemon_name(175, 310)
+        # DisplayPokemon.plapokemon.draw_pokemon_front_sprite(self, 50, 300)
+        
 
-        self.draw_pokemon_background(750, 50)
-        self.draw_wild_pokemon_sprite(750, 50)
-        self.draw_wild_pokemon_name(875, 60)
+        enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
+        player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
+        # self.wild_pokemon = pygame.transform.scale(self.wild_pokemon, (200,200))
+        # pygame.transform(self.front_sprite, (200, 200))
+        player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450)
+        enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
 
         for button in self.buttons:
             button.process()  # Show buttons
