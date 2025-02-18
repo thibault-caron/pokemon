@@ -6,12 +6,12 @@ class PokemonDictionary(Database):
         self.path = "./data/pokemons.json"
         self.data_pokemons = self.read_json()
         
-    def get_unused_pokemon(self):
-        unused_pokemons_list = []
+    def get_pokemon_by_state(self, state):
+        pokemons_list = []
         for pokemon in self.data_pokemons:
-            if self.data_pokemons[pokemon]["state"] == "unused":
-                unused_pokemons_list.append(self.data_pokemons[pokemon]["name"])
-        return unused_pokemons_list
+            if self.data_pokemons[pokemon]["state"] == state:
+                pokemons_list.append(self.data_pokemons[pokemon]["name"])
+        return pokemons_list
 
     def set_pokemon_used(self, name):
         """"""

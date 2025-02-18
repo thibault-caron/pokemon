@@ -1,21 +1,21 @@
 {
-    "Charmander": {
-        "name": "Charmander",
-        "id": 4,
+    "Pikachu": {
+        "name": "Pikachu",
+        "id": 25,
         "level": 5,
         "xp": 0,
         "types": [
-            "fire"
+            "electric"
         ],
         "max_hp": 105,
         "hp": 105,
-        "attack": 30,
+        "attack": 31,
         "evolution": [
-            15,
-            "Charmeleon"
+            20,
+            "Raichu"
         ],
-        "front_sprite": "./assets/sprites/charmander_front.png",
-        "back_sprite": "./assets/sprites/charmander_back.png"
+        "front_sprite": "./assets/sprites/pikachu_front.png",
+        "back_sprite": "./assets/sprites/pikachu_back.png"
     },
     "Caterpie": {
         "name": "Caterpie",
