@@ -1,4 +1,5 @@
 import os
+import time
 from config import *
 from .game_state import GameState
 from .button import Button
@@ -16,6 +17,9 @@ class AddWildPokemon(GameState):
         
         self.menu_background = pygame.Surface((WIDTH*0.9, HEIGHT*0.9), pygame.SRCALPHA)
         self.menu_background.fill(FADE_WHITE)
+        
+        self.message = ""
+        self.message_time = 0
         
     def draw_text(self, text, x, y):
         """ Allow to draw text """
@@ -43,7 +47,11 @@ class AddWildPokemon(GameState):
         all_pokemons.set_pokemon_used(name)
         all_pokemons.write_json(all_pokemons.data_pokemons)
         self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with wild avaible pokemons names
-        self.draw_text(f"{all_pokemons.set_pokemon_used(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)
+        self.display_text(name)
+        
+    def display_text(self, name):
+        self.message = f"{name} has been released in the wild"
+        self.message_time = pygame.time.get_ticks() + 5000
 
     def draw(self):
         """Draw welcome menu scene"""
@@ -53,3 +61,6 @@ class AddWildPokemon(GameState):
         
         for button in self.buttons:
             button.process()
+            
+        if pygame.time.get_ticks() < self.message_time:
+            self.draw_text(self.message, WIDTH*0.05 + 50, HEIGHT*0.9 - 20)
