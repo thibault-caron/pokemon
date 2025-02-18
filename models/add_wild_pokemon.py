@@ -28,7 +28,7 @@ class AddWildPokemon(GameState):
 
 
     def draw_unused_pokemon(self, x, y):
-        unused_pokemon = all_pokemons.get_unused_pokemon()
+        unused_pokemon = all_pokemons.get_pokemon_by_state("unused")
         self.buttons.clear()
         
         for name in unused_pokemon:

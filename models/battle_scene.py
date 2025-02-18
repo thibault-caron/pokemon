@@ -1,6 +1,7 @@
 import os
 
 from config import *
+from random import random
 from .game_state import GameState
 from .button import Button
 from .pokemon import Pokemon, PlayerPokemon
@@ -51,7 +52,14 @@ class BattleScene(GameState):
 
     def run(self):
         """ Escape from the battle. """
-        pass
+        escape_attempt = random()
+        if escape_attempt > 0.10:
+            self.app.state_manager.set_state("battle menu")
+        else:
+            self.player_pokemon.set_hp(self.player_pokemon.get_hp()*0.80)
+            print("you failed to escape!")
+
+
 
     def draw_text(self, text, x, y):
         """ Allow to draw text """
