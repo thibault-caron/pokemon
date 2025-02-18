@@ -88,7 +88,7 @@ class Battle:
             self.player_pokemon.level_up()
             # ajouter condition 'si le pokemon (name) n'est pas dans pokedex
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
-            self.wild_pokemon.draw # Add chosen pokemon in pokedex
+            pokedex.add_pokemon(self.wild_pokemon) # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
             end = True
         
