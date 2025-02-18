@@ -24,7 +24,7 @@ class AddWildPokemon(GameState):
 
 
     def draw_unused_pokemon(self, x, y):
-        unused_pokemon = all_pokemons.get_unused_pokemons()
+        unused_pokemon = all_pokemons.get_unused_pokemon()
         self.buttons.clear()
         
         for name in unused_pokemon:
@@ -40,9 +40,10 @@ class AddWildPokemon(GameState):
 
     def change_state(self, name):
         """"""
-        all_pokemons.set_used_pokemons(name)
+        all_pokemons.set_pokemon_used(name)
+        all_pokemons.write_json(all_pokemons.data_pokemons)
         self.draw_unused_pokemon(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with wild avaible pokemons names
-        self.draw_text(f"{all_pokemons.set_used_pokemons(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)
+        self.draw_text(f"{all_pokemons.set_pokemon_used(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)
 
     def draw(self):
         """Draw welcome menu scene"""
