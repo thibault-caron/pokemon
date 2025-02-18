@@ -8,7 +8,6 @@ class PokemonDictionary(Database):
         
     def get_pokemon_by_state(self, state):
         unused_pokemons_list = []
-        state = state
         for pokemon in self.data_pokemons:
             if self.data_pokemons[pokemon]["state"] == state:
                 unused_pokemons_list.append(self.data_pokemons[pokemon]["name"])
