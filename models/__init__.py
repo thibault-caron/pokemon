@@ -13,5 +13,4 @@ from .game_state_manager import GameStateManager
 from .pokedex import Pokedex
 from .pokemon import Pokemon
 from .pokemon_dictionary import PokemonDictionary
-from .text import Text
 from .welcome_menu import WelcomeMenu
