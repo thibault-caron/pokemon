@@ -1,4 +1,4 @@
-import random
+from random import random
 from .pokemon import Pokemon
 from .database import Database
 from .pokedex import pokedex
@@ -56,9 +56,25 @@ class Battle:
         :return: ∅
         """
         attack = attacker.get_attack()
-        damage = attack * self.multiplier
-        print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage "
+        random_power = random()
+        if random_power < 0.11:
+            damage_efficiency = 0
+        elif random_power > 0.90:
+            damage_efficiency = 1.5
+        else:
+            damage_efficiency = 1
+
+        damage = attack * self.multiplier * damage_efficiency
+
+        if damage_efficiency == 1:
+            print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage " 
               f"(Multiplier: {self.multiplier})")
+        elif damage_efficiency == 1.5:
+            print(f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage "
+              f"(Multiplier: {self.multiplier})")
+        elif damage_efficiency == 0:
+                        print(f"{attacker.get_name()} missed its attacks!")
+            
 
         defender.set_hp(defender.get_hp() - damage)
         print(f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}")
