@@ -188,12 +188,12 @@ class PlayerPokemon(Pokemon):
         self.__xp = pokedex.data_pokedex[self.get_name()]["xp"]
         self.__wild = False
         self.__types = pokedex.data_pokedex[self.get_name()]["types"]
-        self.__max_hp = pokedex.data_pokedex[self.get_name()]["max hp"]
+        self.__max_hp = pokedex.data_pokedex[self.get_name()]["max_hp"]
         self.__hp = pokedex.data_pokedex[self.get_name()]["hp"]
         self.__attack = pokedex.data_pokedex[self.get_name()]["attack"]
         self.__evolution = pokedex.data_pokedex[self.get_name()]["evolution"]
-        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front sprite"]
-        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back sprite"]
+        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front_sprite"]
+        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back_sprite"]
 
     def calculate_attack(self):
         """
