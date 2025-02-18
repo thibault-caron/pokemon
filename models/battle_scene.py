@@ -3,16 +3,24 @@ import os
 from config import *
 from .game_state import GameState
 from .button import Button
-from .pokemon import Pokemon
+from .pokemon import Pokemon, PlayerPokemon
 from .battle import Battle
 from .display_pokemon import DisplayPokemon
+from .pokedex import pokedex
 
 class BattleScene(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
 
-        self.player_pokemon = Pokemon("Pikachu", 5)
+
+        # get player_poke name
+        pp_name = ""
+        pp_list = pokedex.list_pokemons()
+        pp_name = pp_list[0]
+        print(pp_name)
+        print(pokedex.data_pokedex[pp_name]["types"])
+        self.player_pokemon = PlayerPokemon(pp_name)
         self.wild_pokemon = Pokemon("Caterpie", 1)
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
         

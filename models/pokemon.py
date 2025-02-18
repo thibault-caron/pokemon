@@ -1,12 +1,12 @@
 # import json
 # from database import Database
-from .pokedex import Pokedex
+from .pokedex import Pokedex, pokedex
 from .pokemon_dictionary import PokemonDictionary, all_pokemons
 
 
 class Pokemon:
 
-    def __init__(self, name, level, wild=True):
+    def __init__(self, name, level=5, wild=True):
         self.__name = name
         self.__id = all_pokemons.data_pokemons[self.get_name()]["id_code"]
         self.__level = level
@@ -99,12 +99,12 @@ class Pokemon:
             "level": self.__level,
             "xp": self.__xp,
             "types": self.__types,
-            "max hp": self.__max_hp,
+            "max_hp": self.__max_hp,
             "hp": self.__hp,
             "attack": self.__attack,
             "evolution": self.__evolution,
-            "front sprite": self.__front_sprite_path,
-            "back sprite": self.__back_sprite_path,
+            "front_sprite": self.__front_sprite_path,
+            "back_sprite": self.__back_sprite_path,
         }
 
     def evolve(self):
@@ -177,6 +177,45 @@ class Pokemon:
             print(f"Evolves into: {self.__evolution}")
         else:
             print("This Pokémon cannot evolve.")
+
+
+class PlayerPokemon(Pokemon):
+    def __init__(self, name):
+        super().__init__(name)
+
+        self.__id = pokedex.data_pokedex[self.get_name()]["id"]
+        self.__level = pokedex.data_pokedex[self.get_name()]["level"]
+        self.__xp = pokedex.data_pokedex[self.get_name()]["xp"]
+        self.__wild = False
+        self.__types = pokedex.data_pokedex[self.get_name()]["types"]
+        self.__max_hp = pokedex.data_pokedex[self.get_name()]["max_hp"]
+        self.__hp = pokedex.data_pokedex[self.get_name()]["hp"]
+        self.__attack = pokedex.data_pokedex[self.get_name()]["attack"]
+        self.__evolution = pokedex.data_pokedex[self.get_name()]["evolution"]
+        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front_sprite"]
+        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back_sprite"]
+
+    def calculate_attack(self):
+        """
+        Calculate pokemon attack evolution.
+        :return:
+        """
+        if self.get_level() > 1:
+            attack = pokedex.data_pokedex[self.get_name()]["attack"] * 1.02 ** self.get_level()
+        else:
+            attack = pokedex.data_pokedex[self.get_name()]["attack"]
+        return round(attack)
+
+    def calculate_max_hp(self):
+        """
+        Calculate pokemon max HP evolution.
+        :return:
+        """
+        if self.get_level() > 1:
+            max_hp = pokedex.data_pokedex[self.get_name()]["hp"] * 1.02 ** self.get_level()
+        else:
+            max_hp = pokedex.data_pokedex[self.get_name()]["hp"]
+        return round(max_hp)
 
 
 if __name__ == '__main__':

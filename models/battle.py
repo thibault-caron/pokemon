@@ -76,7 +76,7 @@ class Battle:
             result = "defeat"
             print(f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}")
         else:
-            result = "onging"
+            result = "ongoing"
             print("Battle continues!")
         return result
     
