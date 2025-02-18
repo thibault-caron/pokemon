@@ -31,6 +31,9 @@ class Pokedex(Database):
         """remove a pokemon from var pokedex if it contains an item with its name"""
         if pokemon_name in self.data_pokedex:
             self.data_pokedex.pop(pokemon_name, None)
+
+    def list_pokemons(self):
+        return list(self.data_pokedex.keys())
                 
 pokedex = Pokedex()
 
