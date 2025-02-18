@@ -7,11 +7,11 @@ class PokemonDictionary(Database):
         self.data_pokemons = self.read_json()
         
     def get_pokemon_by_state(self, state):
-        unused_pokemons_list = []
+        pokemons_list = []
         for pokemon in self.data_pokemons:
             if self.data_pokemons[pokemon]["state"] == state:
-                unused_pokemons_list.append(self.data_pokemons[pokemon]["name"])
-        return unused_pokemons_list
+                pokemons_list.append(self.data_pokemons[pokemon]["name"])
+        return pokemons_list
 
     def set_pokemon_used(self, name):
         """"""
