@@ -22,19 +22,6 @@ class ChoiceMenu(GameState):
             DisplayPokemon(starter3, 100, 400, 400, 200, app=self.app),
             DisplayPokemon(starter4, 700, 400, 400, 200, app=self.app),
         ]
-              
-    '''Action'''
-    # def battle(self):
-    #     """Go to menu battle menu"""
-    #     self.app.state_manager.set_state("battle")
-    #
-    # def settings(self):
-    #     """Affiche les paramètres."""
-    #     print("Settings clicked!")
-    #
-    # def exit_game(self):
-    #     """Quitte l'application."""
-    #     self.app.running = False
 
     def draw(self):
         """Draw welcome menu scene"""

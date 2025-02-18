@@ -1,6 +1,4 @@
 import os
-import time
-# config = "../config.py"
 from config import *
 from .game_state import GameState
 from .button import Button
@@ -54,5 +52,3 @@ class AddWildPokemon(GameState):
         
         for button in self.buttons:
             button.process()
-        
-        # self.draw_text(f"{all_pokemons.set_used_pokemons(name)} has been released in the wild", WIDTH*0.05 + 50, HEIGHT*0.9 - 20)

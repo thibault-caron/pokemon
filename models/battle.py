@@ -98,22 +98,6 @@ class Battle:
         
         return end
 
-    
-    # def turn(self):
-    #     """
-    #     Play a battle turn.
-    #     :return: The victory.
-    #     """
-    #     victory = None
-    #     self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
-    #     if not self.check_victory():
-    #         self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
-    #         if self.check_victory():
-    #             victory = self.wild_pokemon.get_name()
-    #     else:
-    #         victory = self.player_pokemon.get_name()
-    #     return victory
-
     def turn(self):
         """
         Play a battle turn.
