@@ -1,12 +1,13 @@
 import os
 
 from config import *
-from random import random
+from random import random, choice
 from .game_state import GameState
 from .button import Button
 from .pokemon import Pokemon, PlayerPokemon
 from .battle import Battle
 from .display_pokemon import DisplayPokemon
+from .pokemon_dictionary import all_pokemons
 from .pokedex import pokedex
 
 class BattleScene(GameState):
@@ -14,7 +15,7 @@ class BattleScene(GameState):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
         self.player_pokemon = self.select_first_pokemon()
-        self.wild_pokemon = Pokemon("Caterpie", 1)
+        self.wild_pokemon = self.generate_wild_pokemon()
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
         
         self.font = pygame.font.Font(None, 50)
@@ -43,6 +44,12 @@ class BattleScene(GameState):
         player_pokemon_list = pokedex.list_pokemons()
         first_pokemon = player_pokemon_list[0]
         return PlayerPokemon(first_pokemon)
+
+    def generate_wild_pokemon(self):
+        """"""
+        used_pokemons = all_pokemons.get_pokemon_by_state("used")
+        return Pokemon(choice(used_pokemons), 1)
+
 
     def attack(self):
         """ Attack the enemy. """

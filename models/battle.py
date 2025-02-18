@@ -15,6 +15,7 @@ class Battle:
         self.player_pokemon = player_pokemon
         self.wild_pokemon = wild_pokemon
         self.multiplier = 1.0
+        self.type_chart = Database().read_json()
 
     def calculate_multiplier(self, attacker, defender):
         """
@@ -30,11 +31,11 @@ class Battle:
             :param defender_type: The defender type.
             :return: Single type couple multiplier.
             """
-            for attack_key in type_chart:
+            for attack_key in self.type_chart:
                 if attacker_type == attack_key:
-                    for defense_key in type_chart[attack_key]:
+                    for defense_key in self.type_chart[attack_key]:
                         if defender_type == defense_key:
-                            return type_chart[attack_key][defense_key]
+                            return self.type_chart[attack_key][defense_key]
 
         attacker_type_0 = attacker.get_types()[0]
         defender_type_0 = defender.get_types()[0]
@@ -42,11 +43,22 @@ class Battle:
 
         if len(attacker.get_types()) > 1:  # Check if attacker pokemon have two types.
             attacker_type_1 = attacker.get_types()[1]
-            defender_type_1 = defender.get_types()[1]
-            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_1)
-            self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of two types pokemon.
+            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_0)
+
+            if len(defender.get_types()) > 1:  # Check if defender pokemon have two types.
+                defender_type_1 = defender.get_types()[1]
+                multiplier_3 = single_type_multiplier(attacker_type_0, defender_type_1)
+                multiplier_4 = single_type_multiplier(attacker_type_1, defender_type_1)
+
+                # Global multiplier of two, two types pokemon.
+                self.multiplier = multiplier_1 * multiplier_2 * multiplier_3 * multiplier_4
+
+            else:
+                self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
         else:
-            self.multiplier = multiplier_1  # Global multiplier of a single type pokemon.
+            self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
+
+        return self.multiplier
 
     def inflict_damage(self, attacker, defender):
         """
@@ -64,7 +76,7 @@ class Battle:
         else:
             damage_efficiency = 1
 
-        damage = attack * self.multiplier * damage_efficiency
+        damage = attack * self.calculate_multiplier(attacker, defender) * damage_efficiency
 
         if damage_efficiency == 1:
             print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage " 
