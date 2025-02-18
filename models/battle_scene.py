@@ -30,6 +30,9 @@ class BattleScene(GameState):
         
         self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 400, 105, app=self.app)
         self.player_card= DisplayPokemon(self.player_pokemon, WIDTH * 0.425, 500, 400, 105, app=self.app)
+        
+        self.message = self.battle.message
+        self.message_time = self.battle.message_time
 
     def get_pokemon_front_sprite(self):
         """"""
@@ -94,13 +97,9 @@ class BattleScene(GameState):
         """"""
         self.draw_image(self.get_pokemon_back_sprite(), x, y)
 
-    # def draw_player_pokemon_name(self, x, y):
-    #     get_pokemon_name = self.player_pokemon.get_name()
-    #     self.draw_text(get_pokemon_name, x, y)
-
-    # def draw_wild_pokemon_name(self, x, y):
-    #     get_pokemon_name = self.wild_pokemon.get_name()
-    #     self.draw_text(get_pokemon_name, x, y)
+    def display_text(self):
+        self.battle.message
+        self.battle.message_time = pygame.time.get_ticks() + 5000
 
     def draw(self):
         """Draw welcome menu scene"""
@@ -110,6 +109,10 @@ class BattleScene(GameState):
         self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
         self.player_card.draw_battle_card()
         self.enemy_card.draw_battle_card()
+        self.display_text()
 
         for button in self.buttons:
             button.process()  # Show buttons
+            
+        if pygame.time.get_ticks() < self.battle.message_time:
+            self.draw_text(self.battle.message, 50, 50)
