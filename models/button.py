@@ -20,9 +20,6 @@ class Button:
         
         self.screen = screen
         
-        if self.screen is None:
-            raise ValueError("La surface Pygame 'screen' ne peut pas être None. Vérifie que tu passes bien self.app.screen au Button.")
-        
         self.buttonSurface = pygame.Surface((self.width, self.height))
         self.buttonRect = pygame.Rect(self.x, self.y, self.width, self.height)
 

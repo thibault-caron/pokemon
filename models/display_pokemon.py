@@ -17,7 +17,7 @@ class DisplayPokemon():
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
-        self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle, screen=self.app.screen) 
+        self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle, screen=self.app.screen)
  
     '''Draw pokemon info'''
     def draw_text(self, text, x, y):
@@ -33,12 +33,22 @@ class DisplayPokemon():
             self.app.screen.blit(image, (x, y))
         except pygame.error as error:
             print(f"Error: there is no image at the path {image_path}: {error}")
+            
+    def draw_battle_image(self, image_path, x, y):
+        """ Allow to draw a sprite """
+        try:
+            image = pygame.image.load(image_path)
+            image = pygame.transform.scale(image, (400, 400))
+            self.app.screen.blit(image, (x, y))
+        except pygame.error as error:
+            print(f"Error: there is no image at the path {image_path}: {error}")
     
     def draw_pokemon_name(self, x, y):
         self.draw_text(self.pokemon.get_name(), x, y)
 
     def draw_pokemon_type(self, x, y):
-        self.draw_text(f"Type: {self.pokemon.get_types()}", x, y)
+        types = "/".join(self.pokemon.get_types())
+        self.draw_text(f"Type: {types}", x, y)
 
     def draw_pokemon_hp(self, x, y):
         self.draw_text(f"HP: {self.pokemon.get_hp()}", x, y)
@@ -60,6 +70,12 @@ class DisplayPokemon():
 
     def draw_pokemon_back_sprite(self, x, y):
         self.draw_image(self.pokemon.get_back_sprite(), x, y)
+        
+    def draw_battle_pokemon_front_sprite(self, x, y):
+        self.draw_battle_image(self.pokemon.get_front_sprite(), x, y)
+
+    def draw_battle_pokemon_back_sprite(self, x, y):
+        self.draw_battle_image(self.pokemon.get_back_sprite(), x, y)
         
     def draw_card_background(self, x, y):
         image = pygame.image.load("assets/images/card.png")
