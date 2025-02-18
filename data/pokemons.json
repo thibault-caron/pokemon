@@ -938,7 +938,7 @@
         ],
         "front_sprite": "assets/sprites/voltorb_front.png",
         "back_sprite": "assets/sprites/voltorb_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Electrode": {
         "name": "Electrode",
@@ -952,7 +952,7 @@
         "evolution": [],
         "front_sprite": "assets/sprites/electrode_front.png",
         "back_sprite": "assets/sprites/electrode_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Cubone": {
         "name": "Cubone",

@@ -8,7 +8,7 @@ from .battle import Battle
 from .display_pokemon import DisplayPokemon
 from .pokedex import pokedex
 
-class BattleScene(GameState, DisplayPokemon):
+class BattleScene(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
@@ -85,15 +85,12 @@ class BattleScene(GameState, DisplayPokemon):
 
     def draw(self):
         """Draw welcome menu scene"""
-        super().draw()  # Draw background
-        # DisplayPokemon.plapokemon.draw_pokemon_front_sprite(self, 50, 300)
-        
+        super().draw()  # Draw background        
 
         enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
         player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
-        # self.wild_pokemon = pygame.transform.scale(self.wild_pokemon, (200,200))
-        # pygame.transform(self.front_sprite, (200, 200))
-        player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450)
+        
+        player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450) # Draw sprites
         enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
 
         for button in self.buttons:

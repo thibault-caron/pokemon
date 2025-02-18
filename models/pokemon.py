@@ -99,12 +99,12 @@ class Pokemon:
             "level": self.__level,
             "xp": self.__xp,
             "types": self.__types,
-            "max hp": self.__max_hp,
+            "max_hp": self.__max_hp,
             "hp": self.__hp,
             "attack": self.__attack,
             "evolution": self.__evolution,
-            "front sprite": self.__front_sprite_path,
-            "back sprite": self.__back_sprite_path,
+            "front_sprite": self.__front_sprite_path,
+            "back_sprite": self.__back_sprite_path,
         }
 
     def evolve(self):
