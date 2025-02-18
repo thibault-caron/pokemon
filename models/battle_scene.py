@@ -13,15 +13,7 @@ class BattleScene(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
-
-
-        # get player_poke name
-        pp_name = ""
-        pp_list = pokedex.list_pokemons()
-        pp_name = pp_list[0]
-        print(pp_name)
-        print(pokedex.data_pokedex[pp_name]["types"])
-        self.player_pokemon = PlayerPokemon(pp_name)
+        self.player_pokemon = self.select_first_pokemon()
         self.wild_pokemon = Pokemon("Caterpie", 1)
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
         
@@ -39,6 +31,12 @@ class BattleScene(GameState):
     def get_pokemon_back_sprite(self):
         """"""
         return self.wild_pokemon.get_back_sprite()
+
+    def select_first_pokemon(self):
+        """"""
+        player_pokemon_list = pokedex.list_pokemons()
+        first_pokemon = player_pokemon_list[0]
+        return PlayerPokemon(first_pokemon)
 
     def attack(self):
         """ Attack the enemy. """
