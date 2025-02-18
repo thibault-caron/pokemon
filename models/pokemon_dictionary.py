@@ -18,7 +18,7 @@ class PokemonDictionary(Database):
         for pokemon in self.data_pokemons:
             if self.data_pokemons[pokemon]["name"] == name:
                 self.data_pokemons[pokemon]["state"] = "used"
-                break
-        self.data_pokemons = {key: value for key, value in self.data_pokemons.items() if value["state"] == "unused"}        
+        #         break
+        # self.data_pokemons = {key: value for key, value in self.data_pokemons.items() if value["state"] == "unused"}        
 
 all_pokemons = PokemonDictionary()
