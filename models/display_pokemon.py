@@ -1,12 +1,10 @@
 from config import *
-from .pokemon import Pokemon
 from .button import Button
 from .pokedex import pokedex
-from .pokemon_dictionary import PokemonDictionary, all_pokemons
+from .pokemon_dictionary import all_pokemons
 
 class DisplayPokemon():
     def __init__(self, pokemon, x, y, width, height, app, onclickFunction=None, onePress=False):
-        # super().__init__(self)
         self.app = app
         self.x = x
         self.y = y
@@ -20,30 +18,7 @@ class DisplayPokemon():
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
         self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me', self.battle, screen=self.app.screen) 
-    
-    '''Get pokemon infos'''    
-    # def get_pokemon_name(self):
-    #     return self.pokemon.get_name()
-        
-    # def get_pokemon_type(self):
-    #     types = " ".join(self.pokemon.get_types())
-    #     return types
-        
-    # def get_pokemon_hp(self):
-    #     return self.pokemon.get_hp()
-        
-    # def get_pokemon_level(self):
-    #     return self.pokemon.get_level()
-        
-    # def get_pokemon_attack(self):
-    #     return self.pokemon.get_attack()
-    
-    # def get_pokemon_front_sprite(self):
-    #     return self.pokemon.get_front_sprite()
-    
-    # def get_pokemon_back_sprite(self):
-    #     return self.pokemon.get_back_sprite()
-    
+ 
     '''Draw pokemon info'''
     def draw_text(self, text, x, y):
         """ Allow to draw text """

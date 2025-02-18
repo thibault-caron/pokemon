@@ -5,6 +5,7 @@ from .game_state import GameState
 from .button import Button
 from .pokemon import Pokemon
 from .battle import Battle
+from .display_pokemon import DisplayPokemon
 
 class BattleScene(GameState):
     def __init__(self, app):
@@ -58,12 +59,6 @@ class BattleScene(GameState):
         except pygame.error as error:
             print(f"Error: there is no image at the path {image_path}: {error}")
 
-    def draw_pokemon_background(self, x, y):
-        """"""
-        image = pygame.image.load("assets/images/battle_background.webp")
-        image = pygame.transform.scale(image, (400, 300))
-        self.app.screen.blit(image, (x, y))
-
     def draw_player_pokemon_sprite(self, x, y):
         """"""
         self.draw_image(self.get_pokemon_front_sprite(), x, y)
@@ -83,12 +78,10 @@ class BattleScene(GameState):
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
-        self.draw_pokemon_background(50, 300)
-        self.draw_player_pokemon_sprite(50, 300)
+        DisplayPokemon.draw_pokemon_front_sprite(self, 50, 300)
         self.draw_player_pokemon_name(175, 310)
 
-        self.draw_pokemon_background(750, 50)
-        self.draw_wild_pokemon_sprite(750, 50)
+        DisplayPokemon.draw_pokemon_back_sprite(self, 750, 50)
         self.draw_wild_pokemon_name(875, 60)
 
         for button in self.buttons:
