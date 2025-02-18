@@ -178,6 +178,7 @@ class Pokemon:
         else:
             print("This Pokémon cannot evolve.")
 
+
 class PlayerPokemon(Pokemon):
     def __init__(self, name):
         super().__init__(name)
@@ -191,16 +192,16 @@ class PlayerPokemon(Pokemon):
         self.__hp = pokedex.data_pokedex[self.get_name()]["hp"]
         self.__attack = pokedex.data_pokedex[self.get_name()]["attack"]
         self.__evolution = pokedex.data_pokedex[self.get_name()]["evolution"]
-        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front_sprite"]
-        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back_sprite"]
+        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front sprite"]
+        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back sprite"]
 
     def calculate_attack(self):
         """
         Calculate pokemon attack evolution.
         :return:
         """
-        if self.__level > 1:
-            attack = pokedex.data_pokedex[self.get_name()]["attack"] * 1.02 ** self.__level
+        if self.get_level() > 1:
+            attack = pokedex.data_pokedex[self.get_name()]["attack"] * 1.02 ** self.get_level()
         else:
             attack = pokedex.data_pokedex[self.get_name()]["attack"]
         return round(attack)
@@ -210,8 +211,8 @@ class PlayerPokemon(Pokemon):
         Calculate pokemon max HP evolution.
         :return:
         """
-        if self.__level > 1:
-            max_hp = pokedex.data_pokedex[self.get_name()]["hp"] * 1.02 ** self.__level
+        if self.get_level() > 1:
+            max_hp = pokedex.data_pokedex[self.get_name()]["hp"] * 1.02 ** self.get_level()
         else:
             max_hp = pokedex.data_pokedex[self.get_name()]["hp"]
         return round(max_hp)
