@@ -23,6 +23,12 @@ class BattleScene(GameState):
         self.button2 = Button(450, 650, 300, 50, "Change Pokemon", self.change_pokemon, screen=self.app.screen)
         self.button3 = Button(950, 650, 200, 50, "Run", self.run, screen=self.app.screen)
         self.buttons = [self.button1, self.button2, self.button3]
+        
+        self.enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
+        self.player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
+        
+        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 400, 105, app=self.app)
+        self.player_card= DisplayPokemon(self.player_pokemon, WIDTH * 0.425, 500, 400, 105, app=self.app)
 
     def get_pokemon_front_sprite(self):
         """"""
@@ -81,25 +87,22 @@ class BattleScene(GameState):
         """"""
         self.draw_image(self.get_pokemon_back_sprite(), x, y)
 
-    def draw_player_pokemon_name(self, x, y):
-        get_pokemon_name = self.player_pokemon.get_name()
-        self.draw_text(get_pokemon_name, x, y)
+    # def draw_player_pokemon_name(self, x, y):
+    #     get_pokemon_name = self.player_pokemon.get_name()
+    #     self.draw_text(get_pokemon_name, x, y)
 
-    def draw_wild_pokemon_name(self, x, y):
-        get_pokemon_name = self.wild_pokemon.get_name()
-        self.draw_text(get_pokemon_name, x, y)
+    # def draw_wild_pokemon_name(self, x, y):
+    #     get_pokemon_name = self.wild_pokemon.get_name()
+    #     self.draw_text(get_pokemon_name, x, y)
 
     def draw(self):
         """Draw welcome menu scene"""
-        super().draw()  # Draw background        
-
-        enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
-        player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
+        super().draw()  # Draw background
         
-        player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450) # Draw sprites
-        enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
+        self.player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450) # Draw sprites
+        self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
+        self.player_card.draw_battle_card()
+        self.enemy_card.draw_battle_card()
 
         for button in self.buttons:
             button.process()  # Show buttons
-
-
