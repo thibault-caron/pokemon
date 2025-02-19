@@ -1,38 +1,21 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
         "level": 5,
         "xp": 0,
         "types": [
-            "electric"
+            "grass",
+            "poison"
         ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 31,
-        "evolution": [
-            20,
-            "Raichu"
-        ],
-        "front_sprite": "./assets/sprites/pikachu_front.png",
-        "back_sprite": "./assets/sprites/pikachu_back.png"
-    },
-    "Caterpie": {
-        "name": "Caterpie",
-        "id": 10,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "bug"
-        ],
-        "max_hp": 100,
-        "hp": 100,
-        "attack": 18,
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 28,
         "evolution": [
             15,
-            "Metapod"
+            "Ivysaur"
         ],
-        "front_sprite": "./assets/sprites/caterpie_front.png",
-        "back_sprite": "./assets/sprites/caterpie_back.png"
+        "front_sprite": "./assets/sprites/bulbasaur_front.png",
+        "back_sprite": "./assets/sprites/bulbasaur_back.png"
     }
 }

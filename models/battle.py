@@ -4,7 +4,6 @@ from random import random
 from .pokemon import Pokemon
 from .database import Database
 from .pokedex import pokedex
-from .display_pokemon import DisplayPokemon
 
 class Battle:
     """ Class to manage the battle. """
@@ -17,8 +16,11 @@ class Battle:
         self.player_pokemon = player_pokemon
         self.wild_pokemon = wild_pokemon
         self.multiplier = 1.0
+        self.type_chart = Database().read_json()
         
-        self.message = ""
+        self.damage_player_message = ""
+        self.damage_enemy_message = ""
+        self.winner_message = ""
         self.message_time = 0
 
     def calculate_multiplier(self, attacker, defender):
@@ -35,11 +37,11 @@ class Battle:
             :param defender_type: The defender type.
             :return: Single type couple multiplier.
             """
-            for attack_key in type_chart:
+            for attack_key in self.type_chart:
                 if attacker_type == attack_key:
-                    for defense_key in type_chart[attack_key]:
+                    for defense_key in self.type_chart[attack_key]:
                         if defender_type == defense_key:
-                            return type_chart[attack_key][defense_key]
+                            return self.type_chart[attack_key][defense_key]
 
         attacker_type_0 = attacker.get_types()[0]
         defender_type_0 = defender.get_types()[0]
@@ -47,11 +49,22 @@ class Battle:
 
         if len(attacker.get_types()) > 1:  # Check if attacker pokemon have two types.
             attacker_type_1 = attacker.get_types()[1]
-            defender_type_1 = defender.get_types()[1]
-            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_1)
-            self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of two types pokemon.
+            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_0)
+
+            if len(defender.get_types()) > 1:  # Check if defender pokemon have two types.
+                defender_type_1 = defender.get_types()[1]
+                multiplier_3 = single_type_multiplier(attacker_type_0, defender_type_1)
+                multiplier_4 = single_type_multiplier(attacker_type_1, defender_type_1)
+
+                # Global multiplier of two, two types pokemon.
+                self.multiplier = multiplier_1 * multiplier_2 * multiplier_3 * multiplier_4
+
+            else:
+                self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
         else:
-            self.multiplier = multiplier_1  # Global multiplier of a single type pokemon.
+            self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
+
+        return self.multiplier
 
     def inflict_damage(self, attacker, defender):
         """
@@ -69,20 +82,20 @@ class Battle:
         else:
             damage_efficiency = 1
 
-        damage = attack * self.multiplier * damage_efficiency
+        damage = attack * self.calculate_multiplier(attacker, defender) * damage_efficiency
 
         if damage_efficiency == 1:
-            self.message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
+            damage_message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
  
         elif damage_efficiency == 1.5:
-            self.message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
+            damage_message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
 
         elif damage_efficiency == 0:
-            self.message = f"{attacker.get_name()} missed its attacks!"
+            damage_message = f"{attacker.get_name()} missed its attacks!"
             
 
         defender.set_hp(defender.get_hp() - damage)
-        self.message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
+        return damage, damage_message
 
     def check_victory(self):
         """
@@ -92,10 +105,10 @@ class Battle:
         result = "ongoing"
         if self.player_pokemon.get_hp() > 0 >= self.wild_pokemon.get_hp():
             result = "victory"
-            self.message = f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}"
+            self.winner_message = f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}"
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
-            self.message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
+            self.winner_message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
         else:
             result = "ongoing"
         return result
@@ -106,9 +119,12 @@ class Battle:
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
-            # ajouter condition 'si le pokemon (name) n'est pas dans pokedex
+            self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            pokedex.add_pokemon(self.player_pokemon)
+
+            # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
-            pokedex.add_pokemon(self.wild_pokemon) # Add chosen pokemon in pokedex
+            pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
             end = True
         
@@ -125,9 +141,11 @@ class Battle:
         :return: The victory.
         """
         victory = None
-        self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+        player_damage, self.damage_player_message = self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+        
         if self.check_victory() == "ongoing":
-            self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+            enemy_damage, self.damage_enemy_message = self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+            
             if self.check_victory() == "defeat":
                 victory = self.wild_pokemon.get_name()
         else:
