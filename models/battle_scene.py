@@ -58,9 +58,7 @@ class BattleScene(GameState):
         self.winner_message = self.battle.winner_message
         self.message_time = pygame.time.get_ticks() + 2200
         
-        # if self.battle.end_battle():
-        #     self.winner_message = self.battle.winner_message
-        #     self.message_time = pygame.time.get_ticks() + 2200
+        self.battle.end_battle()
 
 
     def change_pokemon(self):
@@ -104,10 +102,6 @@ class BattleScene(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
 
-        # print(self.wild_pokemon.get_name())
-        # self.wild_pokemon = self.generate_wild_pokemon()
-        # print(self.wild_pokemon.get_name())
-
         self.player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450)  # Draw sprites
         self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
         self.player_card.draw_battle_card()
@@ -125,7 +119,6 @@ class BattleScene(GameState):
                 self.draw_text(self.winner_message, 280, 124, "red")
                 
         if self.winner_message and pygame.time.get_ticks() > self.message_time:
-            # self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
             self.app.state_manager.set_state("battle menu")
         
             
