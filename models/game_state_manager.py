@@ -15,7 +15,7 @@ class GameStateManager:
         
         self.set_state("welcome")
         
-    def set_state(self, state_name):
+    def set_state(self, state_name, player_pokemon=None, wild_pokemon=None, battle=None):
         """Change d'état en créant l'instance seulement si elle n'existe pas"""
         # if state_name not in self.states:
         if state_name == "welcome":
