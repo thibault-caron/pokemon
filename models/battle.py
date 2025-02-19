@@ -63,7 +63,9 @@ class Battle:
                 self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
         else:
             self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
-
+        
+        if self.multiplier < 0.5:
+            self.multiplier = 0.5
         return self.multiplier
 
     def inflict_damage(self, attacker, defender):
