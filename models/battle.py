@@ -63,7 +63,9 @@ class Battle:
                 self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
         else:
             self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
-
+        
+        if self.multiplier < 0.5:
+            self.multiplier = 0.5
         return self.multiplier
 
     def inflict_damage(self, attacker, defender):
@@ -122,6 +124,7 @@ class Battle:
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
             self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            self.player_pokemon.evolve()
             pokedex.add_pokemon(self.player_pokemon)
 
             # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
