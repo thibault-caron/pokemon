@@ -2,21 +2,23 @@ import os
 
 from config import *
 from random import random, choice
-from .game_state import GameState
+from .battle_menu import BattleMenu
 from .button import Button
 from .pokemon import Pokemon, PlayerPokemon
 from .battle import Battle
 from .display_pokemon import DisplayPokemon
+from .game_state import GameState
 from .pokemon_dictionary import all_pokemons
 from .pokedex import pokedex
 
+
 class BattleScene(GameState):
-    def __init__(self, app):
+    def __init__(self, app, player_pokemon, wild_pokemon, battle):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="battle_background.webp")
         self.caption = "Battle"
-        self.player_pokemon = self.select_first_pokemon()
-        self.wild_pokemon = self.generate_wild_pokemon()
-        self.battle = Battle(self.player_pokemon, self.wild_pokemon)
+        self.player_pokemon = player_pokemon
+        self.wild_pokemon = wild_pokemon
+        self.battle = battle
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 20)
 
@@ -44,18 +46,6 @@ class BattleScene(GameState):
     def get_pokemon_back_sprite(self):
         """"""
         return self.wild_pokemon.get_back_sprite()
-
-    def select_first_pokemon(self):
-        """"""
-        player_pokemon_list = pokedex.list_pokemons()
-        first_pokemon = player_pokemon_list[0]
-        return PlayerPokemon(first_pokemon)
-
-    def generate_wild_pokemon(self):
-        """"""
-        used_pokemons = all_pokemons.get_pokemon_by_state("used")
-        return Pokemon(choice(used_pokemons), 1)
-
 
     def attack(self):
         """ Attack the enemy. """
@@ -114,7 +104,9 @@ class BattleScene(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
 
+        # print(self.wild_pokemon.get_name())
         # self.wild_pokemon = self.generate_wild_pokemon()
+        # print(self.wild_pokemon.get_name())
 
         self.player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450)  # Draw sprites
         self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
