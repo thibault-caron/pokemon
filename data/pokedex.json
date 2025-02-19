@@ -3,18 +3,36 @@
         "name": "Pikachu",
         "id": 25,
         "level": 5,
-        "xp": 0,
+        "xp": 1,
         "types": [
             "electric"
         ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 31,
+        "max_hp": 116,
+        "hp": 116,
+        "attack": 34,
         "evolution": [
             20,
             "Raichu"
         ],
         "front_sprite": "./assets/sprites/pikachu_front.png",
         "back_sprite": "./assets/sprites/pikachu_back.png"
+    },
+    "Charmander": {
+        "name": "Charmander",
+        "id": 4,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "fire"
+        ],
+        "max_hp": 95,
+        "hp": 95,
+        "attack": 27,
+        "evolution": [
+            15,
+            "Charmeleon"
+        ],
+        "front_sprite": "./assets/sprites/charmander_front.png",
+        "back_sprite": "./assets/sprites/charmander_back.png"
     }
 }

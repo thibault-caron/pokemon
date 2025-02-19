@@ -84,17 +84,20 @@ class Battle:
         damage = attack * self.calculate_multiplier(attacker, defender) * damage_efficiency
 
         if damage_efficiency == 1:
-            self.message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
+            self.message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
+            print(f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}")
  
         elif damage_efficiency == 1.5:
             self.message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
+            print(f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}")
 
         elif damage_efficiency == 0:
             self.message = f"{attacker.get_name()} missed its attacks!"
+            print(f"{attacker.get_name()} missed its attacks!")
             
 
         defender.set_hp(defender.get_hp() - damage)
-        self.message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
+        # self.message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
 
     def check_victory(self):
         """
@@ -105,9 +108,11 @@ class Battle:
         if self.player_pokemon.get_hp() > 0 >= self.wild_pokemon.get_hp():
             result = "victory"
             self.message = f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}"
+            print(f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}")
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
             self.message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
+            print(f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}")
         else:
             result = "ongoing"
         return result
@@ -118,8 +123,10 @@ class Battle:
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
-            # ajouter condition 'si le pokemon (name) n'est pas dans pokedex
             self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            pokedex.add_pokemon(self.player_pokemon)
+
+            # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
             pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
