@@ -9,7 +9,7 @@ from .pokemon_dictionary import all_pokemons
 class AddWildPokemon(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="Pokemon_bg1.webp")
-        self.caption = "Welcome Menu"
+        self.caption = "Add wild pokemon"
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         

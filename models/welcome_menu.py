@@ -31,12 +31,12 @@ class WelcomeMenu(GameState):
             self.app.state_manager.set_state("battle menu")
         
     def add_wild_pokemon(self):
-        """Go to pokedex display scene."""
+        """Go to wild pokemon display scene."""
         self.app.state_manager.set_state("add wild pokemon")
 
     def display_pokedex(self):
         """Go to pokedex display scene"""
-        print("Show my pokedex")
+        self.app.state_manager.set_state("show pokedex")
 
     def draw(self):
         """Draw welcome menu scene"""

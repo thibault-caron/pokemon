@@ -983,7 +983,7 @@
         "evolution": [],
         "front_sprite": "assets/sprites/marowak_front.png",
         "back_sprite": "assets/sprites/marowak_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Koffing": {
         "name": "Koffing",

@@ -5,6 +5,7 @@ from .battle_menu import BattleMenu
 from .battle_scene import BattleScene
 from .choice_menu import ChoiceMenu
 from .add_wild_pokemon import AddWildPokemon
+from .pokedex_scene import PokedexScene
 
 class GameStateManager:
     def __init__(self, app):
@@ -22,6 +23,8 @@ class GameStateManager:
             self.states[state_name] = WelcomeMenu(self.app)
         elif state_name == "choice":
             self.states[state_name] = ChoiceMenu(self.app)
+        elif state_name == "show pokedex":
+            self.states[state_name] = PokedexScene(self.app)
         elif state_name == "battle menu":
             self.states[state_name] = BattleMenu(self.app)
         elif state_name == "add wild pokemon":
