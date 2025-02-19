@@ -30,8 +30,8 @@ class BattleMenu(GameState):
         self.app.state_manager.set_state("battle", player_pokemon, wild_pokemon, battle)
 
     def view_pokedex(self):
-        """Show pokedex."""
-        print("Settings clicked!")
+        """Go to pokedex display scene"""
+        self.app.state_manager.set_state("show pokedex")
 
     def exit_game(self):
         """ Exit the game."""
