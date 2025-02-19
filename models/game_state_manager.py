@@ -27,7 +27,7 @@ class GameStateManager:
         elif state_name == "add wild pokemon":
             self.states[state_name] = AddWildPokemon(self.app)
         elif state_name == "battle":
-            self.states[state_name] = BattleScene(self.app)
+            self.states[state_name] = BattleScene(self.app, player_pokemon, wild_pokemon, battle)
 
         self.current_state = self.states[state_name]
 
