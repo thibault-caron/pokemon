@@ -30,14 +30,15 @@ class BattleScene(GameState):
         self.enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
         self.player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
         
-        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 360, 105, app=self.app)
+        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.15, HEIGHT * 0.25, 400, 105, app=self.app)
         self.player_card= DisplayPokemon(self.player_pokemon, WIDTH * 0.425, 500, 400, 105, app=self.app)
         
-        self.damage_message = ""
-        self.defender_message = ""
+        self.battle.damage_player_message= ""
+        self.battle.damage_enemy_message = ""
+        self.battle.winner_message = ""
         self.winner_message = ""
         
-        self.message_time = self.battle.message_time
+        self.message_time = 0
 
     def get_pokemon_front_sprite(self):
         """"""
@@ -52,16 +53,15 @@ class BattleScene(GameState):
         self.battle.turn()
         
         # show messages
-        self.damage_message = self.battle.damage_message
-        self.defender_message = self.battle.defender_message
+        self.damage_player_message = self.battle.damage_player_message
+        self.damage_enemy_message = self.battle.damage_enemy_message
         self.winner_message = self.battle.winner_message
         self.message_time = pygame.time.get_ticks() + 2200
         
-        if self.battle.end_battle():
-            # print(self.wild_pokemon.get_name())
-            # self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
-            # print(self.wild_pokemon.get_name())
-            self.app.state_manager.set_state("battle menu")
+        # if self.battle.end_battle():
+        #     self.winner_message = self.battle.winner_message
+        #     self.message_time = pygame.time.get_ticks() + 2200
+
 
     def change_pokemon(self):
         """ Change pokemon in the battle. """
@@ -117,16 +117,15 @@ class BattleScene(GameState):
             button.process()  # Show buttons
             
         if pygame.time.get_ticks() < self.message_time:
-            if self.damage_message:
-                self.draw_text(self.damage_message, 50, 20)
-            if self.defender_message:
-                self.draw_text(self.defender_message, 50, 100)
+            if self.damage_player_message:
+                self.draw_text(self.damage_player_message, 50, 20)
+            if self.damage_enemy_message:
+                self.draw_text(self.damage_enemy_message, 50, 90)
             if self.winner_message:
-                self.draw_text(self.winner_message, 50, 180)
-            
-        else:
-            self.battle.damage_message = ""
-            self.battle.defender_message = ""
-            self.battle.winner_message = ""
-            self.battle.message_time = 0
+                self.draw_text(self.winner_message, 280, 124, "red")
+                
+        if self.winner_message and pygame.time.get_ticks() > self.message_time:
+            # self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
+            self.app.state_manager.set_state("battle menu")
+        
             
