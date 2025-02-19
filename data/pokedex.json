@@ -1,26 +1,8 @@
 {
-    "Charmander": {
-        "name": "Charmander",
-        "id": 4,
-        "level": 5,
-        "xp": 1,
-        "types": [
-            "fire"
-        ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 30,
-        "evolution": [
-            15,
-            "Charmeleon"
-        ],
-        "front_sprite": "./assets/sprites/charmander_front.png",
-        "back_sprite": "./assets/sprites/charmander_back.png"
-    },
     "Charmeleon": {
         "name": "Charmeleon",
-        "id": 5,
-        "level": 1,
+        "id": 4,
+        "level": 15,
         "xp": 0,
         "types": [
             "fire"
@@ -32,7 +14,25 @@
             30,
             "Charizard"
         ],
-        "front_sprite": "./assets/sprites/charmeleon_front.png",
-        "back_sprite": "./assets/sprites/charmeleon_back.png"
+        "front_sprite": "assets/sprites/charmeleon_front.png",
+        "back_sprite": "assets/sprites/charmeleon_back.png"
+    },
+    "Voltorb": {
+        "name": "Voltorb",
+        "id": 100,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "electric"
+        ],
+        "max_hp": 98,
+        "hp": 98,
+        "attack": 18,
+        "evolution": [
+            20,
+            "Electrode"
+        ],
+        "front_sprite": "./assets/sprites/voltorb_front.png",
+        "back_sprite": "./assets/sprites/voltorb_back.png"
     }
 }
