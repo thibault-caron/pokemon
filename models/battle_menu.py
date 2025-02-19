@@ -40,8 +40,11 @@ class BattleMenu(GameState):
     def select_first_pokemon(self):
         """"""
         player_pokemon_list = pokedex.list_pokemons()
-        first_pokemon = player_pokemon_list[0]
-        return PlayerPokemon(first_pokemon)
+        if not player_pokemon_list:
+            exit()
+        else:
+            first_pokemon = player_pokemon_list[0]
+            return PlayerPokemon(first_pokemon)
 
     def generate_wild_pokemon(self):
         """"""
