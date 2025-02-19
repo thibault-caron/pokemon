@@ -58,7 +58,9 @@ class BattleScene(GameState):
         """ Attack the enemy. """
         self.battle.turn()
         if self.battle.end_battle():
-            self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
+            # print(self.wild_pokemon.get_name())
+            # self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
+            # print(self.wild_pokemon.get_name())
             self.app.state_manager.set_state("battle menu")
 
     def change_pokemon(self):
@@ -105,8 +107,10 @@ class BattleScene(GameState):
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
-        
-        self.player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450) # Draw sprites
+
+        # self.wild_pokemon = self.generate_wild_pokemon()
+
+        self.player_display.draw_battle_pokemon_back_sprite(200, HEIGHT - 450)  # Draw sprites
         self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
         self.player_card.draw_battle_card()
         self.enemy_card.draw_battle_card()
