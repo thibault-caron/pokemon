@@ -70,7 +70,7 @@ class Pokemon:
         self.__level = level
 
     def set_xp(self, xp):
-        self.__max_hp = xp
+        self.__xp = xp
 
     def set_types(self, types):
         self.__types = types
