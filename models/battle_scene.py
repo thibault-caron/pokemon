@@ -28,7 +28,7 @@ class BattleScene(GameState):
         self.enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
         self.player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
         
-        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 400, 105, app=self.app)
+        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 360, 105, app=self.app)
         self.player_card= DisplayPokemon(self.player_pokemon, WIDTH * 0.425, 500, 400, 105, app=self.app)
         
         self.damage_message = ""
@@ -65,7 +65,7 @@ class BattleScene(GameState):
         self.damage_message = self.battle.damage_message
         self.defender_message = self.battle.defender_message
         self.winner_message = self.battle.winner_message
-        self.message_time = pygame.time.get_ticks() + 3000
+        self.message_time = pygame.time.get_ticks() + 2200
         
         if self.battle.end_battle():
             self.wild_pokemon = self.generate_wild_pokemon()  # not function!!

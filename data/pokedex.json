@@ -7,9 +7,9 @@
         "types": [
             "electric"
         ],
-        "max_hp": 116,
-        "hp": 116,
-        "attack": 34,
+        "max_hp": 141,
+        "hp": 141,
+        "attack": 42,
         "evolution": [
             20,
             "Raichu"
@@ -34,5 +34,39 @@
         ],
         "front_sprite": "./assets/sprites/charmander_front.png",
         "back_sprite": "./assets/sprites/charmander_back.png"
+    },
+    "Blastoise": {
+        "name": "Blastoise",
+        "id": 9,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "water"
+        ],
+        "max_hp": 140,
+        "hp": 140,
+        "attack": 38,
+        "evolution": [],
+        "front_sprite": "./assets/sprites/blastoise_front.png",
+        "back_sprite": "./assets/sprites/blastoise_back.png"
+    },
+    "Houndour": {
+        "name": "Houndour",
+        "id": 228,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "dark",
+            "fire"
+        ],
+        "max_hp": 100,
+        "hp": 100,
+        "attack": 29,
+        "evolution": [
+            20,
+            "Houndoom"
+        ],
+        "front_sprite": "./assets/sprites/houndour_front.png",
+        "back_sprite": "./assets/sprites/houndour_back.png"
     }
 }
