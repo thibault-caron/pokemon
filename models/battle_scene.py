@@ -54,7 +54,7 @@ class BattleScene(GameState):
     def generate_wild_pokemon(self):
         """"""
         used_pokemons = all_pokemons.get_pokemon_by_state("used")
-        return Pokemon(choice(used_pokemons), 1)
+        return Pokemon(choice(used_pokemons), 50)
 
 
     def attack(self):

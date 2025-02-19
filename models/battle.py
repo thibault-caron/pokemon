@@ -110,12 +110,14 @@ class Battle:
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
             self.winner_message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
+            print(self.winner_message)
         else:
             result = "ongoing"
         return result
     
     def end_battle(self):
         end = False
+        print("debut end_battle")
 
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
@@ -130,6 +132,7 @@ class Battle:
             end = True
         
         elif self.check_victory() == "defeat":
+            print("You lost the battle!")
             pokedex.remove_pokemon(self.player_pokemon)
             # self.app.state_manager.set_state("battle menu")
             end = True

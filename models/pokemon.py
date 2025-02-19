@@ -62,6 +62,9 @@ class Pokemon:
     # Setters
     def set_name(self, name):
         self.__name = name
+
+    def set_id(self, id):
+        self.__id = id
     
     def set_level(self, level):
         self.__level = level
@@ -74,6 +77,9 @@ class Pokemon:
 
     def set_hp(self, hp):
         self.__hp = hp
+
+    def set_max_hp(self, max_hp):
+        self.__max_hp = max_hp
     
     def set_attack(self, attack):
         self.__attack = attack
@@ -183,17 +189,30 @@ class PlayerPokemon(Pokemon):
     def __init__(self, name):
         super().__init__(name)
 
-        self.__id = pokedex.data_pokedex[self.get_name()]["id"]
-        self.__level = pokedex.data_pokedex[self.get_name()]["level"]
-        self.__xp = pokedex.data_pokedex[self.get_name()]["xp"]
-        self.__wild = False
-        self.__types = pokedex.data_pokedex[self.get_name()]["types"]
-        self.__max_hp = pokedex.data_pokedex[self.get_name()]["max_hp"]
-        self.__hp = pokedex.data_pokedex[self.get_name()]["hp"]
-        self.__attack = pokedex.data_pokedex[self.get_name()]["attack"]
-        self.__evolution = pokedex.data_pokedex[self.get_name()]["evolution"]
-        self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front_sprite"]
-        self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back_sprite"]
+        # self.__id = pokedex.data_pokedex[self.get_name()]["id"]
+        # self.__level = pokedex.data_pokedex[self.get_name()]["level"]
+        # self.__xp = pokedex.data_pokedex[self.get_name()]["xp"]
+        # self.__wild = False
+        # self.__types = pokedex.data_pokedex[self.get_name()]["types"]
+        # self.__max_hp = pokedex.data_pokedex[self.get_name()]["max_hp"]
+        # self.__hp = pokedex.data_pokedex[self.get_name()]["hp"]
+        # self.__attack = pokedex.data_pokedex[self.get_name()]["attack"]
+        # self.__evolution = pokedex.data_pokedex[self.get_name()]["evolution"]
+        # self.__front_sprite_path = pokedex.data_pokedex[self.get_name()]["front_sprite"]
+        # self.__back_sprite_path = pokedex.data_pokedex[self.get_name()]["back_sprite"]
+
+        self.set_id(pokedex.data_pokedex[self.get_name()]["id"])
+        self.set_level(pokedex.data_pokedex[self.get_name()]["level"])
+        self.set_xp(pokedex.data_pokedex[self.get_name()]["xp"])
+        self.set_wild(False)
+        self.set_types(pokedex.data_pokedex[self.get_name()]["types"])
+        self.set_max_hp(pokedex.data_pokedex[self.get_name()]["max_hp"])
+        self.set_hp(pokedex.data_pokedex[self.get_name()]["hp"])
+        self.set_attack(pokedex.data_pokedex[self.get_name()]["attack"])
+        self.set_evolution(pokedex.data_pokedex[self.get_name()]["evolution"])
+        self.set_front_sprite(pokedex.data_pokedex[self.get_name()]["front_sprite"])
+        self.set_back_sprite(pokedex.data_pokedex[self.get_name()]["back_sprite"])
+
 
     def calculate_attack(self):
         """

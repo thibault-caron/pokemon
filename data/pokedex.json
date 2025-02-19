@@ -1,21 +1,34 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
-        "level": 5,
-        "xp": 1,
+    "Gengar": {
+        "name": "Gengar",
+        "id": 94,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "ghost",
+            "poison"
+        ],
+        "max_hp": 130,
+        "hp": 130,
+        "attack": 32,
+        "evolution": [],
+        "front_sprite": "./assets/sprites/gengar_front.png",
+        "back_sprite": "./assets/sprites/gengar_back.png"
+    },
+    "Electrode": {
+        "name": "Electrode",
+        "id": 101,
+        "level": 1,
+        "xp": 0,
         "types": [
             "electric"
         ],
-        "max_hp": 141,
-        "hp": 141,
-        "attack": 42,
-        "evolution": [
-            20,
-            "Raichu"
-        ],
-        "front_sprite": "./assets/sprites/pikachu_front.png",
-        "back_sprite": "./assets/sprites/pikachu_back.png"
+        "max_hp": 125,
+        "hp": 125,
+        "attack": 28,
+        "evolution": [],
+        "front_sprite": "./assets/sprites/electrode_front.png",
+        "back_sprite": "./assets/sprites/electrode_back.png"
     },
     "Charmander": {
         "name": "Charmander",
@@ -35,38 +48,127 @@
         "front_sprite": "./assets/sprites/charmander_front.png",
         "back_sprite": "./assets/sprites/charmander_back.png"
     },
-    "Blastoise": {
-        "name": "Blastoise",
-        "id": 9,
+    "Squirtle": {
+        "name": "Squirtle",
+        "id": 7,
         "level": 1,
         "xp": 0,
         "types": [
             "water"
         ],
+        "max_hp": 100,
+        "hp": 100,
+        "attack": 25,
+        "evolution": [
+            15,
+            "Wartortle"
+        ],
+        "front_sprite": "./assets/sprites/squirtle_front.png",
+        "back_sprite": "./assets/sprites/squirtle_back.png"
+    },
+    "Graveler": {
+        "name": "Graveler",
+        "id": 75,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "rock",
+            "ground"
+        ],
+        "max_hp": 125,
+        "hp": 125,
+        "attack": 40,
+        "evolution": [
+            30,
+            "Golem"
+        ],
+        "front_sprite": "./assets/sprites/graveler_front.png",
+        "back_sprite": "./assets/sprites/graveler_back.png"
+    },
+    "Magneton": {
+        "name": "Magneton",
+        "id": 82,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "electric",
+            "steel"
+        ],
+        "max_hp": 120,
+        "hp": 120,
+        "attack": 29,
+        "evolution": [],
+        "front_sprite": "./assets/sprites/magneton_front.png",
+        "back_sprite": "./assets/sprites/magneton_back.png"
+    },
+    "Dragonair": {
+        "name": "Dragonair",
+        "id": 148,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "dragon"
+        ],
+        "max_hp": 120,
+        "hp": 120,
+        "attack": 38,
+        "evolution": [
+            30,
+            "Dragonite"
+        ],
+        "front_sprite": "./assets/sprites/dragonair_front.png",
+        "back_sprite": "./assets/sprites/dragonair_back.png"
+    },
+    "Rattata": {
+        "name": "Rattata",
+        "id": 19,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "normal"
+        ],
+        "max_hp": 90,
+        "hp": 90,
+        "attack": 28,
+        "evolution": [
+            20,
+            "Raticate"
+        ],
+        "front_sprite": "./assets/sprites/rattata_front.png",
+        "back_sprite": "./assets/sprites/rattata_back.png"
+    },
+    "Abra": {
+        "name": "Abra",
+        "id": 63,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "psychic"
+        ],
+        "max_hp": 90,
+        "hp": 90,
+        "attack": 18,
+        "evolution": [
+            15,
+            "Kadabra"
+        ],
+        "front_sprite": "./assets/sprites/abra_front.png",
+        "back_sprite": "./assets/sprites/abra_back.png"
+    },
+    "Charizard": {
+        "name": "Charizard",
+        "id": 6,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "fire",
+            "flying"
+        ],
         "max_hp": 140,
         "hp": 140,
         "attack": 38,
         "evolution": [],
-        "front_sprite": "./assets/sprites/blastoise_front.png",
-        "back_sprite": "./assets/sprites/blastoise_back.png"
-    },
-    "Houndour": {
-        "name": "Houndour",
-        "id": 228,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "dark",
-            "fire"
-        ],
-        "max_hp": 100,
-        "hp": 100,
-        "attack": 29,
-        "evolution": [
-            20,
-            "Houndoom"
-        ],
-        "front_sprite": "./assets/sprites/houndour_front.png",
-        "back_sprite": "./assets/sprites/houndour_back.png"
+        "front_sprite": "./assets/sprites/charizard_front.png",
+        "back_sprite": "./assets/sprites/charizard_back.png"
     }
 }
