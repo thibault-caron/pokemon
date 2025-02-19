@@ -10,6 +10,7 @@ class WelcomeMenu(GameState):
     def __init__(self, app):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokemon.jpg")
         self.caption = "Welcome Menu"
+        self.radius = 10
         
         self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'New game', self.new_game, screen=self.app.screen)
         self.button2 = Button(WIDTH/2 - 200, 290, 400, 50, 'Continue', self.continue_game, screen=self.app.screen)

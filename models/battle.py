@@ -4,7 +4,6 @@ from random import random
 from .pokemon import Pokemon
 from .database import Database
 from .pokedex import pokedex
-from .display_pokemon import DisplayPokemon
 
 class Battle:
     """ Class to manage the battle. """
@@ -19,8 +18,8 @@ class Battle:
         self.multiplier = 1.0
         self.type_chart = Database().read_json()
         
-        self.damage_message = ""
-        self.defender_message = ""
+        self.damage_player_message = ""
+        self.damage_enemy_message = ""
         self.winner_message = ""
         self.message_time = 0
 
@@ -86,17 +85,17 @@ class Battle:
         damage = attack * self.calculate_multiplier(attacker, defender) * damage_efficiency
 
         if damage_efficiency == 1:
-            self.damage_message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
+            damage_message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
  
         elif damage_efficiency == 1.5:
-            self.damage_message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
+            damage_message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
 
         elif damage_efficiency == 0:
-            self.damage_message = f"{attacker.get_name()} missed its attacks!"
+            damage_message = f"{attacker.get_name()} missed its attacks!"
             
 
         defender.set_hp(defender.get_hp() - damage)
-        self.defender_message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
+        return damage, damage_message
 
     def check_victory(self):
         """
@@ -145,9 +144,11 @@ class Battle:
         :return: The victory.
         """
         victory = None
-        self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+        player_damage, self.damage_player_message = self.inflict_damage(self.player_pokemon, self.wild_pokemon)  # Player pokemon attack
+        
         if self.check_victory() == "ongoing":
-            self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+            enemy_damage, self.damage_enemy_message = self.inflict_damage(self.wild_pokemon, self.player_pokemon)  # Wild pokemon attack
+            
             if self.check_victory() == "defeat":
                 victory = self.wild_pokemon.get_name()
         else:
