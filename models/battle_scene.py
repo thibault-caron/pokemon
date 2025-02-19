@@ -18,7 +18,7 @@ class BattleScene(GameState):
         self.wild_pokemon = self.generate_wild_pokemon()
         self.battle = Battle(self.player_pokemon, self.wild_pokemon)
         
-        self.font = pygame.font.Font(None, 50)
+        self.font = pygame.font.Font("assets/pokemon_classic.ttf", 20)
 
         self.button1 = Button(50, 650, 200, 50, "Attack", self.attack, screen=self.app.screen)
         self.button2 = Button(450, 650, 300, 50, "Change Pokemon", self.change_pokemon, screen=self.app.screen)
@@ -28,10 +28,13 @@ class BattleScene(GameState):
         self.enemy_display = DisplayPokemon(self.wild_pokemon, 100, 100, WIDTH, HEIGHT, app=self.app)
         self.player_display = DisplayPokemon(self.player_pokemon, 700, 100, WIDTH, HEIGHT, app=self.app)
         
-        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 400, 105, app=self.app)
+        self.enemy_card = DisplayPokemon(self.wild_pokemon, WIDTH * 0.25, HEIGHT * 0.25, 360, 105, app=self.app)
         self.player_card= DisplayPokemon(self.player_pokemon, WIDTH * 0.425, 500, 400, 105, app=self.app)
         
-        self.message = self.battle.message
+        self.damage_message = ""
+        self.defender_message = ""
+        self.winner_message = ""
+        
         self.message_time = self.battle.message_time
 
     def get_pokemon_front_sprite(self):
@@ -57,6 +60,13 @@ class BattleScene(GameState):
     def attack(self):
         """ Attack the enemy. """
         self.battle.turn()
+        
+        # show messages
+        self.damage_message = self.battle.damage_message
+        self.defender_message = self.battle.defender_message
+        self.winner_message = self.battle.winner_message
+        self.message_time = pygame.time.get_ticks() + 2200
+        
         if self.battle.end_battle():
             # print(self.wild_pokemon.get_name())
             # self.wild_pokemon = self.generate_wild_pokemon()  # not function!!
@@ -78,9 +88,9 @@ class BattleScene(GameState):
 
 
 
-    def draw_text(self, text, x, y):
+    def draw_text(self, text, x, y, color = WHITE):
         """ Allow to draw text """
-        text_surface = self.font.render(str(text), True, BLACK)
+        text_surface = self.font.render(str(text), True, color)
         self.app.screen.blit(text_surface, (x, y))
 
     def draw_image(self, image_path, x, y):
@@ -100,10 +110,6 @@ class BattleScene(GameState):
         """"""
         self.draw_image(self.get_pokemon_back_sprite(), x, y)
 
-    def display_text(self):
-        self.battle.message
-        self.battle.message_time = pygame.time.get_ticks() + 5000
-
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
@@ -114,10 +120,21 @@ class BattleScene(GameState):
         self.enemy_display.draw_battle_pokemon_front_sprite(WIDTH - 580, 120)
         self.player_card.draw_battle_card()
         self.enemy_card.draw_battle_card()
-        self.display_text()
 
         for button in self.buttons:
             button.process()  # Show buttons
             
-        if pygame.time.get_ticks() < self.battle.message_time:
-            self.draw_text(self.battle.message, 50, 50)
+        if pygame.time.get_ticks() < self.message_time:
+            if self.damage_message:
+                self.draw_text(self.damage_message, 50, 20)
+            if self.defender_message:
+                self.draw_text(self.defender_message, 50, 100)
+            if self.winner_message:
+                self.draw_text(self.winner_message, 50, 180)
+            
+        else:
+            self.battle.damage_message = ""
+            self.battle.defender_message = ""
+            self.battle.winner_message = ""
+            self.battle.message_time = 0
+            
