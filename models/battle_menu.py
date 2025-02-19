@@ -1,6 +1,6 @@
 import os
 
-from random import choice
+from random import choice, randint
 
 from config import *
 from .game_state import GameState
@@ -24,7 +24,7 @@ class BattleMenu(GameState):
     def start_battle(self):
         """Start game."""
         player_pokemon = self.select_first_pokemon()
-        wild_pokemon = self.generate_wild_pokemon()
+        wild_pokemon = self.generate_wild_pokemon(player_pokemon)
         print(wild_pokemon.get_name())
         battle = Battle(player_pokemon, wild_pokemon)
         self.app.state_manager.set_state("battle", player_pokemon, wild_pokemon, battle)
@@ -46,10 +46,39 @@ class BattleMenu(GameState):
             first_pokemon = player_pokemon_list[0]
             return PlayerPokemon(first_pokemon)
 
-    def generate_wild_pokemon(self):
+    def generate_wild_pokemon(self, player_pokemon):
         """"""
-        used_pokemons = all_pokemons.get_pokemon_by_state("used")
-        return Pokemon(choice(used_pokemons), 1)
+        def generate_wild_pokemon_level(player_pokemon_level):
+            """"""
+            min_level = player_pokemon_level - 3
+            if min_level < 1:
+                min_level = 1
+
+            max_level = player_pokemon_level + 3
+            if max_level > 50:
+                max_level = 50
+
+            wild_pokemon_level = randint(min_level, max_level)
+            return wild_pokemon_level
+
+        def generate_wild_pokemon_name(player_pokemon_level):
+            """"""
+            sufficient_level_pokemons = all_pokemons.get_pokemon_by_min_level(player_pokemon_level)
+
+            used_pokemons = all_pokemons.get_pokemon_by_state("used")
+
+            wild_pokemons_list = []
+            for used_name in used_pokemons:
+                for sufficient_level_name in sufficient_level_pokemons:
+                    if used_name == sufficient_level_name:
+                        wild_pokemons_list.append(used_name)
+
+            wild_pokemon_name = choice(wild_pokemons_list)
+            return wild_pokemon_name
+
+        player_pokemon_level = player_pokemon.get_level()
+        return Pokemon(generate_wild_pokemon_name(player_pokemon_level),
+                       generate_wild_pokemon_level(player_pokemon_level))
 
     def draw(self):
         """Draw welcome menu scene"""
