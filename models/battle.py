@@ -19,7 +19,9 @@ class Battle:
         self.multiplier = 1.0
         self.type_chart = Database().read_json()
         
-        self.message = ""
+        self.damage_message = ""
+        self.defender_message = ""
+        self.winner_message = ""
         self.message_time = 0
 
     def calculate_multiplier(self, attacker, defender):
@@ -84,17 +86,17 @@ class Battle:
         damage = attack * self.calculate_multiplier(attacker, defender) * damage_efficiency
 
         if damage_efficiency == 1:
-            self.message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
+            self.damage_message = f"{attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}" 
  
         elif damage_efficiency == 1.5:
-            self.message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
+            self.damage_message = f"CRITICAL STRIKE! {attacker.get_name()} attacks {defender.get_name()} for {damage} damage\nMultiplier: {self.multiplier}"
 
         elif damage_efficiency == 0:
-            self.message = f"{attacker.get_name()} missed its attacks!"
+            self.damage_message = f"{attacker.get_name()} missed its attacks!"
             
 
         defender.set_hp(defender.get_hp() - damage)
-        self.message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
+        self.defender_message = f"{defender.get_name()} takes {damage} damage after defense. Remaining HP: {defender.get_hp()}"
 
     def check_victory(self):
         """
@@ -104,10 +106,10 @@ class Battle:
         result = "ongoing"
         if self.player_pokemon.get_hp() > 0 >= self.wild_pokemon.get_hp():
             result = "victory"
-            self.message = f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}"
+            self.winner_message = f"Winner: {self.player_pokemon.get_name()}, Loser: {self.wild_pokemon.get_name()}"
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
-            self.message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
+            self.winner_message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
         else:
             result = "ongoing"
         return result
