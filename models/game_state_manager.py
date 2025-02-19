@@ -17,17 +17,16 @@ class GameStateManager:
         
     def set_state(self, state_name):
         """Change d'état en créant l'instance seulement si elle n'existe pas"""
-        if state_name not in self.states:
-            if state_name == "welcome":
-                self.states[state_name] = WelcomeMenu(self.app)
-            elif state_name == "choice":
-                self.states[state_name] = ChoiceMenu(self.app)
-            elif state_name == "battle menu":
-                self.states[state_name] = BattleMenu(self.app)
-            elif state_name == "add wild pokemon":
-                self.states[state_name] = AddWildPokemon(self.app)
-            elif state_name == "battle":
-                self.states[state_name] = BattleScene(self.app)
+        if state_name == "welcome":
+            self.states[state_name] = WelcomeMenu(self.app)
+        elif state_name == "choice":
+            self.states[state_name] = ChoiceMenu(self.app)
+        elif state_name == "battle menu":
+            self.states[state_name] = BattleMenu(self.app)
+        elif state_name == "add wild pokemon":
+            self.states[state_name] = AddWildPokemon(self.app)
+        elif state_name == "battle":
+            self.states[state_name] = BattleScene(self.app)
 
         self.current_state = self.states[state_name]
 
