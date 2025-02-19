@@ -117,7 +117,8 @@ class Pokemon:
         if self.__evolution != []:
             if self.__level >= self.__evolution[0]:
                 print(f"{self.__name} is evolving!")
-
+                
+                pokedex.remove_pokemon(self)
                 self.__name = self.__evolution[1]
 
                 # get evolution data from 'pokemon.json (all_pokemons.data_pokemons)'

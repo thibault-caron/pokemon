@@ -1,8 +1,8 @@
 {
-    "Magikarp": {
-        "name": "Magikarp",
-        "id": 129,
-        "level": 7,
+    "Charmeleon": {
+        "name": "Charmeleon",
+        "id": 4,
+        "level": 15,
         "xp": 0,
         "types": [
             "water"
@@ -14,7 +14,25 @@
             20,
             "Gyarados"
         ],
-        "front_sprite": "./assets/sprites/magikarp_front.png",
-        "back_sprite": "./assets/sprites/magikarp_back.png"
+        "front_sprite": "assets/sprites/charmeleon_front.png",
+        "back_sprite": "assets/sprites/charmeleon_back.png"
+    },
+    "Voltorb": {
+        "name": "Voltorb",
+        "id": 100,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "electric"
+        ],
+        "max_hp": 98,
+        "hp": 98,
+        "attack": 18,
+        "evolution": [
+            20,
+            "Electrode"
+        ],
+        "front_sprite": "./assets/sprites/voltorb_front.png",
+        "back_sprite": "./assets/sprites/voltorb_back.png"
     }
 }

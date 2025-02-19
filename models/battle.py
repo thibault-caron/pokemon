@@ -124,6 +124,7 @@ class Battle:
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
             self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            self.player_pokemon.evolve()
             pokedex.add_pokemon(self.player_pokemon)
 
             # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
