@@ -16,7 +16,7 @@ class BattleMenu(GameState):
         self.caption = "Battle Menu"
         
         self.button1 = Button(WIDTH/2 - 200, 200, 400, 50, 'Start Battle', self.start_battle, screen=self.app.screen)
-        self.button2 = Button(WIDTH/2 - 200, 335, 400, 50, 'Settings', self.view_pokedex, screen=self.app.screen)
+        self.button2 = Button(WIDTH/2 - 200, 335, 400, 50, 'Manage team', self.view_pokedex, screen=self.app.screen)
         self.button3 = Button(WIDTH/2 - 200, 470, 400, 50, 'Exit', self.exit_game, screen=self.app.screen)
         
         self.buttons = [self.button1, self.button2, self.button3]
