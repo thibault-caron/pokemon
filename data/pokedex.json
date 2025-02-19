@@ -2,14 +2,14 @@
     "Pikachu": {
         "name": "Pikachu",
         "id": 25,
-        "level": 1,
-        "xp": 0,
+        "level": 5,
+        "xp": 1,
         "types": [
             "electric"
         ],
-        "max_hp": 95,
-        "hp": 95,
-        "attack": 28,
+        "max_hp": 116,
+        "hp": 116,
+        "attack": 34,
         "evolution": [
             20,
             "Raichu"
@@ -17,77 +17,22 @@
         "front_sprite": "./assets/sprites/pikachu_front.png",
         "back_sprite": "./assets/sprites/pikachu_back.png"
     },
-    "Magikarp": {
-        "name": "Magikarp",
-        "id": 129,
+    "Charmander": {
+        "name": "Charmander",
+        "id": 4,
         "level": 1,
         "xp": 0,
         "types": [
-            "water"
+            "fire"
         ],
-        "max_hp": 80,
-        "hp": 80,
-        "attack": 15,
-        "evolution": [
-            20,
-            "Gyarados"
-        ],
-        "front_sprite": "./assets/sprites/magikarp_front.png",
-        "back_sprite": "./assets/sprites/magikarp_back.png"
-    },
-    "Squirtle": {
-        "name": "Squirtle",
-        "id": 7,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "water"
-        ],
-        "max_hp": 100,
-        "hp": 100,
-        "attack": 25,
+        "max_hp": 95,
+        "hp": 95,
+        "attack": 27,
         "evolution": [
             15,
-            "Wartortle"
+            "Charmeleon"
         ],
-        "front_sprite": "./assets/sprites/squirtle_front.png",
-        "back_sprite": "./assets/sprites/squirtle_back.png"
-    },
-    "Wartortle": {
-        "name": "Wartortle",
-        "id": 8,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "water"
-        ],
-        "max_hp": 120,
-        "hp": 120,
-        "attack": 30,
-        "evolution": [
-            30,
-            "Blastoise"
-        ],
-        "front_sprite": "./assets/sprites/wartortle_front.png",
-        "back_sprite": "./assets/sprites/wartortle_back.png"
-    },
-    "Magnemite": {
-        "name": "Magnemite",
-        "id": 81,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "electric",
-            "steel"
-        ],
-        "max_hp": 90,
-        "hp": 90,
-        "attack": 19,
-        "evolution": [
-            20,
-            "Magneton"
-        ],
-        "front_sprite": "./assets/sprites/magnemite_front.png",
-        "back_sprite": "./assets/sprites/magnemite_back.png"
+        "front_sprite": "./assets/sprites/charmander_front.png",
+        "back_sprite": "./assets/sprites/charmander_back.png"
     }
 }

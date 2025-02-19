@@ -120,8 +120,10 @@ class Battle:
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
-            # ajouter condition 'si le pokemon (name) n'est pas dans pokedex
             self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            pokedex.add_pokemon(self.player_pokemon)
+
+            # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
             pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
