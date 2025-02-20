@@ -3,6 +3,7 @@ import time
 from config import *
 from .game_state import GameState
 from .button import Button
+from .pokemon import Pokemon
 from .display_pokemon import DisplayPokemon
 from .pokemon_dictionary import all_pokemons
 
@@ -54,6 +55,18 @@ class AddWildPokemon(GameState):
         self.message = f"{name} has been released in the wild"
         self.message_time = pygame.time.get_ticks() + 5000
 
+    def display_wild_details(self, pokemon_name):
+        """"""
+        displayed_pokemon = Pokemon(pokemon_name)
+        pokemon_card = DisplayPokemon(displayed_pokemon, WIDTH-350, HEIGHT-250, 350, 110, app=self.app)
+        pokemon_card.draw_wild_card()
+
+    def process_hover(self, button):
+        mousePos = pygame.mouse.get_pos()
+        
+        if button.buttonRect.collidepoint(mousePos):
+            self.display_wild_details(button.text)
+
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
@@ -64,6 +77,7 @@ class AddWildPokemon(GameState):
         
         for button in self.buttons:
             button.process()
+            self.process_hover(button)
             
         if pygame.time.get_ticks() < self.message_time:
             self.draw_text(self.message, WIDTH*0.05 + 50, HEIGHT*0.9 - 20)

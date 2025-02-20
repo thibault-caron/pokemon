@@ -10,6 +10,7 @@ class Button:
         self.onePress = onePress
         self.alreadyPressed = False
         self.radius = radius
+        self.text = buttonText
 
         self.fillColors = {
             'normal': '#fc9803',

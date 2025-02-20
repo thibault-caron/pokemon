@@ -969,7 +969,7 @@
         ],
         "front_sprite": "assets/sprites/cubone_front.png",
         "back_sprite": "assets/sprites/cubone_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Marowak": {
         "name": "Marowak",
@@ -1000,7 +1000,7 @@
         ],
         "front_sprite": "assets/sprites/koffing_front.png",
         "back_sprite": "assets/sprites/koffing_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Weezing": {
         "name": "Weezing",

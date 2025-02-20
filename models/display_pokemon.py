@@ -115,7 +115,16 @@ class DisplayPokemon():
         self.draw_text("XP: ", self.x + 30, self.y + 60, BLACK)
         self.draw_pokemon_xp(self.x + 110, self.y + 60, BLACK) 
         self.draw_text("/", self.x + 125, self.y + 60, BLACK)
-        self.draw_pokemon_max_xp(self.x + 140, self.y + 60, BLACK)    
+        self.draw_pokemon_max_xp(self.x + 140, self.y + 60, BLACK)
+
+    def draw_wild_card(self):       
+        self.draw_card_background(self.x, self.y)
+        self.draw_pokemon_name(self.x + self.width*0.35, self.y + 5)
+        self.draw_pokemon_type(self.x + self.width*0.35, self.y + 30)
+        self.draw_text("HP: ", self.x + self.width*0.35, self.y + 55, BLACK)
+        self.draw_pokemon_hp(self.x + self.width*0.35 + 50, self.y + 55, BLACK)
+        self.draw_pokemon_attack(self.x + self.width*0.35, self.y + 80, BLACK)
+        self.draw_pokemon_front_sprite(self.x + 10, self.y + 15, BLACK)
         
     '''Action'''
     def battle(self):
