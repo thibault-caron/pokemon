@@ -45,25 +45,27 @@ class Battle:
 
         attacker_type_0 = attacker.get_types()[0]
         defender_type_0 = defender.get_types()[0]
-        multiplier_1 = single_type_multiplier(attacker_type_0, defender_type_0)
+        attack1_1 = single_type_multiplier(attacker_type_0, defender_type_0)
 
         if len(attacker.get_types()) > 1:  # Check if attacker pokemon have two types.
             attacker_type_1 = attacker.get_types()[1]
-            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_0)
+            attack2_1 = single_type_multiplier(attacker_type_1, defender_type_0)
 
             if len(defender.get_types()) > 1:  # Check if defender pokemon have two types.
                 defender_type_1 = defender.get_types()[1]
-                multiplier_3 = single_type_multiplier(attacker_type_0, defender_type_1)
-                multiplier_4 = single_type_multiplier(attacker_type_1, defender_type_1)
+                attack1_2 = single_type_multiplier(attacker_type_0, defender_type_1)
+                attack2_2 = single_type_multiplier(attacker_type_1, defender_type_1)
 
-                # Global multiplier of two, two types pokemon.
-                self.multiplier = multiplier_1 * multiplier_2 * multiplier_3 * multiplier_4
+                # for each type of the defender, the attacker attack with its best type
+                self.multiplier = max(attack1_1, attack2_1) * max(attack1_2, attack2_2)
 
             else:
-                self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
+                self.multiplier = max(attack1_1, attack2_1)  # the defender has 1 type, the attacker attack with its best type
         else:
-            self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
-
+            self.multiplier = attack1_1  # Global multiplier of single type pokemon.
+        
+        # if self.multiplier < 0.5:
+        #     self.multiplier = 0.5
         return self.multiplier
 
     def inflict_damage(self, attacker, defender):
@@ -93,8 +95,11 @@ class Battle:
         elif damage_efficiency == 0:
             damage_message = f"{attacker.get_name()} missed its attacks!"
             
+        new_hp = defender.get_hp() - damage
+        if new_hp < 0:
+            new_hp = 0
+        defender.set_hp(new_hp)
 
-        defender.set_hp(defender.get_hp() - damage)
         return damage, damage_message
 
     def check_victory(self):
@@ -109,26 +114,31 @@ class Battle:
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
             self.winner_message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
+            print(self.winner_message)
         else:
             result = "ongoing"
         return result
     
     def end_battle(self):
         end = False
+        print("debut end_battle")
 
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
             self.player_pokemon.level_up()
             self.player_pokemon.set_hp(self.player_pokemon.get_max_hp())
+            self.player_pokemon.evolve()
             pokedex.add_pokemon(self.player_pokemon)
 
             # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
+            print("Kaka Boudin")
             pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
             end = True
         
         elif self.check_victory() == "defeat":
+            print("You lost the battle!")
             pokedex.remove_pokemon(self.player_pokemon)
             # self.app.state_manager.set_state("battle menu")
             end = True

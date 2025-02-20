@@ -4,6 +4,7 @@ from config import *
 from .game_state import GameState
 from .button import Button
 from .pokemon_dictionary import all_pokemons
+from .pokedex import pokedex
 
 class WelcomeMenu(GameState):
     def __init__(self, app):
@@ -24,15 +25,18 @@ class WelcomeMenu(GameState):
         
     def continue_game(self):
         """Go to menu battle menu"""
-        self.app.state_manager.set_state("battle menu")
+        if pokedex.data_pokedex == {}:
+            self.app.state_manager.set_state("choice")
+        else:
+            self.app.state_manager.set_state("battle menu")
         
     def add_wild_pokemon(self):
-        """Go to pokedex display scene."""
+        """Go to wild pokemon display scene."""
         self.app.state_manager.set_state("add wild pokemon")
 
     def display_pokedex(self):
         """Go to pokedex display scene"""
-        print("Show my pokedex")
+        self.app.state_manager.set_state("show pokedex")
 
     def draw(self):
         """Draw welcome menu scene"""

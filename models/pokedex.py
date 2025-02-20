@@ -27,10 +27,18 @@ class Pokedex(Database):
         with open(self.path, "w") as file:
             json.dump(self.data_pokedex, file, indent=4)
 
-    def remove_pokemon(self, pokemon_name):
+    def remove_pokemon(self, pokemon):
         """remove a pokemon from var pokedex if it contains an item with its name"""
+        print("start remove")
+        pokemon_name = pokemon.get_name()
+        print(pokemon_name)
         if pokemon_name in self.data_pokedex:
+            print(f"Removing {pokemon_name} from pokedex")
             self.data_pokedex.pop(pokemon_name, None)
+
+        # Save in JSON file
+        with open(self.path, "w") as file:
+            json.dump(self.data_pokedex, file, indent=4)
 
     def list_pokemons(self):
         return list(self.data_pokedex.keys())

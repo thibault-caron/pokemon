@@ -3,7 +3,7 @@
         "name": "Bulbasaur",
         "id": 1,
         "level": 5,
-        "xp": 0,
+        "xp": 5,
         "types": [
             "grass",
             "poison"
@@ -17,5 +17,23 @@
         ],
         "front_sprite": "./assets/sprites/bulbasaur_front.png",
         "back_sprite": "./assets/sprites/bulbasaur_back.png"
+    },
+    "Magikarp": {
+        "name": "Magikarp",
+        "id": 129,
+        "level": 5,
+        "xp": 0,
+        "types": [
+            "water"
+        ],
+        "max_hp": 88,
+        "hp": 88,
+        "attack": 17,
+        "evolution": [
+            20,
+            "Gyarados"
+        ],
+        "front_sprite": "./assets/sprites/magikarp_front.png",
+        "back_sprite": "./assets/sprites/magikarp_back.png"
     }
 }
