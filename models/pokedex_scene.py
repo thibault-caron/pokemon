@@ -3,7 +3,7 @@ import os
 from config import *
 from .game_state import GameState
 from .button import Button
-from .display_pokemon import DisplayPokemon
+from .pokemon_details import PokedexDetails
 from .pokemon_dictionary import all_pokemons
 from .pokedex import pokedex
 
@@ -22,6 +22,10 @@ class PokedexScene(GameState):
         """ Allow to draw text """
         text_surface = self.font.render(str(text), True, BLACK)
         self.app.screen.blit(text_surface, (x, y))
+        
+    def display_pokemon(self):
+        """Go to pokedex display details"""
+        self.app.state_manager.set_state("show pokedex details")
 
 
     def draw_pokedex(self, x, y):
@@ -30,7 +34,7 @@ class PokedexScene(GameState):
         
         for pokemon in list_player_pokemon:
             # self.draw_text(pokemon, x, y)
-            button = Button(x, y, 180, 30, pokemon, lambda name=pokemon: self.display_details(name), screen=self.app.screen)
+            button = Button(x, y, 180, 30, pokemon, lambda: self.display_pokemon(), screen=self.app.screen)
             self.buttons.append(button)        
             
             y += 40
@@ -39,10 +43,12 @@ class PokedexScene(GameState):
                 y = HEIGHT*0.05
                 y += 30
                 x += 270
+        return pokemon
                 
     def display_details(self, name):
         """"""
         self.draw_pokedex(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with pokedex avaible pokemons names
+        return 
 
     def draw(self):
         """Draw welcome menu scene"""
