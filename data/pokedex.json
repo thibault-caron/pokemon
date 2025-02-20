@@ -1,58 +1,38 @@
 {
-    "Bulbasaur": {
-        "name": "Bulbasaur",
-        "id": 1,
+    "Pikachu": {
+        "name": "Pikachu",
+        "id": 25,
         "level": 5,
-        "xp": 12,
+        "xp": 3,
         "types": [
-            "grass",
-            "poison"
+            "electric"
         ],
-        "max_hp": 110,
-        "hp": 110,
-        "attack": 28,
-        "evolution": [
-            15,
-            "Ivysaur"
-        ],
-        "front_sprite": "./assets/sprites/bulbasaur_front.png",
-        "back_sprite": "./assets/sprites/bulbasaur_back.png"
-    },
-    "Onix": {
-        "name": "Onix",
-        "id": 95,
-        "level": 4,
-        "xp": 0,
-        "types": [
-            "rock",
-            "ground"
-        ],
-        "max_hp": 101,
-        "hp": 101,
-        "attack": 27,
+        "max_hp": 105,
+        "hp": 105,
+        "attack": 31,
         "evolution": [
             20,
-            "Steelix"
+            "Raichu"
         ],
-        "front_sprite": "./assets/sprites/onix_front.png",
-        "back_sprite": "./assets/sprites/onix_back.png"
+        "front_sprite": "./assets/sprites/pikachu_front.png",
+        "back_sprite": "./assets/sprites/pikachu_back.png"
     },
-    "Magikarp": {
-        "name": "Magikarp",
-        "id": 129,
-        "level": 8,
+    "Voltorb": {
+        "name": "Voltorb",
+        "id": 100,
+        "level": 3,
         "xp": 0,
         "types": [
-            "water"
+            "electric"
         ],
-        "max_hp": 94,
-        "hp": 94,
-        "attack": 18,
+        "max_hp": 104,
+        "hp": 104,
+        "attack": 19,
         "evolution": [
             20,
-            "Gyarados"
+            "Electrode"
         ],
-        "front_sprite": "./assets/sprites/magikarp_front.png",
-        "back_sprite": "./assets/sprites/magikarp_back.png"
+        "front_sprite": "./assets/sprites/voltorb_front.png",
+        "back_sprite": "./assets/sprites/voltorb_back.png"
     }
 }
