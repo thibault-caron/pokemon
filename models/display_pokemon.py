@@ -42,6 +42,15 @@ class DisplayPokemon():
             self.app.screen.blit(image, (x, y))
         except pygame.error as error:
             print(f"Error: there is no image at the path {image_path}: {error}")
+            
+    def draw_pokedex_image(self, image_path, x, y):
+        """ Allow to draw a sprite """
+        try:
+            image = pygame.image.load(image_path)
+            image = pygame.transform.scale(image, (250, 250))
+            self.app.screen.blit(image, (x, y))
+        except pygame.error as error:
+            print(f"Error: there is no image at the path {image_path}: {error}")
     
     def draw_pokemon_name(self, x, y, color = WHITE):
         self.draw_text(self.pokemon.get_name(), x, y, color)
@@ -80,6 +89,9 @@ class DisplayPokemon():
     def draw_battle_pokemon_back_sprite(self, x, y):
         self.draw_battle_image(self.pokemon.get_back_sprite(), x, y)
         
+    def draw_pokedex_front_sprite(self, x, y):
+        self.draw_pokedex_image(self.pokemon.get_front_sprite(), x, y)
+        
     def draw_card_background(self, x, y):
         image = pygame.image.load("assets/images/card.png")
         image = pygame.transform.scale(image, (self.width, self.height))
@@ -115,7 +127,16 @@ class DisplayPokemon():
         self.draw_text("XP: ", self.x + 30, self.y + 60, BLACK)
         self.draw_pokemon_xp(self.x + 110, self.y + 60, BLACK) 
         self.draw_text("/", self.x + 125, self.y + 60, BLACK)
-        self.draw_pokemon_max_xp(self.x + 140, self.y + 60, BLACK)    
+        self.draw_pokemon_max_xp(self.x + 140, self.y + 60, BLACK)
+        
+    def draw_pokedex_card(self):       
+        self.draw_card_background(self.x, self.y)
+        self.draw_pokemon_name(self.x + 10, self.y + 10)
+        self.draw_pokemon_type(self.x + self.width - 235, self.y + 10)
+        self.draw_pokemon_hp(self.x + 10, self.y + 35)
+        self.draw_pokemon_level(self.x + self.width - 235, self.y + 35)
+        self.draw_pokemon_attack(self.x + 10, self.y + 60)
+        self.draw_pokedex_front_sprite(self.x + 10, self.y + 100)    
         
     '''Action'''
     def battle(self):
