@@ -95,8 +95,11 @@ class Battle:
         elif damage_efficiency == 0:
             damage_message = f"{attacker.get_name()} missed its attacks!"
             
+        new_hp = defender.get_hp() - damage
+        if new_hp < 0:
+            new_hp = 0
+        defender.set_hp(new_hp)
 
-        defender.set_hp(defender.get_hp() - damage)
         return damage, damage_message
 
     def check_victory(self):
