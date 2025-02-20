@@ -68,10 +68,10 @@ class BattleScene(GameState):
     def run(self):
         """ Escape from the battle. """
         escape_attempt = random()
-        if escape_attempt > 0.10:
+        if escape_attempt > 0.49:
             self.app.state_manager.set_state("battle menu")
         else:
-            self.player_pokemon.set_hp(self.player_pokemon.get_hp()*0.80)
+            self.player_pokemon.set_hp(self.player_pokemon.get_hp() - (self.wild_pokemon.get_attack()*0.5))
             print("you failed to escape!")
 
 
