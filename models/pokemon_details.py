@@ -13,7 +13,7 @@ class PokemonDetails(GameState):
         self.caption = "Show pokedex"
         self.pokemon_name = pokemon_name
         
-        self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("battle menu"), screen=self.app.screen)
+        self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("show pokedex"), screen=self.app.screen)
 
     def draw(self):
         """Draw welcome menu scene"""

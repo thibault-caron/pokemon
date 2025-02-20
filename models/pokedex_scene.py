@@ -14,7 +14,7 @@ class PokedexScene(GameState):
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
-        self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("battle menu"), screen=self.app.screen)
+        self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("welcome"), screen=self.app.screen)
         self.buttons = []
         self.message = ""
         self.message_time = 0

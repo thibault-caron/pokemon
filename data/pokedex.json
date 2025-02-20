@@ -1,20 +1,39 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
         "level": 5,
+        "xp": 6,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 28,
+        "evolution": [
+            15,
+            "Ivysaur"
+        ],
+        "front_sprite": "./assets/sprites/bulbasaur_front.png",
+        "back_sprite": "./assets/sprites/bulbasaur_back.png"
+    },
+    "Abra": {
+        "name": "Abra",
+        "id": 63,
+        "level": 6,
         "xp": 0,
         "types": [
-            "electric"
+            "psychic"
         ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 31,
+        "max_hp": 101,
+        "hp": 101,
+        "attack": 20,
         "evolution": [
-            20,
-            "Raichu"
+            15,
+            "Kadabra"
         ],
-        "front_sprite": "./assets/sprites/pikachu_front.png",
-        "back_sprite": "./assets/sprites/pikachu_back.png"
+        "front_sprite": "./assets/sprites/abra_front.png",
+        "back_sprite": "./assets/sprites/abra_back.png"
     }
 }
