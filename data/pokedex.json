@@ -1,76 +1,20 @@
 {
-    "Magnemite": {
-        "name": "Magnemite",
-        "id": 81,
-        "level": 3,
-        "xp": 9,
-        "types": [
-            "electric",
-            "steel"
-        ],
-        "max_hp": 96,
-        "hp": 96,
-        "attack": 20,
-        "evolution": [
-            20,
-            "Magneton"
-        ],
-        "front_sprite": "./assets/sprites/magnemite_front.png",
-        "back_sprite": "./assets/sprites/magnemite_back.png"
-    },
-    "Houndour": {
-        "name": "Houndour",
-        "id": 228,
-        "level": 6,
+    "Pikachu": {
+        "name": "Pikachu",
+        "id": 25,
+        "level": 5,
         "xp": 0,
         "types": [
-            "dark",
-            "fire"
+            "electric"
         ],
-        "max_hp": 113,
-        "hp": 113,
-        "attack": 33,
+        "max_hp": 105,
+        "hp": 105,
+        "attack": 31,
         "evolution": [
             20,
-            "Houndoom"
+            "Raichu"
         ],
-        "front_sprite": "./assets/sprites/houndour_front.png",
-        "back_sprite": "./assets/sprites/houndour_back.png"
-    },
-    "Psyduck": {
-        "name": "Psyduck",
-        "id": 54,
-        "level": 3,
-        "xp": 0,
-        "types": [
-            "water"
-        ],
-        "max_hp": 108,
-        "hp": 108,
-        "attack": 29,
-        "evolution": [
-            20,
-            "Golduck"
-        ],
-        "front_sprite": "./assets/sprites/psyduck_front.png",
-        "back_sprite": "./assets/sprites/psyduck_back.png"
-    },
-    "Magikarp": {
-        "name": "Magikarp",
-        "id": 129,
-        "level": 1,
-        "xp": 0,
-        "types": [
-            "water"
-        ],
-        "max_hp": 80,
-        "hp": 80,
-        "attack": 15,
-        "evolution": [
-            20,
-            "Gyarados"
-        ],
-        "front_sprite": "./assets/sprites/magikarp_front.png",
-        "back_sprite": "./assets/sprites/magikarp_back.png"
+        "front_sprite": "./assets/sprites/pikachu_front.png",
+        "back_sprite": "./assets/sprites/pikachu_back.png"
     }
 }
