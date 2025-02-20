@@ -133,9 +133,12 @@ class DisplayPokemon():
         self.draw_card_background(self.x, self.y)
         self.draw_pokemon_name(self.x + 10, self.y + 10)
         self.draw_pokemon_type(self.x + self.width - 265, self.y + 10)
-        self.draw_pokemon_hp(self.x + 10, self.y + 55)
+        self.draw_text("HP: ", self.x + 10, self.y + 55)
+        self.draw_pokemon_hp(self.x + 60, self.y + 55)
         self.draw_pokemon_level(self.x + self.width - 265, self.y + 55)
         self.draw_pokemon_attack(self.x + 10, self.y + 100)
+        self.draw_text("XP: ", self.x + self.width - 265, self.y + 100)
+        self.draw_pokemon_xp(self.x + self.width - 215, self.y + 100) 
         self.draw_pokedex_front_sprite(self.x + 5, self.y + 110)    
         
     '''Action'''
