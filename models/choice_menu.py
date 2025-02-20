@@ -30,4 +30,4 @@ class ChoiceMenu(GameState):
             for pokemon_card in self.pokemon_cards:
                 pokemon_card.draw_card()
         else:
-            print("Erreur: `self.app` ne contient pas d'attribut `screen`.")
+            print("Error: `self.app` has no attribute `screen`.")
