@@ -33,9 +33,9 @@ class PokedexScene(GameState):
             button = Button(x, y, 180, 30, pokemon, lambda name=pokemon: self.display_details(name), screen=self.app.screen)
             self.buttons.append(button)        
             
-            y += 30
+            y += 40
             
-            if y > HEIGHT*0.9 - 30:
+            if y > HEIGHT*0.9 - 40:
                 y = HEIGHT*0.05
                 y += 30
                 x += 270
@@ -48,7 +48,7 @@ class PokedexScene(GameState):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
         
-        self.draw_pokedex(WIDTH*0.26, HEIGHT*0.18)
+        self.draw_pokedex(WIDTH*0.26, HEIGHT*0.19)
         
         for button in self.buttons:
             button.process()

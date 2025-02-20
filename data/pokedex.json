@@ -1,27 +1,9 @@
 {
-    "Charmeleon": {
-        "name": "Charmeleon",
-        "id": 4,
-        "level": 15,
-        "xp": 0,
-        "types": [
-            "water"
-        ],
-        "max_hp": 92,
-        "hp": 92,
-        "attack": 17,
-        "evolution": [
-            20,
-            "Gyarados"
-        ],
-        "front_sprite": "assets/sprites/charmeleon_front.png",
-        "back_sprite": "assets/sprites/charmeleon_back.png"
-    },
     "Voltorb": {
         "name": "Voltorb",
         "id": 100,
         "level": 1,
-        "xp": 0,
+        "xp": 3,
         "types": [
             "electric"
         ],
@@ -34,5 +16,23 @@
         ],
         "front_sprite": "./assets/sprites/voltorb_front.png",
         "back_sprite": "./assets/sprites/voltorb_back.png"
+    },
+    "Squirtle": {
+        "name": "Squirtle",
+        "id": 7,
+        "level": 3,
+        "xp": 0,
+        "types": [
+            "water"
+        ],
+        "max_hp": 106,
+        "hp": 106,
+        "attack": 27,
+        "evolution": [
+            15,
+            "Wartortle"
+        ],
+        "front_sprite": "./assets/sprites/squirtle_front.png",
+        "back_sprite": "./assets/sprites/squirtle_back.png"
     }
 }
