@@ -123,9 +123,9 @@ class Pokemon:
 
                 # get evolution data from 'pokemon.json (all_pokemons.data_pokemons)'
                 self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
-                self.__max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"]
+                self.__max_hp = self.calculate_max_hp()
                 self.__hp = self.__max_hp
-                self.__attack = all_pokemons.data_pokemons[self.get_name()]["attack"]
+                self.__attack = self.calculate_attack()
                 self.__evolution = all_pokemons.data_pokemons[self.get_name()]["evolution"]
                 self.__front_sprite_path = all_pokemons.data_pokemons[self.get_name()]["front_sprite"]
                 self.__back_sprite_path = all_pokemons.data_pokemons[self.get_name()]["back_sprite"]
