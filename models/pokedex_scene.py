@@ -2,6 +2,8 @@ import os
 
 from config import *
 from .game_state import GameState
+from .button import Button
+from .display_pokemon import DisplayPokemon
 from .pokemon_dictionary import all_pokemons
 from .pokedex import pokedex
 
@@ -11,10 +13,8 @@ class PokedexScene(GameState):
         self.caption = "Show pokedex"
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
-               
-        # self.menu_background = pygame.Surface((WIDTH*0.9, HEIGHT*0.9), pygame.SRCALPHA)
-        # self.menu_background.fill(FADE_WHITE)
         
+        self.buttons = []
         self.message = ""
         self.message_time = 0
         
@@ -26,19 +26,29 @@ class PokedexScene(GameState):
 
     def draw_pokedex(self, x, y):
         list_player_pokemon = pokedex.list_pokemons()
+        self.buttons.clear()
         
         for pokemon in list_player_pokemon:
-            self.draw_text(pokemon, x, y)           
+            # self.draw_text(pokemon, x, y)
+            button = Button(x, y, 180, 30, pokemon, lambda name=pokemon: self.display_details(name), screen=self.app.screen)
+            self.buttons.append(button)        
             
-            y += 30
+            y += 40
             
-            if y > HEIGHT*0.9 - 30:
+            if y > HEIGHT*0.9 - 40:
                 y = HEIGHT*0.05
                 y += 30
                 x += 270
+                
+    def display_details(self, name):
+        """"""
+        self.draw_pokedex(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with pokedex avaible pokemons names
 
     def draw(self):
         """Draw welcome menu scene"""
         super().draw()  # Draw background
-        # self.app.screen.blit(self.menu_background, (WIDTH*0.05, HEIGHT*0.05)) # Draw menu rectangle
-        self.draw_pokedex(WIDTH*0.26, HEIGHT*0.18)
+        
+        self.draw_pokedex(WIDTH*0.26, HEIGHT*0.19)
+        
+        for button in self.buttons:
+            button.process()
