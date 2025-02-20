@@ -132,7 +132,6 @@ class Battle:
 
             # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
-            print("Kaka Boudin")
             pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
             end = True

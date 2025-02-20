@@ -16,23 +16,5 @@
         ],
         "front_sprite": "./assets/sprites/pikachu_front.png",
         "back_sprite": "./assets/sprites/pikachu_back.png"
-    },
-    "Voltorb": {
-        "name": "Voltorb",
-        "id": 100,
-        "level": 3,
-        "xp": 0,
-        "types": [
-            "electric"
-        ],
-        "max_hp": 104,
-        "hp": 104,
-        "attack": 19,
-        "evolution": [
-            20,
-            "Electrode"
-        ],
-        "front_sprite": "./assets/sprites/voltorb_front.png",
-        "back_sprite": "./assets/sprites/voltorb_back.png"
     }
 }
