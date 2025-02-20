@@ -24,10 +24,13 @@ class BattleMenu(GameState):
     def start_battle(self):
         """Start game."""
         player_pokemon = self.select_first_pokemon()
-        wild_pokemon = self.generate_wild_pokemon(player_pokemon)
-        print(wild_pokemon.get_name())
-        battle = Battle(player_pokemon, wild_pokemon)
-        self.app.state_manager.set_state("battle", player_pokemon, wild_pokemon, battle)
+        if not player_pokemon:
+            self.app.state_manager.set_state("choice")
+        else:
+            wild_pokemon = self.generate_wild_pokemon(player_pokemon)
+            print(wild_pokemon.get_name())
+            battle = Battle(player_pokemon, wild_pokemon)
+            self.app.state_manager.set_state("battle", player_pokemon, wild_pokemon, battle)
 
     def view_pokedex(self):
         """Go to pokedex display scene"""
@@ -41,7 +44,7 @@ class BattleMenu(GameState):
         """"""
         player_pokemon_list = pokedex.list_pokemons()
         if not player_pokemon_list:
-            exit()
+            return None
         else:
             first_pokemon = player_pokemon_list[0]
             return PlayerPokemon(first_pokemon)
