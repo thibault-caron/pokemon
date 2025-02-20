@@ -45,27 +45,27 @@ class Battle:
 
         attacker_type_0 = attacker.get_types()[0]
         defender_type_0 = defender.get_types()[0]
-        multiplier_1 = single_type_multiplier(attacker_type_0, defender_type_0)
+        attack1_1 = single_type_multiplier(attacker_type_0, defender_type_0)
 
         if len(attacker.get_types()) > 1:  # Check if attacker pokemon have two types.
             attacker_type_1 = attacker.get_types()[1]
-            multiplier_2 = single_type_multiplier(attacker_type_1, defender_type_0)
+            attack2_1 = single_type_multiplier(attacker_type_1, defender_type_0)
 
             if len(defender.get_types()) > 1:  # Check if defender pokemon have two types.
                 defender_type_1 = defender.get_types()[1]
-                multiplier_3 = single_type_multiplier(attacker_type_0, defender_type_1)
-                multiplier_4 = single_type_multiplier(attacker_type_1, defender_type_1)
+                attack1_2 = single_type_multiplier(attacker_type_0, defender_type_1)
+                attack2_2 = single_type_multiplier(attacker_type_1, defender_type_1)
 
-                # Global multiplier of two, two types pokemon.
-                self.multiplier = multiplier_1 * multiplier_2 * multiplier_3 * multiplier_4
+                # for each type of the defender, the attacker attack with its best type
+                self.multiplier = max(attack1_1, attack2_1) * max(attack1_2, attack2_2)
 
             else:
-                self.multiplier = multiplier_1 * multiplier_2  # Global multiplier of a one type and a two type pokemon.
+                self.multiplier = max(attack1_1, attack2_1)  # the defender has 1 type, the attacker attack with its best type
         else:
-            self.multiplier = multiplier_1  # Global multiplier of single type pokemon.
+            self.multiplier = attack1_1  # Global multiplier of single type pokemon.
         
-        if self.multiplier < 0.5:
-            self.multiplier = 0.5
+        # if self.multiplier < 0.5:
+        #     self.multiplier = 0.5
         return self.multiplier
 
     def inflict_damage(self, attacker, defender):
