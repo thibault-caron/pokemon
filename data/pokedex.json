@@ -1,20 +1,39 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
+        "level": 5,
+        "xp": 5,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 28,
+        "evolution": [
+            15,
+            "Ivysaur"
+        ],
+        "front_sprite": "./assets/sprites/bulbasaur_front.png",
+        "back_sprite": "./assets/sprites/bulbasaur_back.png"
+    },
+    "Magikarp": {
+        "name": "Magikarp",
+        "id": 129,
         "level": 5,
         "xp": 0,
         "types": [
-            "electric"
+            "water"
         ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 31,
+        "max_hp": 88,
+        "hp": 88,
+        "attack": 17,
         "evolution": [
             20,
-            "Raichu"
+            "Gyarados"
         ],
-        "front_sprite": "./assets/sprites/pikachu_front.png",
-        "back_sprite": "./assets/sprites/pikachu_back.png"
+        "front_sprite": "./assets/sprites/magikarp_front.png",
+        "back_sprite": "./assets/sprites/magikarp_back.png"
     }
 }

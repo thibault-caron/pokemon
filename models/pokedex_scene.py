@@ -14,7 +14,11 @@ class PokedexScene(GameState):
         
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
         
-        self.back_button = Button(WIDTH*0.95, HEIGHT*0.95, 40, 40, "Back", lambda: self.app.state_manager.set_state("battle menu"), screen=self.app.screen)
+        self.back_welcome_button = Button(WIDTH*0.25, HEIGHT*0.04, 250, 40, "Start menu", lambda: self.app.state_manager.set_state("welcome"), screen=self.app.screen)
+        
+        self.back_battle_button = Button(WIDTH*0.55, HEIGHT*0.04, 250, 40, "Battle menu", lambda: self.app.state_manager.set_state("battle menu"), screen=self.app.screen)
+        
+        
         self.buttons = []
         self.message = ""
         self.message_time = 0
@@ -45,8 +49,8 @@ class PokedexScene(GameState):
         """"""
         # self.draw_pokedex(WIDTH*0.05 + 50, HEIGHT*0.05 + 30) # draw buttons with pokedex avaible pokemons names
         displayed_pokemon = PlayerPokemon(pokemon_name)
-        pokemon_card = DisplayPokemon(displayed_pokemon, 100, 100, 400, 200, app=self.app)
-        pokemon_card.draw_card()
+        DisplayPokemon(displayed_pokemon, 100, 100, 400, 200, app=self.app)
+        self.app.state_manager.set_state("show pokemon details", pokemon_name=pokemon_name)
 
     def draw(self):
         """Draw welcome menu scene"""
@@ -54,7 +58,8 @@ class PokedexScene(GameState):
         
         self.draw_pokedex(WIDTH*0.26, HEIGHT*0.19)
 
-        self.back_button.process()
+        self.back_welcome_button.process()
+        self.back_battle_button.process()
         
         for button in self.buttons:
             button.process()
