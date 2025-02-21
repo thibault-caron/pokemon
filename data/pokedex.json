@@ -1,108 +1,71 @@
 {
-    "Squirtle": {
-        "name": "Squirtle",
-        "id": 7,
-        "level": 6,
+    "Abra": {
+        "name": "Abra",
+        "id": 63,
+        "level": 2,
         "xp": 0,
         "types": [
-            "water"
-        ],
-        "max_hp": 110,
-        "hp": 110,
-        "attack": 28.560000000000002,
-        "evolution": [
-            15,
-            "Wartortle"
-        ],
-        "front_sprite": "./assets/sprites/squirtle_front.png",
-        "back_sprite": "./assets/sprites/squirtle_back.png"
-    },
-    "Magikarp": {
-        "name": "Magikarp",
-        "id": 129,
-        "level": 8,
-        "xp": 0,
-        "types": [
-            "water"
+            "psychic"
         ],
         "max_hp": 94,
         "hp": 94,
-        "attack": 18,
+        "attack": 19,
         "evolution": [
-            20,
-            "Gyarados"
+            15,
+            "Kadabra"
         ],
-        "front_sprite": "./assets/sprites/magikarp_front.png",
-        "back_sprite": "./assets/sprites/magikarp_back.png"
+        "front_sprite": "./assets/sprites/abra_front.png",
+        "back_sprite": "./assets/sprites/abra_back.png"
     },
-    "Houndour": {
-        "name": "Houndour",
-        "id": 228,
-        "level": 2,
-        "xp": 6,
-        "types": [
-            "dark",
-            "fire"
-        ],
-        "max_hp": 104,
-        "hp": 104,
-        "attack": 30,
-        "evolution": [
-            20,
-            "Houndoom"
-        ],
-        "front_sprite": "./assets/sprites/houndour_front.png",
-        "back_sprite": "./assets/sprites/houndour_back.png"
-    },
-    "Koffing": {
-        "name": "Koffing",
-        "id": 109,
-        "level": 6,
+    "Magnemite": {
+        "name": "Magnemite",
+        "id": 81,
+        "level": 3,
         "xp": 0,
         "types": [
-            "poison"
+            "electric",
+            "steel"
+        ],
+        "max_hp": 96,
+        "hp": 96,
+        "attack": 20,
+        "evolution": [
+            20,
+            "Magneton"
+        ],
+        "front_sprite": "./assets/sprites/magnemite_front.png",
+        "back_sprite": "./assets/sprites/magnemite_back.png"
+    },
+    "Caterpie": {
+        "name": "Caterpie",
+        "id": 10,
+        "level": 5,
+        "xp": 0,
+        "types": [
+            "bug"
         ],
         "max_hp": 110,
         "hp": 110,
-        "attack": 33,
-        "evolution": [
-            20,
-            "Weezing"
-        ],
-        "front_sprite": "./assets/sprites/koffing_front.png",
-        "back_sprite": "./assets/sprites/koffing_back.png"
-    },
-    "Geodude": {
-        "name": "Geodude",
-        "id": 74,
-        "level": 8,
-        "xp": 7,
-        "types": [
-            "rock",
-            "ground"
-        ],
-        "max_hp": 112,
-        "hp": 112,
-        "attack": 40,
+        "attack": 20,
         "evolution": [
             15,
-            "Graveler"
+            "Metapod"
         ],
-        "front_sprite": "./assets/sprites/geodude_front.png",
-        "back_sprite": "./assets/sprites/geodude_back.png"
+        "front_sprite": "./assets/sprites/caterpie_front.png",
+        "back_sprite": "./assets/sprites/caterpie_back.png"
     },
     "Onix": {
         "name": "Onix",
         "id": 95,
-        "level": 3,
-        "xp": 0,
+        "level": 6,
+        "xp": 5,
         "types": [
             "rock",
             "ground"
         ],
-        "max_hp": 99,
-        "hp": 99,
-        "attack": 27,
+        "max_hp": 105,
+        "hp": 105,
+        "attack": 28,
         "evolution": [
             20,
             "Steelix"

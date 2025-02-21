@@ -258,8 +258,8 @@ class Pokemon:
         if self.__xp >= self.__level * 4 and self.__level < 50:
             self.__level += 1
             print(f"{self.__name} has grown to level {self.__level} !")
-            self.__attack = self.__attack * 1.02  # Increases attack by 2 % each level
-            self.__hp = self.__hp * 1.02  # Increases HP by 2 % each level
+            self.__attack = round(self.__attack * 1.02)  # Increases attack by 2 % each level
+            self.__hp = round(self.__hp * 1.02)  # Increases HP by 2 % each level
             self.__xp = 0
 
     def calculate_attack(self):

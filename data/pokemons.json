@@ -938,7 +938,7 @@
         ],
         "front_sprite": "assets/sprites/voltorb_front.png",
         "back_sprite": "assets/sprites/voltorb_back.png",
-        "state": "used"
+        "state": "unused"
     },
     "Electrode": {
         "name": "Electrode",
@@ -952,7 +952,7 @@
         "evolution": [],
         "front_sprite": "assets/sprites/electrode_front.png",
         "back_sprite": "assets/sprites/electrode_back.png",
-        "state": "used"
+        "state": "unused"
     },
     "Cubone": {
         "name": "Cubone",
@@ -1000,7 +1000,7 @@
         ],
         "front_sprite": "assets/sprites/koffing_front.png",
         "back_sprite": "assets/sprites/koffing_back.png",
-        "state": "used"
+        "state": "unused"
     },
     "Weezing": {
         "name": "Weezing",
