@@ -1,34 +1,15 @@
 {
-    "Bulbazaur": {
-        "name": "Bulbazaur",
-        "id": 104,
-        "level": 19,
-        "xp": 75,
-        "types": [
-            "grass",
-            "poison"
-        ],
-        "max_hp": 102,
-        "hp": 102,
-        "attack": 250,
-        "evolution": [
-            15,
-            "Ivysaur"
-        ],
-        "front_sprite": "./assets/sprites/bulbasaur_front.png",
-        "back_sprite": "./assets/sprites/bulbasaur_back.png"
-    },
     "Dratini": {
         "name": "Dratini",
         "id": 147,
-        "level": 6,
-        "xp": 6,
+        "level": 17,
+        "xp": 0,
         "types": [
             "dragon"
         ],
-        "max_hp": 109,
-        "hp": 109,
-        "attack": 35,
+        "max_hp": 136,
+        "hp": 136,
+        "attack": 43,
         "evolution": [
             15,
             "Dragonair"
@@ -71,5 +52,24 @@
         ],
         "front_sprite": "./assets/sprites/voltorb_front.png",
         "back_sprite": "./assets/sprites/voltorb_back.png"
+    },
+    "Ivysaur": {
+        "name": "Ivysaur",
+        "id": 104,
+        "level": 20,
+        "xp": 0,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "max_hp": 178,
+        "hp": 178,
+        "attack": 45,
+        "evolution": [
+            30,
+            "Venusaur"
+        ],
+        "front_sprite": "assets/sprites/ivysaur_front.png",
+        "back_sprite": "assets/sprites/ivysaur_back.png"
     }
 }
