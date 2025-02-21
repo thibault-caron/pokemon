@@ -203,35 +203,3 @@ class PlayerPokemon(Pokemon):
         self.set_evolution(pokedex.data_pokedex[self.get_name()]["evolution"])
         self.set_front_sprite(pokedex.data_pokedex[self.get_name()]["front_sprite"])
         self.set_back_sprite(pokedex.data_pokedex[self.get_name()]["back_sprite"])
-
-
-    def calculate_attack(self):
-        """
-        Calculate pokemon attack evolution.
-        :return:
-        """
-        if self.get_level() > 1:
-            attack = all_pokemons.data_pokemons[self.get_name()]["attack"] * 1.02 ** self.get_level()
-        else:
-            attack = all_pokemons.data_pokemons[self.get_name()]["attack"]
-        return round(attack)
-
-    def calculate_max_hp(self):
-        """
-        Calculate pokemon max HP evolution.
-        :return:
-        """
-        if self.get_level() > 1:
-            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"] * 1.02 ** self.get_level()
-        else:
-            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"]
-        return round(max_hp)
-
-
-if __name__ == '__main__':
-    
-
-    # data_pokemons = PokemonDictionary().data_pokemons
-    pika = Pokemon("Pikachu", 30)
-    pika.evolve()
-    pika.display_info()
