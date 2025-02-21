@@ -2,9 +2,8 @@ from random import choice, randint
 
 from config import *
 
-from .pokedex import pokedex
 from .pokemon import Pokemon, PlayerPokemon
-from .pokemon_dictionary import all_pokemons
+from .values import all_pokemons, pokedex
 
 
 class GeneratePokemon:

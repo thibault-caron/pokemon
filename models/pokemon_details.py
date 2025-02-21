@@ -1,13 +1,14 @@
 import os
 
 from config import *
-from .game_state import GameState
-from .button import Button
-from .display_pokemon import DisplayPokemon
-from .pokemon import PlayerPokemon
-from .pokedex import pokedex
+
 from .battle import Battle
 from .battle_menu import GeneratePokemon
+from .button import Button
+from .display_pokemon import DisplayPokemon
+from .game_state import GameState
+from .pokemon import PlayerPokemon
+from .values import pokedex
 
 class PokemonDetails(GameState):
     def __init__(self, app, pokemon_name):

@@ -5,7 +5,7 @@ from .game_state import GameState
 from .button import Button
 from .display_pokemon import DisplayPokemon
 from .pokemon import PlayerPokemon
-from .pokedex import pokedex
+from .values import pokedex
 
 class PokedexScene(GameState):
     def __init__(self, app):

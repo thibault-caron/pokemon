@@ -14,3 +14,4 @@ from .pokedex_scene import PokedexScene
 from .pokemon import Pokemon, PlayerPokemon
 from .pokemon_dictionary import PokemonDictionary
 from .welcome_menu import WelcomeMenu
+from .values import pokedex, all_pokemons

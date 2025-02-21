@@ -1,10 +1,10 @@
 import os
 
 from config import *
-from .game_state import GameState
+
 from .button import Button
-from .pokemon_dictionary import all_pokemons
-from .pokedex import pokedex
+from .game_state import GameState
+from .values import all_pokemons, pokedex
 
 class WelcomeMenu(GameState):
     def __init__(self, app):

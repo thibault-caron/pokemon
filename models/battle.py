@@ -3,7 +3,7 @@ from random import random
 from config import *
 
 from .database import Database
-from .pokedex import pokedex
+from .values import pokedex
 
 
 class Battle:

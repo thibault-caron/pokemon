@@ -3,7 +3,7 @@ from math import sin
 from config import *
 
 from .button import Button
-from .pokedex import pokedex
+from .values import pokedex
 
 
 class DisplayPokemon:

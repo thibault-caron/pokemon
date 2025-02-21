@@ -6,7 +6,7 @@ from .button import Button
 from .display_pokemon import DisplayPokemon
 from .game_state import GameState
 from .pokemon import Pokemon
-from .pokemon_dictionary import all_pokemons
+from .values import all_pokemons
 
 
 class AddWildPokemon(GameState):

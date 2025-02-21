@@ -1,14 +1,18 @@
 import json
+
+from config import *
+
 from .database import Database
 
 class Pokedex(Database):
+    """ Class to manage the pokedex. """
     def __init__(self):
         self.path = "./data/pokedex.json"
         self.data_pokedex = self.read_json()
 
     def clear_pokedex(self):
         """
-        Function used to clear json pokedex.
+        Clear json pokedex.
         :return: ∅
         """
         self.data_pokedex = {}
@@ -19,7 +23,11 @@ class Pokedex(Database):
             json.dump(self.data_pokedex, file)
 
     def add_pokemon(self, pokemon):
-        """Function that adds a Pokemon to the Pokedex"""
+        """
+        Add a pokemon to the pokedex.
+        :param pokemon: The pokemon.
+        :return: ∅
+        """
         pokemon = pokemon.to_dico()
         self.data_pokedex[pokemon["name"]] = pokemon
         
@@ -28,7 +36,10 @@ class Pokedex(Database):
             json.dump(self.data_pokedex, file, indent=4)
 
     def remove_pokemon(self, pokemon):
-        """remove a pokemon from var pokedex if it contains an item with its name"""
+        """
+        Remove a pokemon from the pokedex.
+         if it contains an item with its name
+        """
         print("start remove")
         pokemon_name = pokemon.get_name()
         print(pokemon_name)
@@ -41,17 +52,5 @@ class Pokedex(Database):
             json.dump(self.data_pokedex, file, indent=4)
 
     def list_pokemons(self):
+        """"""
         return list(self.data_pokedex.keys())
-                
-pokedex = Pokedex()
-
-
-'''Si c'est défini en dessous pour que ça marche ilfaut le dénir au dessus aussi (ex: PokemonDictionary pas importé, all_pokemons pas défini)'''
-# if __name__ == '__main__':
-#     from pokemon_dictionary import PokemonDictionary
-
-#     all_pokemons = PokemonDictionary()
-#     player_pokedex = Pokedex()
-#     player_pokedex.add_pokemon("Mewtwo")
-
-#     print(player_pokedex.data_pokedex)

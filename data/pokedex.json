@@ -3,7 +3,7 @@
         "name": "Bulbasaur",
         "id": 1,
         "level": 5,
-        "xp": 13,
+        "xp": 0,
         "types": [
             "grass",
             "poison"
@@ -17,77 +17,5 @@
         ],
         "front_sprite": "./assets/sprites/bulbasaur_front.png",
         "back_sprite": "./assets/sprites/bulbasaur_back.png"
-    },
-    "Squirtle": {
-        "name": "Squirtle",
-        "id": 7,
-        "level": 4,
-        "xp": 2,
-        "types": [
-            "water"
-        ],
-        "max_hp": 108,
-        "hp": 108,
-        "attack": 27,
-        "evolution": [
-            15,
-            "Wartortle"
-        ],
-        "front_sprite": "./assets/sprites/squirtle_front.png",
-        "back_sprite": "./assets/sprites/squirtle_back.png"
-    },
-    "Abra": {
-        "name": "Abra",
-        "id": 63,
-        "level": 2,
-        "xp": 0,
-        "types": [
-            "psychic"
-        ],
-        "max_hp": 94,
-        "hp": 94,
-        "attack": 19,
-        "evolution": [
-            15,
-            "Kadabra"
-        ],
-        "front_sprite": "./assets/sprites/abra_front.png",
-        "back_sprite": "./assets/sprites/abra_back.png"
-    },
-    "Psyduck": {
-        "name": "Psyduck",
-        "id": 54,
-        "level": 5,
-        "xp": 8,
-        "types": [
-            "water"
-        ],
-        "max_hp": 113,
-        "hp": 113,
-        "attack": 30,
-        "evolution": [
-            20,
-            "Golduck"
-        ],
-        "front_sprite": "./assets/sprites/psyduck_front.png",
-        "back_sprite": "./assets/sprites/psyduck_back.png"
-    },
-    "Sandshrew": {
-        "name": "Sandshrew",
-        "id": 27,
-        "level": 8,
-        "xp": 0,
-        "types": [
-            "ground"
-        ],
-        "max_hp": 120,
-        "hp": 120,
-        "attack": 37,
-        "evolution": [
-            20,
-            "Sandslash"
-        ],
-        "front_sprite": "./assets/sprites/sandshrew_front.png",
-        "back_sprite": "./assets/sprites/sandshrew_back.png"
     }
 }

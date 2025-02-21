@@ -1,7 +1,10 @@
-import json
+from config import *
+
 from .database import Database
 
+
 class PokemonDictionary(Database):
+    """ """
     def __init__(self):
         self.path = "./data/pokemons.json"
         self.data_pokemons = self.read_json()
@@ -24,6 +27,4 @@ class PokemonDictionary(Database):
         """"""
         for pokemon in self.data_pokemons:
             if self.data_pokemons[pokemon]["name"] == name:
-                self.data_pokemons[pokemon]["state"] = "used"    
-
-all_pokemons = PokemonDictionary()
+                self.data_pokemons[pokemon]["state"] = "used"
