@@ -44,7 +44,6 @@ class Pokedex(Database):
         :param pokemon: The pokemon.
         :return: ∅
         """
-        print("start remove")
         pokemon_name = pokemon.get_name()
         print(pokemon_name)
         if pokemon_name in self.data_pokedex:
