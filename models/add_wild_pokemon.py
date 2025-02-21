@@ -21,7 +21,7 @@ class AddWildPokemon(GameState):
         
         self.buttons = []
         self.back_button = Button(WIDTH*0.95, HEIGHT*0.95, 40, 40, "Back",
-                                  lambda: self.app.state_manager.set_state("welcome"), screen=self.app.screen)
+                                  lambda name="": self.app.state_manager.set_state("welcome"), screen=self.app.screen)
 
         self.menu_background = pygame.Surface((WIDTH*0.9, HEIGHT*0.9), pygame.SRCALPHA)
         self.menu_background.fill(FADE_WHITE)
