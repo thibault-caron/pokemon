@@ -2,14 +2,14 @@
     "Cubone": {
         "name": "Cubone",
         "id": 104,
-        "level": 1,
-        "xp": 0,
+        "level": 19,
+        "xp": 75,
         "types": [
             "ground"
         ],
         "max_hp": 102,
         "hp": 102,
-        "attack": 25,
+        "attack": 250,
         "evolution": [
             20,
             "Marowak"

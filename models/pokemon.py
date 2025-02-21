@@ -130,6 +130,8 @@ class Pokemon:
                 self.__front_sprite_path = all_pokemons.data_pokemons[self.get_name()]["front_sprite"]
                 self.__back_sprite_path = all_pokemons.data_pokemons[self.get_name()]["back_sprite"]
 
+
+
                 print(f"{self.__name} has evolved!")
 
                 # a faire: retirer l'objet du nom de la pré-evolution à 'my_pokemons' et append celui du nouveau nom à la place 
@@ -209,9 +211,9 @@ class PlayerPokemon(Pokemon):
         :return:
         """
         if self.get_level() > 1:
-            attack = pokedex.data_pokedex[self.get_name()]["attack"] * 1.02 ** self.get_level()
+            attack = all_pokemons.data_pokemons[self.get_name()]["attack"] * 1.02 ** self.get_level()
         else:
-            attack = pokedex.data_pokedex[self.get_name()]["attack"]
+            attack = all_pokemons.data_pokemons[self.get_name()]["attack"]
         return round(attack)
 
     def calculate_max_hp(self):
@@ -220,9 +222,9 @@ class PlayerPokemon(Pokemon):
         :return:
         """
         if self.get_level() > 1:
-            max_hp = pokedex.data_pokedex[self.get_name()]["hp"] * 1.02 ** self.get_level()
+            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"] * 1.02 ** self.get_level()
         else:
-            max_hp = pokedex.data_pokedex[self.get_name()]["hp"]
+            max_hp = all_pokemons.data_pokemons[self.get_name()]["hp"]
         return round(max_hp)
 
 
