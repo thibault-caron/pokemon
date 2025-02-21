@@ -2,7 +2,8 @@ from random import choice, randint
 
 from config import *
 
-from .pokemon import Pokemon, PlayerPokemon
+from .player_pokemon import PlayerPokemon
+from .pokemon import Pokemon
 from .values import all_pokemons, pokedex
 
 

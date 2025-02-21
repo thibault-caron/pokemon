@@ -4,15 +4,20 @@ from .values import all_pokemons, pokedex
 
 
 class Pokemon:
-
+    """ Class to manage the pokemons."""
     def __init__(self, name, level=5, wild=True):
+        """
+        Initialization of the class.
+        :param name: The pokemon name.
+        :param level: The pokemon level.
+        :param wild: If true it's a wild pokemon.
+        """
         self.__name = name
         self.__id = all_pokemons.data_pokemons[self.get_name()]["id_code"]
         self.__level = level
         self.__xp = 0
         self.__wild = wild
 
-        # a faire: données à récup dans all_pokemons.data_pokemons via le "name"
         self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
         self.__max_hp = self.calculate_max_hp()
         self.__hp = self.__max_hp
@@ -20,42 +25,89 @@ class Pokemon:
         self.__evolution = all_pokemons.data_pokemons[self.get_name()]["evolution"]
         self.__front_sprite_path = './assets/sprites/' + self.__name.lower() + '_front.png'
         self.__back_sprite_path = './assets/sprites/' + self.__name.lower() + '_back.png'
-    
-    # Getters
+
     def get_name(self):
+        """
+        Getter of the pokemon name.
+        :return: The name.
+        """
         return self.__name
     
     def get_id(self):
+        """
+        Getter of the pokemon id.
+        :return: The id.
+        """
         return self.__id
     
     def get_level(self):
+        """
+        Getter of the pokemon level.
+        :return: The level.
+        """
         return self.__level
     
     def get_xp(self):
+        """
+        Getter of the pokemon xp.
+        :return: The xp.
+        """
         return self.__xp
     
     def get_types(self):
+        """
+        Getter of the pokemon type.
+        :return: The type.
+        """
         return self.__types
     
     def get_max_hp(self):
+        """
+        Getter of the pokemon max hp.
+        :return: The max hp.
+        """
         return self.__max_hp
     
     def get_hp(self):
+        """
+        Getter of the pokemon hp.
+        :return: The hp.
+        """
         return self.__hp
     
     def get_attack(self):
+        """
+        Getter of the pokemon attack points.
+        :return: The attack points.
+        """
         return self.__attack
     
     def get_wild(self):
+        """
+        Getter of the pokemon wild status.
+        :return: The wild status.
+        """
         return self.__wild
     
     def get_evolution(self):
+        """
+        Getter of the pokemon evolution.
+        :return: The evolution.
+        """
         return self.__evolution
     
     def get_front_sprite(self):
+        """
+        Getter of the pokemon front sprite.
+        :return: The front sprite.
+        """
         return self.__front_sprite_path
     
     def get_back_sprite(self):
+        """
+        Getter of the pokemon back sprite.
+        :return: The back sprite.
+        """
         return self.__back_sprite_path
     
     # Setters
@@ -63,6 +115,11 @@ class Pokemon:
         self.__name = name
 
     def set_id(self, id):
+        """
+        Setter of the pokemon id.
+        :param id: The new id.
+        :return: ∅
+        """
         self.__id = id
     
     def set_level(self, level):
@@ -129,11 +186,8 @@ class Pokemon:
                 self.__front_sprite_path = all_pokemons.data_pokemons[self.get_name()]["front_sprite"]
                 self.__back_sprite_path = all_pokemons.data_pokemons[self.get_name()]["back_sprite"]
 
-
-
                 print(f"{self.__name} has evolved!")
 
-                # a faire: retirer l'objet du nom de la pré-evolution à 'my_pokemons' et append celui du nouveau nom à la place 
         else:
             print(f"{self.__name} cannot evolve.")
 
@@ -185,20 +239,3 @@ class Pokemon:
             print(f"Evolves into: {self.__evolution}")
         else:
             print("This Pokémon cannot evolve.")
-
-
-class PlayerPokemon(Pokemon):
-    def __init__(self, name):
-        super().__init__(name)
-
-        self.set_id(pokedex.data_pokedex[self.get_name()]["id"])
-        self.set_level(pokedex.data_pokedex[self.get_name()]["level"])
-        self.set_xp(pokedex.data_pokedex[self.get_name()]["xp"])
-        self.set_wild(False)
-        self.set_types(pokedex.data_pokedex[self.get_name()]["types"])
-        self.set_max_hp(pokedex.data_pokedex[self.get_name()]["max_hp"])
-        self.set_hp(pokedex.data_pokedex[self.get_name()]["hp"])
-        self.set_attack(pokedex.data_pokedex[self.get_name()]["attack"])
-        self.set_evolution(pokedex.data_pokedex[self.get_name()]["evolution"])
-        self.set_front_sprite(pokedex.data_pokedex[self.get_name()]["front_sprite"])
-        self.set_back_sprite(pokedex.data_pokedex[self.get_name()]["back_sprite"])

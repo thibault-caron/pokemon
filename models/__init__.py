@@ -9,9 +9,10 @@ from .display_pokemon import DisplayPokemon
 from .game_state import GameState
 from .game_state_manager import GameStateManager
 from .generate_pokemon import GeneratePokemon
+from .player_pokemon import PlayerPokemon
 from .pokedex import Pokedex
 from .pokedex_scene import PokedexScene
-from .pokemon import Pokemon, PlayerPokemon
+from .pokemon import Pokemon
 from .pokemon_dictionary import PokemonDictionary
 from .welcome_menu import WelcomeMenu
 from .values import pokedex, all_pokemons

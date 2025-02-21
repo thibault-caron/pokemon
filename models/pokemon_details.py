@@ -7,7 +7,7 @@ from .battle_menu import GeneratePokemon
 from .button import Button
 from .display_pokemon import DisplayPokemon
 from .game_state import GameState
-from .pokemon import PlayerPokemon
+from .player_pokemon import PlayerPokemon
 from .values import pokedex
 
 class PokemonDetails(GameState):

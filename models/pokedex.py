@@ -4,9 +4,12 @@ from config import *
 
 from .database import Database
 
+
 class Pokedex(Database):
     """ Class to manage the pokedex. """
     def __init__(self):
+        """ Initialization of the class. """
+        super().__init__()
         self.path = "./data/pokedex.json"
         self.data_pokedex = self.read_json()
 
@@ -38,7 +41,8 @@ class Pokedex(Database):
     def remove_pokemon(self, pokemon):
         """
         Remove a pokemon from the pokedex.
-         if it contains an item with its name
+        :param pokemon: The pokemon.
+        :return: ∅
         """
         print("start remove")
         pokemon_name = pokemon.get_name()
@@ -52,5 +56,8 @@ class Pokedex(Database):
             json.dump(self.data_pokedex, file, indent=4)
 
     def list_pokemons(self):
-        """"""
+        """
+        Create a list of the pokemons names.
+        :return: The list.
+        """
         return list(self.data_pokedex.keys())
