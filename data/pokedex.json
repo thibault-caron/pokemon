@@ -1,38 +1,75 @@
 {
-    "Pikachu": {
-        "name": "Pikachu",
-        "id": 25,
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "id": 1,
         "level": 5,
-        "xp": 3,
+        "xp": 15,
         "types": [
-            "electric"
+            "grass",
+            "poison"
         ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 31,
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 28,
+        "evolution": [
+            15,
+            "Ivysaur"
+        ],
+        "front_sprite": "./assets/sprites/bulbasaur_front.png",
+        "back_sprite": "./assets/sprites/bulbasaur_back.png"
+    },
+    "Cubone": {
+        "name": "Cubone",
+        "id": 104,
+        "level": 1,
+        "xp": 0,
+        "types": [
+            "ground"
+        ],
+        "max_hp": 102,
+        "hp": 102,
+        "attack": 25,
         "evolution": [
             20,
-            "Raichu"
+            "Marowak"
         ],
-        "front_sprite": "./assets/sprites/pikachu_front.png",
-        "back_sprite": "./assets/sprites/pikachu_back.png"
+        "front_sprite": "./assets/sprites/cubone_front.png",
+        "back_sprite": "./assets/sprites/cubone_back.png"
     },
-    "Voltorb": {
-        "name": "Voltorb",
-        "id": 100,
+    "Dratini": {
+        "name": "Dratini",
+        "id": 147,
         "level": 3,
         "xp": 0,
         "types": [
-            "electric"
+            "dragon"
         ],
-        "max_hp": 104,
-        "hp": 104,
-        "attack": 19,
+        "max_hp": 103,
+        "hp": 103,
+        "attack": 33,
+        "evolution": [
+            15,
+            "Dragonair"
+        ],
+        "front_sprite": "./assets/sprites/dratini_front.png",
+        "back_sprite": "./assets/sprites/dratini_back.png"
+    },
+    "Sandshrew": {
+        "name": "Sandshrew",
+        "id": 27,
+        "level": 4,
+        "xp": 7,
+        "types": [
+            "ground"
+        ],
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 35,
         "evolution": [
             20,
-            "Electrode"
+            "Sandslash"
         ],
-        "front_sprite": "./assets/sprites/voltorb_front.png",
-        "back_sprite": "./assets/sprites/voltorb_back.png"
+        "front_sprite": "./assets/sprites/sandshrew_front.png",
+        "back_sprite": "./assets/sprites/sandshrew_back.png"
     }
 }
