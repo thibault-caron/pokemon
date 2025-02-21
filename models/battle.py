@@ -1,9 +1,10 @@
-import pygame
-
 from random import random
-from .pokemon import Pokemon
+
+from config import *
+
 from .database import Database
 from .pokedex import pokedex
+
 
 class Battle:
     """ Class to manage the battle. """

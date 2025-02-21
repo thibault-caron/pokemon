@@ -1,12 +1,12 @@
 from config import *
 
-from .welcome_menu import WelcomeMenu
+from .add_wild_pokemon import AddWildPokemon
 from .battle_menu import BattleMenu
 from .battle_scene import BattleScene
 from .choice_menu import ChoiceMenu
-from .add_wild_pokemon import AddWildPokemon
 from .pokedex_scene import PokedexScene
 from .pokemon_details import PokemonDetails
+from .welcome_menu import WelcomeMenu
 
 
 class GameStateManager:

@@ -1,9 +1,10 @@
 import os
 
 from config import *
+
 from .game_state import GameState
-from .pokemon import Pokemon
 from .display_pokemon import DisplayPokemon
+from .pokemon import Pokemon
 
 
 class ChoiceMenu(GameState):

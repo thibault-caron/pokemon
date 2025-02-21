@@ -1,5 +1,7 @@
 import json
 
+from config import *
+
 
 class Database:
     """ Class to interact with json files. """

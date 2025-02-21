@@ -1152,7 +1152,7 @@
         "evolution": [],
         "front_sprite": "assets/sprites/mewtwo_front.png",
         "back_sprite": "assets/sprites/mewtwo_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Mew": {
         "name": "Mew",

@@ -1,9 +1,11 @@
 import os
+
 from config import *
-from .game_state import GameState
+
 from .button import Button
-from .pokemon import Pokemon
 from .display_pokemon import DisplayPokemon
+from .game_state import GameState
+from .pokemon import Pokemon
 from .pokemon_dictionary import all_pokemons
 
 

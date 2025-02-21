@@ -1,7 +1,8 @@
 import os
+from random import random
 
 from config import *
-from random import random
+
 from .button import Button
 from .display_pokemon import DisplayPokemon
 from .game_state import GameState

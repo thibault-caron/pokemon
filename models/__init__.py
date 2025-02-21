@@ -8,6 +8,7 @@ from .database import Database
 from .display_pokemon import DisplayPokemon
 from .game_state import GameState
 from .game_state_manager import GameStateManager
+from .generate_pokemon import GeneratePokemon
 from .pokedex import Pokedex
 from .pokedex_scene import PokedexScene
 from .pokemon import Pokemon, PlayerPokemon
