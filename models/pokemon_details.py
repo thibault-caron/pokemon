@@ -7,7 +7,7 @@ from .display_pokemon import DisplayPokemon
 from .pokemon import PlayerPokemon
 from .pokedex import pokedex
 from .battle import Battle
-from .battle_menu import generate_wild_pokemon
+from .battle_menu import GeneratePokemon
 
 class PokemonDetails(GameState):
     def __init__(self, app, pokemon_name):
@@ -24,7 +24,7 @@ class PokemonDetails(GameState):
         if not player_pokemon:
             self.app.state_manager.set_state("choice")
         else:
-            wild_pokemon = generate_wild_pokemon(player_pokemon)
+            wild_pokemon = GeneratePokemon().wild_pokemon
             print(wild_pokemon.get_name())
             battle = Battle(player_pokemon, wild_pokemon)
             self.app.state_manager.set_state("battle", player_pokemon, wild_pokemon, battle)
