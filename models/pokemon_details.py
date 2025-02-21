@@ -16,7 +16,7 @@ class PokemonDetails(GameState):
         self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("show pokedex"), screen=self.app.screen)
 
     def draw(self):
-        """Draw welcome menu scene"""
+        """Draw welcome menu scene. """
         super().draw()  # Draw background
         
         if self.pokemon_name:

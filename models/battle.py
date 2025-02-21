@@ -9,7 +9,7 @@ class Battle:
     """ Class to manage the battle. """
     def __init__(self, player_pokemon, wild_pokemon):
         """
-        Initialisation of the class.
+        Initialization of the class.
         :param player_pokemon: The player pokemon choose for the battle.
         :param wild_pokemon: A wild pokemon encountered.
         """
@@ -114,14 +114,16 @@ class Battle:
         elif self.wild_pokemon.get_hp() > 0 >= self.player_pokemon.get_hp():
             result = "defeat"
             self.winner_message = f"Winner: {self.wild_pokemon.get_name()}, Loser: {self.player_pokemon.get_name()}"
-            print(self.winner_message)
         else:
             result = "ongoing"
         return result
     
     def end_battle(self):
+        """
+        Check if battle is finished.
+        :return: End battle status.
+        """
         end = False
-        print("debut end_battle")
 
         if self.check_victory() == "victory":
             self.player_pokemon.gain_xp(self.wild_pokemon)
@@ -132,13 +134,11 @@ class Battle:
 
             # ajouter condition 'si le wild_pokemon (name) n'est pas dans pokedex'
             self.wild_pokemon.set_hp(self.wild_pokemon.get_max_hp())
-            print("Kaka Boudin")
             pokedex.add_pokemon(self.wild_pokemon)  # Add chosen pokemon in pokedex
             # self.app.state_manager.set_state("battle menu")
             end = True
         
         elif self.check_victory() == "defeat":
-            print("You lost the battle!")
             pokedex.remove_pokemon(self.player_pokemon)
             # self.app.state_manager.set_state("battle menu")
             end = True
@@ -161,17 +161,3 @@ class Battle:
         else:
             victory = self.player_pokemon.get_name()
         return victory
-
-if __name__ == '__main__':
-
-    type_chart = Database().read_json()
-    poke1 = Pokemon("Pikachu", 1)
-    poke2 = Pokemon("Caterpie", 1)
-    test_battle = Battle(poke1, poke2)
-
-    victory = 0
-    n = 1
-    while not isinstance(victory, str):
-        print(f"\nTour {n}")
-        victory = test_battle.turn()
-        n += 1

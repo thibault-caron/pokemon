@@ -1,5 +1,3 @@
-
-
 from .add_wild_pokemon import AddWildPokemon
 from .battle import Battle
 from .battle_menu import BattleMenu
@@ -11,6 +9,7 @@ from .display_pokemon import DisplayPokemon
 from .game_state import GameState
 from .game_state_manager import GameStateManager
 from .pokedex import Pokedex
-from .pokemon import Pokemon
+from .pokedex_scene import PokedexScene
+from .pokemon import Pokemon, PlayerPokemon
 from .pokemon_dictionary import PokemonDictionary
 from .welcome_menu import WelcomeMenu

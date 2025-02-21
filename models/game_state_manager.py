@@ -8,8 +8,14 @@ from .add_wild_pokemon import AddWildPokemon
 from .pokedex_scene import PokedexScene
 from .pokemon_details import PokemonDetails
 
+
 class GameStateManager:
+    """ Manage the switch between various screens. """
     def __init__(self, app):
+        """
+        Initialization of the class.
+        :param app: Call of the game main loop.
+        """
         self.app = app
         self.states = {}
         
@@ -18,7 +24,15 @@ class GameStateManager:
         self.set_state("welcome")
         
     def set_state(self, state_name, player_pokemon=None, wild_pokemon=None, battle=None, pokemon_name=None):
-        """Change d'état en créant l'instance seulement si elle n'existe pas"""
+        """
+        Set the game screen.
+        :param state_name: Name of the screen.
+        :param player_pokemon: The player pokemon.
+        :param wild_pokemon: The wild pokemon.
+        :param battle: The battle between the two pokemons.
+        :param pokemon_name: The pokemon name.
+        :return: ∅
+        """
 
         if state_name == "welcome":
             self.states[state_name] = WelcomeMenu(self.app)
@@ -38,4 +52,8 @@ class GameStateManager:
         self.current_state = self.states[state_name]
 
     def get_state(self):
+        """
+        Getter of the current state.
+        :return: ∅
+        """
         return self.current_state
