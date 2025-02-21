@@ -94,6 +94,8 @@ class BattleScene(GameState):
         else:
             self.player_pokemon.set_hp(self.player_pokemon.get_hp() - (self.wild_pokemon.get_attack() * 0.5))
             print("you failed to escape!")
+            if self.battle.end_battle():
+                self.app.state_manager.set_state("battle menu")
 
     def draw_text(self, text, x, y, color=WHITE):
         """

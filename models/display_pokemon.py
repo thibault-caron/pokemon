@@ -1,3 +1,4 @@
+from math import sin
 from config import *
 from .button import Button
 from .pokedex import pokedex
@@ -29,6 +30,13 @@ class DisplayPokemon:
         self.pokemon = pokemon
 
         self.font = pygame.font.Font("assets/pokemon_classic.ttf", 15)
+
+        self.mouvement_x = 0
+        self.mouvement_y = 0
+        self.amplitude_vertical = 0
+        self.amplitude_horizontal = 0
+        self.speed = 3
+        self.time_elapsed = 6
 
         self.button = Button(self.x + 120, self.y + 130, 250, 50, 'Choose me',
                              self.battle, screen=self.app.screen)
@@ -196,6 +204,11 @@ class DisplayPokemon:
         :param y: His ordinate.
         :return: ∅
         """
+        self.amplitude_vertical = 5
+        self.amplitude_horizontal = 2
+        self.time_elapsed += self.speed
+        self.mouvement_x = int(self.amplitude_horizontal * sin(self.time_elapsed * 0.08))
+        self.mouvement_y = int(self.amplitude_vertical * sin(self.time_elapsed * 0.2))
         self.draw_battle_image(self.pokemon.get_front_sprite(), x, y)
 
     def draw_battle_pokemon_back_sprite(self, x, y):
@@ -205,6 +218,11 @@ class DisplayPokemon:
         :param y: His ordinate.
         :return: ∅
         """
+        self.amplitude_vertical = 2
+        self.amplitude_horizontal = 5
+        self.time_elapsed += self.speed
+        self.mouvement_x = int(self.amplitude_horizontal * sin(self.time_elapsed * 0.1))
+        self.mouvement_y = int(self.amplitude_vertical * sin(self.time_elapsed * 0.2))
         self.draw_battle_image(self.pokemon.get_back_sprite(), x, y)
 
     def draw_pokedex_front_sprite(self, x, y):

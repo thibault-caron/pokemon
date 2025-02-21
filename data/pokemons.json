@@ -1166,7 +1166,7 @@
         "evolution": [],
         "front_sprite": "assets/sprites/mew_front.png",
         "back_sprite": "assets/sprites/mew_back.png",
-        "state": "unused"
+        "state": "used"
     },
     "Steelix": {
         "name": "Steelix",
