@@ -109,8 +109,7 @@ class Pokemon:
         :return: The back sprite.
         """
         return self.__back_sprite_path
-    
-    # Setters
+
     def set_name(self, name):
         """
         Setter of the pokemon name.
@@ -238,7 +237,6 @@ class Pokemon:
                 pokedex.remove_pokemon(self)
                 self.__name = self.__evolution[1]
 
-                # get evolution data from 'pokemon.json (all_pokemons.data_pokemons)'
                 self.__types = all_pokemons.data_pokemons[self.get_name()]["types"]
                 self.__max_hp = self.calculate_max_hp()
                 self.__hp = self.__max_hp

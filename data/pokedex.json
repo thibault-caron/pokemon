@@ -1,38 +1,113 @@
 {
-    "Charmander": {
-        "name": "Charmander",
-        "id": 4,
-        "level": 5,
-        "xp": 7,
-        "types": [
-            "fire"
-        ],
-        "max_hp": 105,
-        "hp": 105,
-        "attack": 30,
-        "evolution": [
-            15,
-            "Charmeleon"
-        ],
-        "front_sprite": "./assets/sprites/charmander_front.png",
-        "back_sprite": "./assets/sprites/charmander_back.png"
-    },
-    "Clefairy": {
-        "name": "Clefairy",
-        "id": 35,
-        "level": 7,
+    "Squirtle": {
+        "name": "Squirtle",
+        "id": 7,
+        "level": 6,
         "xp": 0,
         "types": [
-            "fairy"
+            "water"
         ],
-        "max_hp": 144,
-        "hp": 144,
-        "attack": 29,
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 28.560000000000002,
+        "evolution": [
+            15,
+            "Wartortle"
+        ],
+        "front_sprite": "./assets/sprites/squirtle_front.png",
+        "back_sprite": "./assets/sprites/squirtle_back.png"
+    },
+    "Magikarp": {
+        "name": "Magikarp",
+        "id": 129,
+        "level": 8,
+        "xp": 0,
+        "types": [
+            "water"
+        ],
+        "max_hp": 94,
+        "hp": 94,
+        "attack": 18,
         "evolution": [
             20,
-            "Clefable"
+            "Gyarados"
         ],
-        "front_sprite": "./assets/sprites/clefairy_front.png",
-        "back_sprite": "./assets/sprites/clefairy_back.png"
+        "front_sprite": "./assets/sprites/magikarp_front.png",
+        "back_sprite": "./assets/sprites/magikarp_back.png"
+    },
+    "Houndour": {
+        "name": "Houndour",
+        "id": 228,
+        "level": 2,
+        "xp": 6,
+        "types": [
+            "dark",
+            "fire"
+        ],
+        "max_hp": 104,
+        "hp": 104,
+        "attack": 30,
+        "evolution": [
+            20,
+            "Houndoom"
+        ],
+        "front_sprite": "./assets/sprites/houndour_front.png",
+        "back_sprite": "./assets/sprites/houndour_back.png"
+    },
+    "Koffing": {
+        "name": "Koffing",
+        "id": 109,
+        "level": 6,
+        "xp": 0,
+        "types": [
+            "poison"
+        ],
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 33,
+        "evolution": [
+            20,
+            "Weezing"
+        ],
+        "front_sprite": "./assets/sprites/koffing_front.png",
+        "back_sprite": "./assets/sprites/koffing_back.png"
+    },
+    "Geodude": {
+        "name": "Geodude",
+        "id": 74,
+        "level": 8,
+        "xp": 7,
+        "types": [
+            "rock",
+            "ground"
+        ],
+        "max_hp": 112,
+        "hp": 112,
+        "attack": 40,
+        "evolution": [
+            15,
+            "Graveler"
+        ],
+        "front_sprite": "./assets/sprites/geodude_front.png",
+        "back_sprite": "./assets/sprites/geodude_back.png"
+    },
+    "Onix": {
+        "name": "Onix",
+        "id": 95,
+        "level": 3,
+        "xp": 0,
+        "types": [
+            "rock",
+            "ground"
+        ],
+        "max_hp": 99,
+        "hp": 99,
+        "attack": 27,
+        "evolution": [
+            20,
+            "Steelix"
+        ],
+        "front_sprite": "./assets/sprites/onix_front.png",
+        "back_sprite": "./assets/sprites/onix_back.png"
     }
 }
