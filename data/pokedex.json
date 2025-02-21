@@ -1,56 +1,113 @@
 {
-    "Cubone": {
-        "name": "Cubone",
-        "id": 104,
-        "level": 19,
-        "xp": 75,
-        "types": [
-            "ground"
-        ],
-        "max_hp": 102,
-        "hp": 102,
-        "attack": 250,
-        "evolution": [
-            20,
-            "Marowak"
-        ],
-        "front_sprite": "./assets/sprites/cubone_front.png",
-        "back_sprite": "./assets/sprites/cubone_back.png"
-    },
-    "Dratini": {
-        "name": "Dratini",
-        "id": 147,
-        "level": 3,
+    "Squirtle": {
+        "name": "Squirtle",
+        "id": 7,
+        "level": 6,
         "xp": 0,
         "types": [
-            "dragon"
-        ],
-        "max_hp": 103,
-        "hp": 103,
-        "attack": 33,
-        "evolution": [
-            15,
-            "Dragonair"
-        ],
-        "front_sprite": "./assets/sprites/dratini_front.png",
-        "back_sprite": "./assets/sprites/dratini_back.png"
-    },
-    "Sandshrew": {
-        "name": "Sandshrew",
-        "id": 27,
-        "level": 4,
-        "xp": 7,
-        "types": [
-            "ground"
+            "water"
         ],
         "max_hp": 110,
         "hp": 110,
-        "attack": 35,
+        "attack": 28.560000000000002,
+        "evolution": [
+            15,
+            "Wartortle"
+        ],
+        "front_sprite": "./assets/sprites/squirtle_front.png",
+        "back_sprite": "./assets/sprites/squirtle_back.png"
+    },
+    "Magikarp": {
+        "name": "Magikarp",
+        "id": 129,
+        "level": 8,
+        "xp": 0,
+        "types": [
+            "water"
+        ],
+        "max_hp": 94,
+        "hp": 94,
+        "attack": 18,
         "evolution": [
             20,
-            "Sandslash"
+            "Gyarados"
         ],
-        "front_sprite": "./assets/sprites/sandshrew_front.png",
-        "back_sprite": "./assets/sprites/sandshrew_back.png"
+        "front_sprite": "./assets/sprites/magikarp_front.png",
+        "back_sprite": "./assets/sprites/magikarp_back.png"
+    },
+    "Houndour": {
+        "name": "Houndour",
+        "id": 228,
+        "level": 2,
+        "xp": 6,
+        "types": [
+            "dark",
+            "fire"
+        ],
+        "max_hp": 104,
+        "hp": 104,
+        "attack": 30,
+        "evolution": [
+            20,
+            "Houndoom"
+        ],
+        "front_sprite": "./assets/sprites/houndour_front.png",
+        "back_sprite": "./assets/sprites/houndour_back.png"
+    },
+    "Koffing": {
+        "name": "Koffing",
+        "id": 109,
+        "level": 6,
+        "xp": 0,
+        "types": [
+            "poison"
+        ],
+        "max_hp": 110,
+        "hp": 110,
+        "attack": 33,
+        "evolution": [
+            20,
+            "Weezing"
+        ],
+        "front_sprite": "./assets/sprites/koffing_front.png",
+        "back_sprite": "./assets/sprites/koffing_back.png"
+    },
+    "Geodude": {
+        "name": "Geodude",
+        "id": 74,
+        "level": 8,
+        "xp": 7,
+        "types": [
+            "rock",
+            "ground"
+        ],
+        "max_hp": 112,
+        "hp": 112,
+        "attack": 40,
+        "evolution": [
+            15,
+            "Graveler"
+        ],
+        "front_sprite": "./assets/sprites/geodude_front.png",
+        "back_sprite": "./assets/sprites/geodude_back.png"
+    },
+    "Onix": {
+        "name": "Onix",
+        "id": 95,
+        "level": 3,
+        "xp": 0,
+        "types": [
+            "rock",
+            "ground"
+        ],
+        "max_hp": 99,
+        "hp": 99,
+        "attack": 27,
+        "evolution": [
+            20,
+            "Steelix"
+        ],
+        "front_sprite": "./assets/sprites/onix_front.png",
+        "back_sprite": "./assets/sprites/onix_back.png"
     }
 }

@@ -1,20 +1,26 @@
 import os
 
 from config import *
+
 from .game_state import GameState
-from .button import Button
-from .pokemon import Pokemon
 from .display_pokemon import DisplayPokemon
+from .pokemon import Pokemon
+
 
 class ChoiceMenu(GameState):
+    """ Class to manage the choice menu scene. """
     def __init__(self, app):
+        """
+        Initialization of the class.
+        :param app: Call of the game main loop.
+        """
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokemon.jpg")
         self.caption = "Choose Pokemon Menu"
-        
-        starter1= Pokemon("Pikachu", 5)
-        starter2= Pokemon("Bulbasaur", 5)
-        starter3= Pokemon("Charmander", 5)
-        starter4= Pokemon("Squirtle", 5)
+
+        starter1 = Pokemon("Pikachu", 5)
+        starter2 = Pokemon("Bulbasaur", 5)
+        starter3 = Pokemon("Charmander", 5)
+        starter4 = Pokemon("Squirtle", 5)
 
         self.pokemon_cards = [
             DisplayPokemon(starter1, 100, 100, 400, 200, app=self.app),
@@ -24,8 +30,11 @@ class ChoiceMenu(GameState):
         ]
 
     def draw(self):
-        """Draw welcome menu scene"""
-        super().draw()  # Draw background
+        """
+        Draw the choice menu scene.
+        :return: ∅
+        """
+        super().draw()
         if hasattr(self.app, 'screen'):
             for pokemon_card in self.pokemon_cards:
                 pokemon_card.draw_card()

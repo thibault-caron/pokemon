@@ -53,7 +53,7 @@
         "psychic": 1,
         "bug": 1,
         "rock": 2,
-        "ghost": 0,
+        "ghost": 1,
         "dragon" : 0.5,
         "steel" : 1,
         "fairy" : 1,

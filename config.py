@@ -1,6 +1,5 @@
-'''Set all the variable of the game'''
+""" Set all the variables of the game. """
 
-# import pygame
 import pygame
 from pygame.locals import *
 
