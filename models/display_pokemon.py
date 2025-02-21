@@ -318,7 +318,7 @@ class DisplayPokemon:
         self.draw_text("HP: ", self.x + self.width * 0.35, self.y + 55, BLACK)
         self.draw_pokemon_hp(self.x + self.width * 0.35 + 50, self.y + 55, BLACK)
         self.draw_pokemon_attack(self.x + self.width * 0.35, self.y + 80, BLACK)
-        self.draw_pokemon_front_sprite(self.x + 10, self.y + 15, BLACK)
+        self.draw_pokemon_front_sprite(self.x + 10, self.y + 15)
 
     def battle(self):
         """
