@@ -14,7 +14,7 @@ class PokemonDetails(GameState):
         super().__init__(app, img_folder=os.path.join(os.getcwd(), "assets", "images"), file="pokedex.jpg")
         self.caption = "Show pokemon details"
         self.pokemon = PlayerPokemon(pokemon_name)
-        self.chose_pokemon_button = Button(WIDTH*0.048, HEIGHT*0.78, 100, 40, "Choose", lambda: self.launch_battle(self.pokemon), screen=self.app.screen)
+        self.chose_pokemon_button = Button(WIDTH / 2 - 50, HEIGHT*0.78, 200, 40, "Choose me", lambda: self.launch_battle(self.pokemon), screen=self.app.screen)
         
         self.back_button = Button(WIDTH*0.048, HEIGHT*0.84, 100, 40, "Back", lambda: self.app.state_manager.set_state("show pokedex"), screen=self.app.screen)
 
