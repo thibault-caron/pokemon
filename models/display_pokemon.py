@@ -23,8 +23,10 @@ class DisplayPokemon():
         
         self.mouvement_x = 0
         self.mouvement_y = 0
-        self.speed = 5
-        self.time_elapsed = 10
+        self.amplitude_vertical = 0
+        self.amplitude_horizontal = 0
+        self.speed = 3
+        self.time_elapsed = 6
  
     '''Draw pokemon info'''
     def draw_text(self, text, x, y, color = WHITE):
@@ -91,18 +93,20 @@ class DisplayPokemon():
         self.draw_image(self.pokemon.get_back_sprite(), x, y)
         
     def draw_battle_pokemon_front_sprite(self, x, y):
-        amplitude_vertical = 5
-        amplitude_horizontal = 5
+        self.amplitude_vertical = 5
+        self.amplitude_horizontal = 2
         self.time_elapsed += self.speed
-        self.mouvement_y = int(amplitude_vertical * math.sin(self.time_elapsed * 0.1))
-        self.draw_battle_image(self.pokemon.get_front_sprite(), x, y + self.mouvement_y)
+        self.mouvement_x = int(self.amplitude_horizontal * math.sin(self.time_elapsed * 0.08))
+        self.mouvement_y = int(self.amplitude_vertical * math.sin(self.time_elapsed * 0.2))
+        self.draw_battle_image(self.pokemon.get_front_sprite(), x + self.mouvement_x, y + self.mouvement_y)
 
     def draw_battle_pokemon_back_sprite(self, x, y):
-        amplitude_vertical = 5
-        amplitude_horizontal = 5
+        self.amplitude_vertical = 2
+        self.amplitude_horizontal = 5
         self.time_elapsed += self.speed
-        self.mouvement_x = int(amplitude_horizontal * math.sin(self.time_elapsed * 0.08))
-        self.draw_battle_image(self.pokemon.get_back_sprite(), x + self.mouvement_x, y)
+        self.mouvement_x = int(self.amplitude_horizontal * math.sin(self.time_elapsed * 0.1))
+        self.mouvement_y = int(self.amplitude_vertical * math.sin(self.time_elapsed * 0.2))
+        self.draw_battle_image(self.pokemon.get_back_sprite(), x + self.mouvement_x, y + self.mouvement_y)
         
     def draw_pokedex_front_sprite(self, x, y):
         self.draw_pokedex_image(self.pokemon.get_front_sprite(), x, y)
