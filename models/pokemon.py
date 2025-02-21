@@ -203,3 +203,4 @@ class PlayerPokemon(Pokemon):
         self.set_evolution(pokedex.data_pokedex[self.get_name()]["evolution"])
         self.set_front_sprite(pokedex.data_pokedex[self.get_name()]["front_sprite"])
         self.set_back_sprite(pokedex.data_pokedex[self.get_name()]["back_sprite"])
+
