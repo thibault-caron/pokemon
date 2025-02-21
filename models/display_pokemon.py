@@ -209,7 +209,7 @@ class DisplayPokemon:
         self.time_elapsed += self.speed
         self.mouvement_x = int(self.amplitude_horizontal * sin(self.time_elapsed * 0.08))
         self.mouvement_y = int(self.amplitude_vertical * sin(self.time_elapsed * 0.2))
-        self.draw_battle_image(self.pokemon.get_front_sprite(), x, y)
+        self.draw_battle_image(self.pokemon.get_front_sprite(), x + self.mouvement_x, y + self. mouvement_y)
 
     def draw_battle_pokemon_back_sprite(self, x, y):
         """
@@ -223,7 +223,7 @@ class DisplayPokemon:
         self.time_elapsed += self.speed
         self.mouvement_x = int(self.amplitude_horizontal * sin(self.time_elapsed * 0.1))
         self.mouvement_y = int(self.amplitude_vertical * sin(self.time_elapsed * 0.2))
-        self.draw_battle_image(self.pokemon.get_back_sprite(), x, y)
+        self.draw_battle_image(self.pokemon.get_back_sprite(), x + self.mouvement_x, y + self. mouvement_y)
 
     def draw_pokedex_front_sprite(self, x, y):
         """
