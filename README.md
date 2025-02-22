@@ -12,7 +12,7 @@ loose the battle it will be lost, and you can't use it again.
 You have also an option to show your pokedex and add other pokemons to the game.
 
 - Language used: Python
-- Libraries used: PyGame, math, os, random
+- Libraries used: PyGame, json, math, os, random
 
 ## **Installation**
 
