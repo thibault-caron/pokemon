@@ -18,9 +18,11 @@ You have also an option to show your pokedex and add other pokemons to the game.
 
 To install Pokemon, follow these steps:
 
-1. Clone this repository: **`git clone https://github.com/thibault-caron/pokemon`**
-2. Navigate to the project directory: **`cd pokemon`**
+1. Clone this repository: **`git clone https://github.com/thibault-caron/pokemon`**, or download the folder as a zip file ("code" button on GitHub)
+2. Download the Python language: **https://www.python.org/downloads/**
 3. Install the PyGame library: **`pip install pygame`**
+4. Navigate to the project directory: **`cd pokemon`**
+
 
 ## **Usage**
 
