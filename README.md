@@ -2,7 +2,6 @@
 
 <img src="./assets/images/pokemon_family.png" alt="The Pokemon family!">
 
-
 ## **Introduction**
 
 This project is a Pokemon game created using the PyGame library of Python.
